@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
 
 
 
+
+
 #part of date validator
 
 	def self.birth_date_last

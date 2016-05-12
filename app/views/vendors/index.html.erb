@@ -6,6 +6,7 @@
   <thead>
     <tr>
       <th>Company</th>
+      <th>Email</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -14,6 +15,7 @@
     <% @vendors.each do |vendor| %>
       <tr>
         <td><%= vendor.company %></td>
+        <td><%= vendor.email %></td>
         <td><%= link_to 'Show', vendor %></td>
         <td><%= link_to 'Edit', edit_vendor_path(vendor) %></td>
         <td><%= link_to 'Destroy', vendor, method: :delete, data: { confirm: 'Are you sure?' } %></td>

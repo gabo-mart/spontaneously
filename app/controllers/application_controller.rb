@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   private
 
   def current_vendor
-    Vendor.where(id: session[:vendor_id]).first
+    @current_vendor ||= Vendor.find_by(id: session[:vendor_id])
   end
 
   def current_user
@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
   end
 
   def require_logged_in
-    redirect_to root_path if current_user == nil
+    redirect_to root_path if current_user == nil || current_vendor == nil
   end
 
 

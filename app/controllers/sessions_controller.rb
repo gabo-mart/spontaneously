@@ -3,6 +3,7 @@ class SessionsController < ApplicationController
   end
 
   def new_vendor
+    
   end
 
   def create_user

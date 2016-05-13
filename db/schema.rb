@@ -13,6 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20160512202842) do
 
+<<<<<<< HEAD
   create_table "packages", force: :cascade do |t|
     t.string   "itinerary"
     t.string   "ship"
@@ -29,6 +30,8 @@ ActiveRecord::Schema.define(version: 20160512202842) do
 
   add_index "packages", ["user_id"], name: "index_packages_on_user_id"
 
+=======
+>>>>>>> reviews
   create_table "reviews", force: :cascade do |t|
     t.string   "title"
     t.text     "description"

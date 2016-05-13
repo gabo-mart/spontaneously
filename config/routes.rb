@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
 
-
+ 
+  resources :reviews
   resources :users
   resources :vendors
-  resources :reviews
-  resources :sessions, only: [:new, :create, :destroy]
-
+  resources :sessions
+  get '/usersign_up' => 'users#new'
   get 'signup', to: 'vendors#new', as: 'signup'
   get 'login', to: 'sessions#new', as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'

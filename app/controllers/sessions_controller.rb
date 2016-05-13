@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     	return render action: 'new' unless @user
 
     	session[:user_id] = @user.id
-    	redirect_to "#"
+    	redirect_to packages_index_path
   end
 
   def create_vendor
@@ -28,6 +28,7 @@ class SessionsController < ApplicationController
     else
       session[:user_id] = nil
       redirect_to root_url, notice: "Logged out!"
+    end
   end
 
 end

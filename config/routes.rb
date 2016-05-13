@@ -3,11 +3,15 @@ Rails.application.routes.draw do
  
   resources :reviews
   resources :users
-  resources :vendors
   resources :sessions
+
+  resources :vendors do
+    resources :ships
+  end
+
   get '/usersign_up' => 'users#new'
   get 'signup', to: 'vendors#new', as: 'signup'
-  get 'login', to: 'sessions#new', as: 'login'
+  get 'login', to: 'packages#index', as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'
 
 

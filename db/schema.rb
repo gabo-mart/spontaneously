@@ -11,10 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20160512200221) do
-=======
-ActiveRecord::Schema.define(version: 20160512173827) do
+ActiveRecord::Schema.define(version: 20160512202842) do
 
   create_table "packages", force: :cascade do |t|
     t.string   "itinerary"
@@ -31,7 +28,16 @@ ActiveRecord::Schema.define(version: 20160512173827) do
   end
 
   add_index "packages", ["user_id"], name: "index_packages_on_user_id"
->>>>>>> db094e4d3c93a949879614c8e42ed555b7f939d5
+
+  create_table "reviews", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.integer  "user_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "reviews", ["user_id"], name: "index_reviews_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "username"
@@ -43,11 +49,7 @@ ActiveRecord::Schema.define(version: 20160512173827) do
     t.string   "address2"
     t.string   "region"
     t.string   "postal_code"
-<<<<<<< HEAD
     t.string   "tel"
-=======
-    t.integer  "tel"
->>>>>>> db094e4d3c93a949879614c8e42ed555b7f939d5
     t.string   "email"
     t.string   "password_digest"
     t.datetime "created_at",      null: false
@@ -56,8 +58,6 @@ ActiveRecord::Schema.define(version: 20160512173827) do
 
   add_index "users", ["username"], name: "index_users_on_username", unique: true
 
-<<<<<<< HEAD
-=======
   create_table "vendors", force: :cascade do |t|
     t.string   "company"
     t.string   "password_digest"
@@ -66,5 +66,4 @@ ActiveRecord::Schema.define(version: 20160512173827) do
     t.string   "email"
   end
 
->>>>>>> db094e4d3c93a949879614c8e42ed555b7f939d5
 end

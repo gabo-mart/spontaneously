@@ -1,9 +1,24 @@
 Rails.application.routes.draw do
+<<<<<<< HEAD
   root 'sessions#new'
 
   resources :users
   resources :sessions
   
+=======
+
+  resources :sessions, only: [:new, :create, :destroy]
+
+  get 'signup', to: 'vendors#new', as: 'signup'
+  get 'login', to: 'sessions#new', as: 'login'
+  get 'logout', to: 'sessions#destroy', as: 'logout'
+
+  resources :vendors
+  resources :users
+
+  get 'packages/index'
+  root 'packages#index'
+>>>>>>> db094e4d3c93a949879614c8e42ed555b7f939d5
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

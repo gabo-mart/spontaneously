@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
+  resources :reviews
   root 'sessions#new'
+  
+  get '/logout' => 'sessions#destroy'
 
   resources :users
   resources :sessions

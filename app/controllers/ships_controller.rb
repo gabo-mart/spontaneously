@@ -13,7 +13,7 @@ class ShipsController < ApplicationController
 
     respond_to do |format|
       if @ship.save
-        format.html { redirect_to @ship, notice: 'Department was successfully created.' }
+        format.html { redirect_to @ship, notice: 'Ship was successfully created.' }
         format.json { render :show, status: :created, location: @ship }
       else
         format.html { render :new }
@@ -46,5 +46,5 @@ class ShipsController < ApplicationController
     def ship_params
       params.require(:ship).permit(:name, :tonnage, :length, :max_beam, :type, :activities, :other, :vendor_id)
     end
-    
+
 end

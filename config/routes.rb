@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   resources :vendors do
     resources :ships
+    post 'ships/new' => 'ships#create'
   end
 
   get '/usersign_up' => 'users#new'

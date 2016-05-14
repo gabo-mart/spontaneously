@@ -1,4 +1,6 @@
 class ShipsController < ApplicationController
+before_action :set_vendor, only: [:create]
+
 
 	def index
 		@ships = Ship.find_by(vendor_id: pramams[:vendor_id])
@@ -8,12 +10,15 @@ class ShipsController < ApplicationController
 		@ship = Ship.new
 	end
 
+	def show
+	end
+
 	def create
-		@ship = @vendor.ships.new(ship_params)
+		@ship = @vendor.ships.build(ship_params)
 
     respond_to do |format|
       if @ship.save
-        format.html { redirect_to @ship, notice: 'Ship was successfully created.' }
+        format.html { redirect_to @vendor, notice: 'Ship was successfully created.' }
         format.json { render :show, status: :created, location: @ship }
       else
         format.html { render :new }
@@ -41,6 +46,10 @@ class ShipsController < ApplicationController
     def set_ship
       @ship = @vendor.ship.find(params[:id])
     end
+
+		def set_vendor
+			@vendor = Vendor.find(params[:vendor_id])
+		end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def ship_params

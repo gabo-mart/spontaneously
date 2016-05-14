@@ -1,1 +1,17 @@
 <h1>  Ship Show </h1>
+
+<p>
+  <strong>Ship:</strong>
+  <%= @ship.name %>
+</p>
+
+<ul>
+	<li><strong>Tonnage: </strong><%= @ship.tonnage %></li>
+  <li><strong>Length: </strong><%= @ship.length %></li>
+  <li><strong>Max Beam: </strong><%= @ship.max_beam %></li>
+  <li><strong>Type: </strong><%= @ship.type %></li>
+  <li><strong>Activities: </strong><%= @ship.activities %></li>
+  <li><strong>Other: </strong><%= @ship.other %></li>
+</ul>
+
+<%= link_to 'Back to Dashboard', vendors_path %>

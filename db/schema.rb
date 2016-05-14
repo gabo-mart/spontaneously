@@ -11,7 +11,52 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20160511215010) do
+=======
+ActiveRecord::Schema.define(version: 20160513034041) do
+
+  create_table "packages", force: :cascade do |t|
+    t.string   "itinerary"
+    t.string   "ship"
+    t.string   "dates"
+    t.string   "duration"
+    t.decimal  "price"
+    t.integer  "rooms"
+    t.integer  "people"
+    t.string   "room_type"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "packages", ["user_id"], name: "index_packages_on_user_id"
+
+  create_table "reviews", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.integer  "user_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "reviews", ["user_id"], name: "index_reviews_on_user_id"
+
+  create_table "ships", force: :cascade do |t|
+    t.string   "name"
+    t.string   "tonnage"
+    t.string   "length"
+    t.string   "max_beam"
+    t.string   "type"
+    t.text     "activities"
+    t.text     "other"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "vendor_id"
+  end
+
+  add_index "ships", ["vendor_id"], name: "index_ships_on_vendor_id"
+>>>>>>> 09f128a189673022daaf1c0bc831a9ced585342c
 
   create_table "users", force: :cascade do |t|
     t.string   "username"
@@ -23,7 +68,11 @@ ActiveRecord::Schema.define(version: 20160511215010) do
     t.string   "address2"
     t.string   "region"
     t.string   "postal_code"
+<<<<<<< HEAD
     t.integer  "tel"
+=======
+    t.string   "tel"
+>>>>>>> 09f128a189673022daaf1c0bc831a9ced585342c
     t.string   "email"
     t.string   "password_digest"
     t.datetime "created_at",      null: false
@@ -32,4 +81,15 @@ ActiveRecord::Schema.define(version: 20160511215010) do
 
   add_index "users", ["username"], name: "index_users_on_username", unique: true
 
+<<<<<<< HEAD
+=======
+  create_table "vendors", force: :cascade do |t|
+    t.string   "company"
+    t.string   "password_digest"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "email"
+  end
+
+>>>>>>> 09f128a189673022daaf1c0bc831a9ced585342c
 end

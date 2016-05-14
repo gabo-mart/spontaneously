@@ -5,6 +5,7 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+<<<<<<< HEAD
   <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
@@ -101,8 +102,37 @@
 </html>
 
 
+=======
+</head>
+<body>
+<% if current_user %>
+	Signed in as:<%= current_user.username %> <%= link_to 'Log Out', logout_path %>
+<% end %>
+>>>>>>> 09f128a189673022daaf1c0bc831a9ced585342c
 
-<%= yield %>
+
+
+  
+  <% flash.each do |key, value| %>
+    <%= content_tag(:div, class: "alert alert- #{key}") do %>
+      <p><%= value %></p>
+    <% end %>
+  <% end %>
+
+  <%= yield %>
+
+  <div id="vendor_footer">
+
+    <% if current_vendor %>
+      Logged in as  <%= current_vendor.email %>
+      <%= link_to "Log Out", logout_path %>
+    <% else %>
+      <p> Company:
+        <%= link_to "Sign Up", signup_path %> or
+        <%= link_to "Log In", vendor_login_path %>
+      </p>
+    <% end %>
+  </div>
 
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>

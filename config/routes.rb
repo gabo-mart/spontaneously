@@ -1,6 +1,30 @@
 Rails.application.routes.draw do
+
+
+  resources :reviews
   resources :users
   root 'welcome#index'
+
+
+  resources :sessions
+
+  resources :vendors do
+    resources :ships
+  end
+
+  get '/usersign_up' => 'users#new'
+  get 'signup', to: 'vendors#new', as: 'signup'
+
+  get 'logout', to: 'sessions#destroy', as: 'logout'
+
+  get '/vendor/login' => 'sessions#new_vendor'
+  get '/users/login' => 'sessions#new_user'
+
+  post 'vendor/login' => 'sessions#create_vendor', as: 'create_vendor'
+  post 'users/login' => 'sessions#create_user'
+
+  get 'packages/index'
+  root 'packages#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

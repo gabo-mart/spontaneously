@@ -1,40 +1,21 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Spontaneously</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-<<<<<<< HEAD
-  <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
-
-
-
-<html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
-
     <title>Spontaneously</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
 
+      <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
     <!-- Bootstrap core CSS -->
     <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
-
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
-
     <!-- Custom styles for this template -->
     <link href="jumbotron-narrow.css" rel="stylesheet">
-
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
     <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
@@ -47,94 +28,40 @@
   </head>
 
   <body>
+    <div class="container-fluid Site">
 
-    <div class="container">
-      <div class="header clearfix">
-        <nav>
-          <ul class="nav nav-pills pull-right">
-            <li role="presentation" class="active"><a href="#">Create Account</a></li>
-            <li role="presentation"><a href="#">Login</a></li>
-          </ul>
+      <% flash.each do |key, value| %>
+        <%= content_tag(:div, class: "alert alert- #{key}") do %>
+          <p><%= value %></p>
+        <% end %>
+      <% end %>
+
+        <nav class="navbar navbar-primary">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <a class="navbar-brand text-muted" href="#">Spontaneosly</a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="#"><span class="glyphicon glyphicon-user"></span> Create Account</a></li>
+              <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+              <% if current_user %>
+                <li>
+                  <a href="#">
+                    <span class="glyphicon glyphicon-log-in"></span>
+                    Signed in as: </strong><%= current_user.username %></strong>
+                    <%= link_to 'Log Out', logout_path %>
+                  </a>
+                </li>
+              <% end %>
+            </ul>
+          </div>
         </nav>
-        <h3 class="text-muted">Spontaneosly</h3>
+      <div class="site-content">
+        <%= yield %>
       </div>
-
-      <div class="jumbotron">
-        <h1>Picture Here</h1>
-        <p class="lead">Add Whatever Text</p>
-        <p><a class="btn btn-lg btn-success" href="#" role="button">Book Now</a></p>
-      </div>
-
-      <div class="row marketing">
-        <div class="col-lg-6">
-          <h4>Cruise 1</h4>
-          <p>Add text here.</p>
-
-          <h4>Cruise 2</h4>
-          <p>Add text here.</p>
-
-          <h4>Cruise 3</h4>
-          <p>Add text here.</p>
-        </div>
-
-        <div class="col-lg-6">
-          <h4>Cruise 4</h4>
-          <p>Add text here.</p>
-
-          <h4>Cruise 5</h4>
-          <p>Add text here.</p>
-
-          <h4>Cruise 6</h4>
-          <p>Add text here.</p>
-        </div>
-      </div>
-
       <footer class="footer">
         <p>&copy; 2016 Spontaneosly, Inc.</p>
       </footer>
-
-    </div> <!-- /container -->
-
-
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+    </div>
   </body>
-</html>
-
-
-=======
-</head>
-<body>
-<% if current_user %>
-	Signed in as:<%= current_user.username %> <%= link_to 'Log Out', logout_path %>
-<% end %>
->>>>>>> 09f128a189673022daaf1c0bc831a9ced585342c
-
-
-
-  
-  <% flash.each do |key, value| %>
-    <%= content_tag(:div, class: "alert alert- #{key}") do %>
-      <p><%= value %></p>
-    <% end %>
-  <% end %>
-
-  <%= yield %>
-
-  <div id="vendor_footer">
-
-    <% if current_vendor %>
-      Logged in as  <%= current_vendor.email %>
-      <%= link_to "Log Out", logout_path %>
-    <% else %>
-      <p> Company:
-        <%= link_to "Sign Up", signup_path %> or
-        <%= link_to "Log In", vendor_login_path %>
-      </p>
-    <% end %>
-  </div>
-
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-</body>
 </html>

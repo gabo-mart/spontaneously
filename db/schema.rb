@@ -11,9 +11,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20160511215010) do
-=======
 ActiveRecord::Schema.define(version: 20160513034041) do
 
   create_table "packages", force: :cascade do |t|
@@ -56,7 +53,6 @@ ActiveRecord::Schema.define(version: 20160513034041) do
   end
 
   add_index "ships", ["vendor_id"], name: "index_ships_on_vendor_id"
->>>>>>> 09f128a189673022daaf1c0bc831a9ced585342c
 
   create_table "users", force: :cascade do |t|
     t.string   "username"
@@ -68,11 +64,7 @@ ActiveRecord::Schema.define(version: 20160513034041) do
     t.string   "address2"
     t.string   "region"
     t.string   "postal_code"
-<<<<<<< HEAD
-    t.integer  "tel"
-=======
     t.string   "tel"
->>>>>>> 09f128a189673022daaf1c0bc831a9ced585342c
     t.string   "email"
     t.string   "password_digest"
     t.datetime "created_at",      null: false
@@ -81,8 +73,6 @@ ActiveRecord::Schema.define(version: 20160513034041) do
 
   add_index "users", ["username"], name: "index_users_on_username", unique: true
 
-<<<<<<< HEAD
-=======
   create_table "vendors", force: :cascade do |t|
     t.string   "company"
     t.string   "password_digest"
@@ -91,5 +81,4 @@ ActiveRecord::Schema.define(version: 20160513034041) do
     t.string   "email"
   end
 
->>>>>>> 09f128a189673022daaf1c0bc831a9ced585342c
 end

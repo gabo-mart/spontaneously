@@ -24,7 +24,7 @@ Rails.application.routes.draw do
   post 'users/login' => 'sessions#create_user'
 
   get 'packages/index'
-  root 'packages#index'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

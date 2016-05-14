@@ -12,6 +12,11 @@
   <% end %>
 
 
+
+  t.text     "other"
+  t.text     "description"
+
+
   <div class="field">
 
   </div>
@@ -21,10 +26,12 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
-
+    <%= f.label :tonnage %><br>
+    <%= f.number_field :tonnage %>
   </div>
   <div class="field">
-
+    <%= f.label :length_in_feet %><br>
+    <%= f.number_field :length_in_feet %>
   </div>
   <div class="field">
     <%= f.label :max_beam %><br>
@@ -35,14 +42,17 @@
     <%= f.text_field :type %>
   </div>
   <div class="field">
+    <%= f.label :guest_capacity %><br>
+    <%= f.number_field :guest_capacity %>
+  </div>
+  <div class="field">
+    <%= f.label :onboard_crew %><br>
+    <%= f.number_field :onboard_crew %>
 
   </div>
   <div class="field">
-
-  </div>
-  <div class="field">
-    <%= f.label :activities %><br>
-    <%= f.text_field :activities %>
+    <%= f.label :decription %><br>
+    <%= f.text_field :description %>
   </div>
   <div class="actions">
     <%= f.submit 'swag' %>

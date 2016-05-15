@@ -44,7 +44,7 @@ class ShipsController < ApplicationController
 
 	# Use callbacks to share common setup or constraints between actions.
 	def set_ship
-		@ship = Vendor.find_by(params[:vendor_id]).ships.find(params[:id])
+		@ship = Ship.find(params[:id])
 	end
 
 	def set_vendor

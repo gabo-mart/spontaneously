@@ -4,12 +4,17 @@
   <strong>Company:</strong>
   <%= @vendor.company %>
 </p>
-
-<ul>
-	<% @vendor.ships.each do |ship| %>
-		<li><%= link_to ship.name, vendor_ship_path(@vendor,ship) %></li>
-	<% end %>
-</ul>
+<div> SHIPS </div>
+<table>
+	<thead></thead>
+	<tbody>
+		<% @vendor.ships.each do |ship| %>
+			<tr>
+				<td><%= link_to ship.name, vendor_ship_path(@vendor,ship) %></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
 
 
 

@@ -30,11 +30,10 @@
         <nav class="navbar navbar-primary" id="navbar">
           <div class="container-fluid">
             <div class="navbar-header">
-              <a class="navbar-brand text-muted" href="#">Spontaneously</a>
+              <a class="navbar-brand text-muted" href="/">Spontaneously</a>
             </div>
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="/usersign_up"><span class="glyphicon glyphicon-user"></span> Create Account</a></li>
-              <li><a href="/user/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+
               <% if current_user %>
                 <li>
                   <a href="#">
@@ -43,7 +42,12 @@
                     <%= link_to 'Log Out', logout_path %>
                   </a>
                 </li>
+              <% elsif !current_vendor %>
+                <li><a href="/usersign_up"><span class="glyphicon glyphicon-user"></span> Create Account</a></li>
+                <li><a href="/user/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+              <% else %>
               <% end %>
+
             </ul>
           </div>
         </nav>
@@ -54,8 +58,9 @@
         <p>&copy; 2016 Spontaneously, Inc.</p>
         <% if current_vendor %>
         <%= link_to "Log out", logout_path %>
-        <% else %>
+        <% elsif !current_user %>
         <%= link_to "Vendor Sign In", create_vendor_path %>
+        <% else %>
         <% end %>
       </footer>
     </div>

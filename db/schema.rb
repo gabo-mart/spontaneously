@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160513034041) do
+ActiveRecord::Schema.define(version: 20160514223616) do
 
   create_table "packages", force: :cascade do |t|
     t.string   "itinerary"
@@ -41,15 +41,17 @@ ActiveRecord::Schema.define(version: 20160513034041) do
 
   create_table "ships", force: :cascade do |t|
     t.string   "name"
-    t.string   "tonnage"
-    t.string   "length"
-    t.string   "max_beam"
+    t.integer  "tonnage"
+    t.integer  "max_beam"
     t.string   "type"
-    t.text     "activities"
     t.text     "other"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
     t.integer  "vendor_id"
+    t.integer  "length_in_feet"
+    t.integer  "guest_capacity"
+    t.integer  "onboard_crew"
+    t.text     "description"
   end
 
   add_index "ships", ["vendor_id"], name: "index_ships_on_vendor_id"

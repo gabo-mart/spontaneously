@@ -1,0 +1,53 @@
+<%= form_for @ship,url: vendor_ships_new_path do |f| %>
+  <% if @ship.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@ship.errors.count, "error") %> prohibited this ship from being saved:</h2>
+
+      <ul>
+      <% @ship.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+
+  <div class="field">
+
+  </div>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :tonnage %><br>
+    <%= f.number_field :tonnage %>
+  </div>
+  <div class="field">
+    <%= f.label :length_in_feet %><br>
+    <%= f.number_field :length_in_feet %>
+  </div>
+  <div class="field">
+    <%= f.label :max_beam %><br>
+    <%= f.text_field :max_beam %>
+  </div>
+
+  <div class="field">
+    <%= f.label :guest_capacity %><br>
+    <%= f.number_field :guest_capacity %>
+  </div>
+  <div class="field">
+    <%= f.label :onboard_crew %><br>
+    <%= f.number_field :onboard_crew %>
+
+  </div>
+  <div class="field">
+    <%= f.label :decription %><br>
+    <%= f.text_field :description %>
+  </div>
+  <div class="actions">
+    <%= f.submit 'swag' %>
+  </div>
+<% end %>

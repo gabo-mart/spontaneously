@@ -10,15 +10,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
-    <!-- Bootstrap core CSS -->
-    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
-    <!-- Custom styles for this template -->
-    <link href="jumbotron-narrow.css" rel="stylesheet">
-    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -39,9 +30,11 @@
         <nav class="navbar navbar-primary" id="navbar">
           <div class="container-fluid">
             <div class="navbar-header">
-              <a class="navbar-brand text-muted" href="#">Spontaneosly</a>
+              <a class="navbar-brand text-muted" href="#">Spontaneously</a>
             </div>
             <ul class="nav navbar-nav navbar-right">
+              <li><%= link_to 'Vendor Logout', logout_url %><br></li>
+              <li><%= link_to 'Vendor Login', vendor_login_path %><br></li>
               <li><a href="#"><span class="glyphicon glyphicon-user"></span> Create Account</a></li>
               <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
               <% if current_user %>
@@ -60,7 +53,7 @@
         <%= yield %>
       </div>
       <footer class="footer">
-        <p>&copy; 2016 Spontaneosly, Inc.</p>
+        <p>&copy; 2016 Spontaneously, Inc.</p>
       </footer>
     </div>
   </body>

@@ -1,6 +1,7 @@
 class Vendor < ActiveRecord::Base
   has_secure_password
   has_many :ships
+  has_many :packages
 
   validates :company, presence: true
   validates :email,

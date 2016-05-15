@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160515182225) do
+ActiveRecord::Schema.define(version: 20160515212433) do
 
   create_table "packages", force: :cascade do |t|
     t.string   "itinerary"
@@ -26,9 +26,11 @@ ActiveRecord::Schema.define(version: 20160515182225) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "avatar"
+    t.integer  "vendor_id"
   end
 
   add_index "packages", ["user_id"], name: "index_packages_on_user_id"
+  add_index "packages", ["vendor_id"], name: "index_packages_on_vendor_id"
 
   create_table "reviews", force: :cascade do |t|
     t.string   "title"

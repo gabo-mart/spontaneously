@@ -23,5 +23,6 @@
 
 <% if @vendor == current_vendor %>
 <%= link_to 'Create a New Ship', new_vendor_ship_path(@vendor) %> |
-<%= link_to 'Edit Vendor Profile', edit_vendor_path(@vendor) %> 
+<%= link_to 'Create a New Package', vendor_packages_new_path(@vendor) %> |
+<%= link_to 'Edit Vendor Profile', edit_vendor_path(@vendor) %>
 <% end %>

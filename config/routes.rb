@@ -8,6 +8,11 @@ Rails.application.routes.draw do
   resources :sessions
 
   resources :vendors do
+    resources :packages
+    post 'packages/new' => 'packages#create'
+  end
+
+  resources :vendors do
     resources :ships
     post 'ships/new' => 'ships#create'
   end

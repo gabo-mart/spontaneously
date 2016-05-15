@@ -1,7 +1,8 @@
 class ShipsController < ApplicationController
-	before_action :set_vendor, only: [:create]
-	before_action :set_ship, only: [:show]
-#
+
+	before_action :set_ship, only: [:show, :update, :destroy]
+	before_action :set_vendor, only: [:create, :new, :update, :destroy]
+
 	def index
 		@ships = Ship.find_by(vendor_id: params[:vendor_id])
 	end
@@ -39,7 +40,6 @@ class ShipsController < ApplicationController
 		end
 	end
 
-
 	private
 
 	# Use callbacks to share common setup or constraints between actions.
@@ -58,3 +58,4 @@ class ShipsController < ApplicationController
 	end
 
 end
+

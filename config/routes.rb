@@ -18,10 +18,10 @@ Rails.application.routes.draw do
   get 'logout', to: 'sessions#destroy', as: 'logout'
 
   get '/vendor/login' => 'sessions#new_vendor'
-  get '/users/login' => 'sessions#new_user'
+  get '/user/login' => 'sessions#new_user'
 
   post 'vendor/login' => 'sessions#create_vendor', as: 'create_vendor'
-  post 'users/login' => 'sessions#create_user'
+  post 'user/login' => 'sessions#create_user', as: 'create_user'
 
   get 'packages/index'
 

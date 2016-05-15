@@ -7,11 +7,11 @@
 
 <ul>
 	<li><strong>Tonnage: </strong><%= @ship.tonnage %></li>
-  <li><strong>Length: </strong><%= @ship.length %></li>
+  <li><strong>Length in feet: </strong><%= @ship.length_in_feet %></li>
   <li><strong>Max Beam: </strong><%= @ship.max_beam %></li>
-  <li><strong>Type: </strong><%= @ship.type %></li>
-  <li><strong>Activities: </strong><%= @ship.activities %></li>
-  <li><strong>Other: </strong><%= @ship.other %></li>
+  <li><strong>Guest capacity: </strong><%= @ship.guest_capacity %></li>
+  <li><strong>Onboard crew: </strong><%= @ship.onboard_crew %></li>
+  <li><strong>Description: </strong><%= @ship.description %></li>
 </ul>
 
-<%= link_to 'Back to Dashboard', vendors_path %>
+<%= link_to 'Back to Vendor', vendor_path(params[:vendor_id]) %>

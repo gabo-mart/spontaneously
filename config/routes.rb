@@ -5,10 +5,9 @@ Rails.application.routes.draw do
   resources :users
   root 'welcome#index'
 
-
   resources :sessions
 
-  resources :vendors do
+  resources :vendors, except: [:index] do
     resources :ships
     post 'ships/new' => 'ships#create'
   end

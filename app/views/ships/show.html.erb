@@ -12,6 +12,7 @@
   <li><strong>Guest capacity: </strong><%= @ship.guest_capacity %></li>
   <li><strong>Onboard crew: </strong><%= @ship.onboard_crew %></li>
   <li><strong>Description: </strong><%= @ship.description %></li>
+  <li><strong>Picture: </strong><%= image_tag(@ship.avatar.medium) %></li>
 </ul>
 	<% if @ship.vendor == current_vendor %>
 		<%= link_to 'Edit', edit_vendor_ship_path(current_vendor.id, @ship.id) %>

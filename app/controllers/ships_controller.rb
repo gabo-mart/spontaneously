@@ -53,7 +53,7 @@ before_action :set_vendor, only: [:create]
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def ship_params
-      params.require(:ship).permit(:name, :tonnage, :length, :max_beam, :type, :activities, :other, :vendor_id)
+      params.require(:ship).permit(:name, :tonnage, :length, :max_beam, :length_in_feet, :guest_capacity, :onboard_crew, :description, :other, :vendor_id)
     end
 
 end

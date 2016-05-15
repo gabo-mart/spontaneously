@@ -1,3 +1,4 @@
+
 <%= form_for([@vendor, @ship]) do |f| %>
   <% if @ship.errors.any? %>
     <div id="error_explanation">
@@ -11,34 +12,43 @@
     </div>
   <% end %>
 
+
   <div class="field">
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
-
+  <div class="field">
+    <%= f.label :type %><br>
+    <%= f.text_field :type %>
+  </div>
   <div class="field">
     <%= f.label :tonnage %><br>
     <%= f.text_field :tonnage %>
   </div>
-
   <div class="field">
-    <%= f.label :length %><br>
-    <%= f.text_field :length %>
+    <%= f.label :length_in_feet %><br>
+    <%= f.number_field :length_in_feet %>
   </div>
   <div class="field">
     <%= f.label :max_beam %><br>
     <%= f.text_field :max_beam %>
   </div>
-
+    <%= f.label :guest_capacity %><br>
+    <%= f.number_field :guest_capacity %>
+  </div>
   <div class="field">
-    <%= f.label :activities %><br>
-    <%= f.text_area :activities %>
+    <%= f.label :onboard_crew %><br>
+    <%= f.number_field :onboard_crew %>
+  </div>
+  <div class="field">
+    <%= f.label :decription %><br>
+    <%= f.text_area :description %>
   </div>
   <div class="field">
     <%= f.label :other %><br>
     <%= f.text_area :other %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'swag' %>
   </div>
 <% end %>

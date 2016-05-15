@@ -1,12 +1,15 @@
 Rails.application.routes.draw do
 
- 
+
   resources :reviews
   resources :users
+  root 'welcome#index'
+
   resources :sessions
 
-  resources :vendors do
+  resources :vendors, except: [:index] do
     resources :ships
+    post 'ships/new' => 'ships#create'
   end
 
   get '/usersign_up' => 'users#new'
@@ -21,7 +24,6 @@ Rails.application.routes.draw do
   post 'user/login' => 'sessions#create_user', as: 'create_user'
 
   get 'packages/index'
-  root 'packages#index'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

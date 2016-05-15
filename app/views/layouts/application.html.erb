@@ -42,6 +42,8 @@
               <a class="navbar-brand text-muted" href="#">Spontaneously</a>
             </div>
             <ul class="nav navbar-nav navbar-right">
+              <li><%= link_to 'Vendor Logout', logout_url %><br></li>
+              <li><%= link_to 'Vendor Login', vendor_login_path %><br></li>
               <li><a href="#"><span class="glyphicon glyphicon-user"></span> Create Account</a></li>
               <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
               <% if current_user %>

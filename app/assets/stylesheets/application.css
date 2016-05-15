@@ -17,6 +17,8 @@
  #navbar {
    position: fixed;
    z-index: 10;
+   background-color: rgba(0, 0, 0, 0.39);
+   width: 100%;
  }
 
 
@@ -28,6 +30,9 @@
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 

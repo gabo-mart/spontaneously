@@ -1,7 +1,7 @@
 class ShipsController < ApplicationController
 
-	before_action :set_ship, only: [:show, :update, :destroy]
-	before_action :set_vendor, only: [:create, :new, :update, :destroy]
+	before_action :set_ship, only: [:show, :update, :destroy, :edit]
+	before_action :set_vendor, only: [:create, :new, :update, :edit, :destroy]
 
 	def index
 		@ships = Ship.find_by(vendor_id: params[:vendor_id])
@@ -9,6 +9,9 @@ class ShipsController < ApplicationController
 
 	def new
 		@ship = Vendor.find_by(params[:vendor_id]).ships.build
+	end
+
+	def edit
 	end
 
 	def show
@@ -31,7 +34,7 @@ class ShipsController < ApplicationController
 	def update
 		respond_to do |format|
 			if @ship.update(ship_params)
-				format.html { redirect_to @ship, notice: "#{@ship.name} was successfully updated." }
+				format.html { redirect_to vendor_ship_path(current_vendor.id, @ship.id), notice: "#{@ship.name} was successfully updated." }
 				format.json { render :show, status: :ok, location: @ship }
 			else
 				format.html { render :edit }
@@ -49,7 +52,6 @@ class ShipsController < ApplicationController
 
 	def set_vendor
 		@vendor = Vendor.find(params[:vendor_id])
-		puts @vendor
 	end
 
 	# Never trust parameters from the scary internet, only allow the white list through.

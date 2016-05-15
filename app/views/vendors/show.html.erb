@@ -10,7 +10,10 @@
 	<tbody>
 		<% @vendor.ships.each do |ship| %>
 			<tr>
-				<td><%= link_to ship.name, vendor_ship_path(@vendor,ship) %></td>
+				<td><%= link_to ship.name, vendor_ship_path(@vendor.id, ship.id) %></td>
+				<% if @vendor == current_vendor %>
+				<td><%= link_to 'Edit', edit_vendor_ship_path(@vendor.id, ship.id) %> </td>
+				<% end %>
 			</tr>
 		<% end %>
 	</tbody>

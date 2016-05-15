@@ -25,9 +25,9 @@ class VendorsController < ApplicationController
   # POST /vendors.json
   def create
     @vendor = Vendor.new(vendor_params)
-
     respond_to do |format|
       if @vendor.save
+        session[:vendor_id] = @vendor.id
         format.html { redirect_to @vendor, notice: 'Vendor was successfully created.' }
         format.json { render :show, status: :created, location: @vendor }
       else

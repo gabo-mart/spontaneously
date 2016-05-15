@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   resources :sessions
 
-  resources :vendors, except: [:index] do
+  resources :vendors do
     resources :ships
     post 'ships/new' => 'ships#create'
   end

@@ -24,13 +24,6 @@ class SessionsController < ApplicationController
     if @vendor && @vendor.authenticate(params[:password])
       session[:vendor_id] = @vendor.id
       redirect_to vendor_path(@vendor), notice: "Logged in!"
-    end
-    
-    vendor = Vendor.find_by_email(params[:email])
-    if vendor && vendor.authenticate(params[:password])
-      session[:vendor_id] = vendor.id
-      redirect_to vendor_path(vendor), notice: "Logged in!"  #root_url
-
     else
       render :new_vendor
       flash[:notice] = "Invalid Credentials"

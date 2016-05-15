@@ -69,6 +69,11 @@
           <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
         </div>
         <p>&copy; 2016 Spontaneously, Inc.</p>
+        <% if current_vendor %>
+        <%= link_to "Log out", logout_path %>
+        <% else %>
+        <%= link_to "Vendor Sign In", create_vendor_path %>
+        <% end %>
       </footer>
     </div>
   </body>

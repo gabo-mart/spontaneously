@@ -3,7 +3,6 @@ class SessionsController < ApplicationController
   end
 
   def new_vendor
-    
   end
 
   def create_user
@@ -11,16 +10,16 @@ class SessionsController < ApplicationController
     	return render action: 'new' unless @user
 
     	session[:user_id] = @user.id
-    	redirect_to packages_index_path
+    	redirect_to :back
   end
 
   def create_vendor
-    vendor = Vendor.find_by_email(params[:email])
-    if vendor && vendor.authenticate(params[:password])
-      session[:vendor_id] = vendor.id
-      redirect_to root_url, notice: "Logged in!"
+    @vendor = Vendor.find_by_email(params[:email])
+    if @vendor && @vendor.authenticate(params[:password])
+      session[:vendor_id] = @vendor.id
+      redirect_to vendor_path(@vendor), notice: "Logged in!"
     else
-      render :new
+      render :new_vendor
       flash[:notice] = "Invalid Credentials"
     end
   end

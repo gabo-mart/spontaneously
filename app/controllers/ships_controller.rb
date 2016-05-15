@@ -1,7 +1,9 @@
 class ShipsController < ApplicationController
+	before_action :set_ship, only: [:show, :update, :destroy]
+	before_action :set_vendor, only: [:create, :new, :update, :destroy]
 
 	def index
-		@ships = Ship.find_by(vendor_id: pramams[:vendor_id])
+		@ships = Ship.find_by(vendor_id: params[:vendor_id])
 	end
 
 	def new
@@ -13,7 +15,7 @@ class ShipsController < ApplicationController
 
     respond_to do |format|
       if @ship.save
-        format.html { redirect_to @ship, notice: 'Department was successfully created.' }
+        format.html { redirect_to vendor_ships_path, notice: 'Department was successfully created.' }
         format.json { render :show, status: :created, location: @ship }
       else
         format.html { render :new }
@@ -25,7 +27,7 @@ class ShipsController < ApplicationController
   def update
     respond_to do |format|
       if @ship.update(ship_params)
-        format.html { redirect_to @ship, notice: "#{@ship.name} was successfully updated." }
+        format.html { redirect_to vendor_ships_path, notice: "#{@ship.name} was successfully updated." }
         format.json { render :show, status: :ok, location: @ship }
       else
         format.html { render :edit }
@@ -42,9 +44,14 @@ class ShipsController < ApplicationController
       @ship = @vendor.ship.find(params[:id])
     end
 
+    def set_vendor
+    	@vendor = Vendor.find(params[:vendor_id])
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
+
     def ship_params
       params.require(:ship).permit(:name, :tonnage, :length, :max_beam, :type, :activities, :other, :vendor_id)
     end
-    
+
 end

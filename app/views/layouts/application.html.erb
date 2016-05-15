@@ -29,7 +29,7 @@
         <% end %>
       <% end %>
 
-    <nav class = "navbar navbar-inverse" role = "navigation">
+    <nav class = "navbar navbar-inverse" role = "navigation" id="navbar">
        <div class = "navbar-header">
           <button type = "button" class = "navbar-toggle"
              data-toggle = "collapse" data-target = "#example-navbar-collapse">
@@ -63,7 +63,7 @@
         <%= yield %>
       </div>
 
-      <footer class="footer">
+      <footer class="footer navbar-inverse">
         <div class="form-group">
           <label for="exampleInputEmail1">Email address</label>
           <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">

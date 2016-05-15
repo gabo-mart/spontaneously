@@ -13,6 +13,7 @@ module Spontaneously
     # -- all .rb files in that directory are automatically loaded.
     # adding app/validators to auto load
     config.autoload_paths += %W["#{config.root}/app/validators/"]
+    config.autoload_paths += %W(#{config.root}/lib #{config.root}/app/uploaders)
     # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
     # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
     # config.time_zone = 'Central Time (US & Canada)'

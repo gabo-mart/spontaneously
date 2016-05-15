@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 gem 'carrierwave'
 gem 'fog'
+gem 'mini_magick'
+
 gem 'pry-rails'
 gem 'bcrypt', '~> 3.1.7'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

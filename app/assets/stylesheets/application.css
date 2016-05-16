@@ -70,3 +70,11 @@ footer.footer {
 footer.navbar-inverse div {
   margin: 2em;
 }
+
+
+#myCarousel {
+  font-size: 1.5em;
+   background-color: #ccc;
+   margin: 20px;
+   padding: 40px;
+}

@@ -23,11 +23,7 @@
   <body>
     <div class="Site">
 
-      <% flash.each do |key, value| %>
-        <%= content_tag(:div, class: "alert alert- #{key}") do %>
-          <p><%= value %></p>
-        <% end %>
-      <% end %>
+
 
     <nav class = "navbar navbar-inverse" role = "navigation" id="navbar">
        <div class = "navbar-header">
@@ -47,9 +43,8 @@
               <% if current_user %>
                 <li>
                   <a href="/users/<%= current_user.id %>">
-                    <span class="glyphicon glyphicon-log-in"></span>
-                    Signed in as: </strong><%= current_user.username %></strong></a>
-                    <%= link_to "Vendors", vendors_path %>
+                    
+                    Hello </strong><%= current_user.username %> !</strong></a>
                     <%= link_to 'Log Out', logout_path %>
                 </li>
               <% elsif !current_vendor %>
@@ -62,7 +57,14 @@
     </nav>
 <br><br>
 
+<% flash.each do |key, value| %>
+  <%= content_tag(:div, class: "alert alert- #{key}") do %>
+    <p><%= value %></p>
+  <% end %>
+<% end %>
+
       <div class="site-content">
+
         <%= yield %>
       </div>
 

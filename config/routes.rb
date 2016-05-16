@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   resources :reviews
   resources :users
+
   root 'welcome#index'
 
   resources :sessions
@@ -17,6 +18,8 @@ Rails.application.routes.draw do
     post 'ships/new' => 'ships#create'
   end
 
+  get '/welcome/confirmation' => 'welcome#confirmation'
+  get '/welcome/booknow' => 'welcome#booknow'
   get '/usersign_up' => 'users#new'
   get 'signup', to: 'vendors#new', as: 'signup'
 

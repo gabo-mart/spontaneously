@@ -3,5 +3,5 @@ class Package < ActiveRecord::Base
 
   belongs_to :vendor
   belongs_to :user
-  has_one :ship
+  belongs_to :ship
 end

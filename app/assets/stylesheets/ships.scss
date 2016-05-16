@@ -5,3 +5,20 @@
   margin: 3em;
 
 }
+
+.boatpic {
+  float: right;
+}
+
+.shipcontainer {
+    width: 750px;
+    overflow: hidden; /* will contain if #first is longer than #second */
+}
+.shipinfo {
+    width: 250px;
+    float:left; /* add this */
+}
+.boatpic {
+    padding-top: 2em;
+    overflow: hidden; /* if you don't want #second to wrap below #first */
+}

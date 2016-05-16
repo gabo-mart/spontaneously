@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
   before_action :authenticate_vendor, only: [:new_vendor]
 
   def new_user
-    redirect_to packages_index_path if current_user 
+    redirect_to packages_index_path if current_user
   end
 
   def new_vendor

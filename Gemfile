@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'carrierwave'
 gem 'fog'
 gem 'mini_magick'
+gem "font-awesome-rails"
 
 gem 'pry-rails'
 gem 'bcrypt', '~> 3.1.7'

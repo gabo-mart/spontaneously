@@ -1,5 +1,7 @@
 class PackagesController < ApplicationController
   before_action :set_package, only: [:show, :edit, :update, :destroy]
+	before_action :set_vendor, only: [:create, :new, :update, :edit, :destroy]
+
 
   # GET /packages
   # GET /packages.json
@@ -14,7 +16,8 @@ class PackagesController < ApplicationController
 
   # GET /packages/new
   def new
-    @package = Package.new
+    @package = Vendor.find_by(params[:vendor_id]).packages.build
+
   end
 
   # GET /packages/1/edit
@@ -24,11 +27,11 @@ class PackagesController < ApplicationController
   # POST /packages
   # POST /packages.json
   def create
-    @package = Package.new(package_params)
+    @package = @vendor.packages.build(package_params)
 
     respond_to do |format|
       if @package.save
-        format.html { redirect_to @package, notice: 'Package was successfully created.' }
+        format.html { redirect_to @vendor, notice: 'Package was successfully created.' }
         format.json { render :show, status: :created, location: @package }
       else
         format.html { render :new }
@@ -67,8 +70,14 @@ class PackagesController < ApplicationController
       @package = Package.find(params[:id])
     end
 
+    def set_vendor
+  		@vendor = Vendor.find(params[:vendor_id])
+  	end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def package_params
-      params.require(:package).permit(:itinerary, :ship, :dates, :duration, :price, :rooms, :people, :room_type, :user_id, :avatar)
+      params.require(:package).permit(:itinerary, :dates, :duration, :price, :rooms, :people, :room_type, :user_id, :avatar)
     end
 end
+
+# :ship,

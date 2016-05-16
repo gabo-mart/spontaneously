@@ -13,6 +13,7 @@
 			<tr>
 				<td><%= link_to ship.name, vendor_ship_path(@vendor.id, ship.id) %></td>
 				<% if @vendor == current_vendor %>
+        <td><%# image_tag(@ship.avatar.medium) %></td>
 				<td><%= link_to 'Edit', edit_vendor_ship_path(@vendor.id, ship.id) %> </td>
 				<% end %>
 			</tr>

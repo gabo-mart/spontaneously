@@ -7,7 +7,22 @@
 </div>
 
 
-
+<% @packages.each do |package| %>
+  <div class="col-md-4 panel-body" style="background-image: url(http://placehold.it/350x150)">
+    <div>
+      <%= package.itinerary %>
+    </div>
+    <div>
+      <%= package.price %>
+    </div>
+    <div>
+      <%= package.duration %>
+    </div>
+    <div>
+      <%= package.duration %>
+    </div>
+  </div>
+<% end %>
 <div class="container-fluid">
   <div class="row">
 

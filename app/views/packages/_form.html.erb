@@ -1,16 +1,6 @@
 
 <%= form_for([@vendor, @package]) do |f| %>
-  <% if @package.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@package.errors.count, "error") %> prohibited this package from being saved:</h2>
 
-      <ul>
-      <% @package.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
 
   <div class="field">
     <%= f.label :itinerary %><br>
@@ -43,6 +33,10 @@
   <div class="field">
     <%= f.label :room_type %><br>
     <%= f.text_field :room_type %>
+  </div>
+  <div class="field">
+    <div><strong>Ship</strong></div>
+    <%= f.select :ship_id, options_for_select(Ship.all.collect{ |u| [u.name, u.id] }) %>
   </div>
   <div class="field">
     <%= f.file_field :avatar %>

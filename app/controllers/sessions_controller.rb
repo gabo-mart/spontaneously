@@ -2,19 +2,19 @@ class SessionsController < ApplicationController
   before_action :authenticate_vendor, only: [:new_vendor]
 
   def new_user
-    redirect_to packages_index_path if current_user 
+    redirect_to root_path if current_user
   end
 
   def new_vendor
   end
 
   def authenticate_vendor
-    redirect_to packages_index_path if current_vendor
+    redirect_to root_path if current_vendor
   end
 
   def create_user
     	@user = User.find_by(username: params[:username]).try(:authenticate, params[:password])
-    	return render action: 'new' unless @user
+    	return render action: 'new_user', notice: "Invalid Credentials" unless @user
 
     	session[:user_id] = @user.id
     	redirect_to :back

@@ -30,17 +30,14 @@
     <% @packages.each do |package| %>
       <tr>
         <td><%= package.itinerary %></td>
-        <td><%= package.ship %></td>
+        <td><%= package.ship.name %></td>
         <td><%= package.dates %></td>
         <td><%= package.duration %></td>
         <td><%= package.price %></td>
         <td><%= package.rooms %></td>
         <td><%= package.people %></td>
         <td><%= package.room_type %></td>
-        <td><%= package.user %></td>
-        <td><%= link_to 'Show', package %></td>
-        <td><%= link_to 'Edit', edit_package_path(package) %></td>
-        <td><%= link_to 'Destroy', package, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', vendor_package_path(package.vendor, package.id) %></td>
       </tr>
     <% end %>
   </tbody>

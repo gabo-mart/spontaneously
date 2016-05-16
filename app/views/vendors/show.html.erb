@@ -5,6 +5,27 @@
   <strong><%= @vendor.company %></strong>
 
 </p>
+<div> Offerings </div>
+<table class="table table-hover">
+	<thead></thead>
+	<tbody>
+		<% @vendor.packages.each do |package| %>
+			<tr>
+				<td><%= link_to package.itinerary, vendor_package_path(@vendor.id, package.id) %></td>
+				<td><%= package.ship.name %></td>
+        <td><%= package.dates %></td>
+        <td><%= package.duration %></td>
+        <td><%= package.price %></td>
+        <td><%= package.room_type %></td>
+				<% if @vendor == current_vendor %>
+        <td><%# image_tag(@package.avatar.medium) %></td>
+				<td><%= link_to 'Edit', edit_vendor_package_path(@vendor.id, package.id) %> </td>
+				<td><%= link_to 'Delete', vendor_package_path(current_vendor, package), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+				<% end %>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
 <div> SHIPS </div>
 <table class="table table-hover">
 	<thead></thead>
@@ -15,6 +36,7 @@
 				<% if @vendor == current_vendor %>
         <td><%# image_tag(@ship.avatar.medium) %></td>
 				<td><%= link_to 'Edit', edit_vendor_ship_path(@vendor.id, ship.id) %> </td>
+				<td><%= link_to 'Delete', vendor_ship_path(current_vendor, ship), method: :delete, data: { confirm: 'Are you sure?' } %></td>
 				<% end %>
 			</tr>
 		<% end %>

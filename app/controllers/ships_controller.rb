@@ -43,6 +43,14 @@ class ShipsController < ApplicationController
 		end
 	end
 
+	def destroy
+		@ship.destroy
+    respond_to do |format|
+      format.html { redirect_to @vendor, notice: 'Package was successfully destroyed.' }
+      format.json { head :no_content }
+    end
+  end
+
 	private
 
 	# Use callbacks to share common setup or constraints between actions.

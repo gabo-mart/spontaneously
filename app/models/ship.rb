@@ -3,6 +3,6 @@ class Ship < ActiveRecord::Base
 
 
 	belongs_to :vendor
-	has_one :package
+	has_many :package
 
 end

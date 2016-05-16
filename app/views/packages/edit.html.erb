@@ -3,6 +3,6 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @package %> |
-<%= link_to 'Back', packages_path %>
+<%= link_to 'Show', vendor_package_path(@vendor, @package) %> |
+<%= link_to 'Back', vendor_path(current_vendor) %>
 </div>

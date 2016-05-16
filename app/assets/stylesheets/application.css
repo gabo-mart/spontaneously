@@ -66,3 +66,7 @@ footer.footer {
   align-items: center;
   height: 120px;
 }
+
+footer.navbar-inverse div {
+  margin: 2em;
+}

@@ -71,14 +71,16 @@
           <label for="exampleInputEmail1">Email address</label>
           <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
         </div>
-        <p>&copy; 2016 Spontaneously, Inc.</p>
+        <div class="copyright">&copy; 2016 Spontaneously, Inc.</div>
+        <div class="vendor-signup-login">
         <% if current_vendor %>
           <%= link_to "Log out", logout_path %> |
           <%= link_to "Dashboard", vendor_path(current_vendor) %>
         <% elsif !current_user %>
-        Vendor: <%= link_to "Sign In", create_vendor_path %> or <%= link_to "Sign Up", new_vendor_path %>
+        Company:  <%= link_to "Sign In", create_vendor_path %> or <%= link_to "Sign Up", new_vendor_path %>
         <% else %>
         <% end %>
+      </div>
       </footer>
     </div>
   </body>

@@ -1,9 +1,9 @@
-<div class="pagecontainer">
+<div class="container">
 
 <h1>  <%= @ship.name %> </h1>
-<div class="shipcontainer">
+
 <div>
-<ul class="shipdata">
+<ul class="col-md-4">
 
 	<li><strong>Tonnage: </strong><%= @ship.tonnage %></li>
   <li><strong>Length in feet: </strong><%= @ship.length_in_feet %></li>
@@ -12,12 +12,12 @@
   <li><strong>Onboard crew: </strong><%= @ship.onboard_crew %></li>
   <li><strong>Description: </strong><%= @ship.description %></li>
 </ul>
-<div class="shipdata" id="boatpic">
+<div class="col-md-8">
   <%= image_tag(@ship.avatar.large) %>
 </div>
 </div>
 
-</div>
+
 	<% if @ship.vendor == current_vendor %>
 		<%= link_to 'Edit', edit_vendor_ship_path(current_vendor.id, @ship.id) %>
 	<% end %> |

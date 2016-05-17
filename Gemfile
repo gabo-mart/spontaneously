@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'carrierwave'
 gem 'fog'
 gem 'mini_magick'
+gem "font-awesome-rails"
 
 gem 'httparty'
 

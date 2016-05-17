@@ -6,3 +6,17 @@
   display: flex;
   justify-content: center;
 }
+
+
+/*BookNow - Amenities CSS*/
+#container {
+  display: table;
+  }
+
+#row  {
+  display: table-row;
+  }
+
+#left, #right, #middle {
+  display: table-cell;
+  }

@@ -5,6 +5,8 @@ gem 'fog'
 gem 'mini_magick'
 gem "font-awesome-rails"
 
+gem 'httparty'
+
 gem 'pry-rails'
 gem 'bcrypt', '~> 3.1.7'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

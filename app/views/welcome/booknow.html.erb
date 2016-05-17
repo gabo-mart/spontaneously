@@ -57,29 +57,30 @@
 
 
 <!-- temputure and Forcasting -->
-<h1 id='temp'><%= temp %><%= description %></h1>
+<h1 id='temp'><%= temp %> °F &nbsp; &nbsp;  <%= description.capitalize %></h1>
 
 
 <!-- Amenities Tab Bar -->
 
 <div class="container">
-  <div class="row text-center">
+  <div class="row">
 
     <div class="col-md-4" id="left">
-      <h4>Ship</h4>
-      <ul><li><i class="fa fa-wifi" aria-hidden="true"></i>Wifi</li>
+      <h4 class="text-center">Ship</h4>
+      <ul>
+        <li><i class="fa fa-wifi" aria-hidden="true"></i>Wifi</li>
 
         <li><i class="fa fa-bed" aria-hidden="true"></i>150 Rooms</li>
       </ul>
     </div>
 
     <div class="col-md-4" id="middle">
-      <h4>Activies</h4>
+      <h4 class="text-center">Activies</h4>
       <p>...</p>
     </div>
 
     <div class="col-md-4" id="right">
-      <h4>Food</h4>
+      <h4 class="text-center">Food</h4>
       <p>...</p>
     </div>
 

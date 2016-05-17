@@ -42,7 +42,7 @@
           <ul class = "nav navbar-nav">
               <% if current_user %>
                 <li>
-                  <%= link_to "" , user_path(current_user.id), :class => "fa fa-user fa-2x"%>
+                  <%= link_to "" , user_path(current_user.id), :class => "fa fa-ticket fa-2x"%>
                   <a href="/users/<%= current_user.id %>">
 
                     Hello </strong><%= current_user.username %> !</strong></a>

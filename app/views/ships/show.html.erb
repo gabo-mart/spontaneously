@@ -1,14 +1,10 @@
 <div class="pagecontainer">
 
-<h1>  Ship Show </h1>
+<h1>  <%= @ship.name %> </h1>
 <div class="shipcontainer">
-<div class="shipinfo">
-<p>
-  <strong>Ship:</strong>
-  <%= @ship.name %>
-</p>
+<div>
+<ul class="shipdata">
 
-<ul>
 	<li><strong>Tonnage: </strong><%= @ship.tonnage %></li>
   <li><strong>Length in feet: </strong><%= @ship.length_in_feet %></li>
   <li><strong>Max Beam: </strong><%= @ship.max_beam %></li>
@@ -16,10 +12,11 @@
   <li><strong>Onboard crew: </strong><%= @ship.onboard_crew %></li>
   <li><strong>Description: </strong><%= @ship.description %></li>
 </ul>
+<div class="shipdata" id="boatpic">
+  <%= image_tag(@ship.avatar.large) %>
 </div>
-<div class="boatpic">
-  <%= image_tag(@ship.avatar.medium) %>
 </div>
+
 </div>
 	<% if @ship.vendor == current_vendor %>
 		<%= link_to 'Edit', edit_vendor_ship_path(current_vendor.id, @ship.id) %>

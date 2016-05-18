@@ -9,20 +9,20 @@
 <div class="container-fluid">
   <div class="row">
     <% @packages.each do |package| %>
-      <div class="col-md-4 panel-body" style='background-image: url(<%= package.avatar %>)'>
-        <div>
-          <%= package.itinerary %>
-        </div>
-        <div>
-          <%= package.price %>
-        </div>
-        <div>
-          <%= package.duration %>
-        </div>
-        <div>
-          <%= package.duration %>
-        </div>
+    <div class="col-md-4 panel-body" style='background-image: url(<%= package.avatar %>)'>
+      <div>
+        <%= package.itinerary %>
       </div>
+      <div>
+        <%= package.price %>
+      </div>
+      <div>
+        <%= package.duration %>
+      </div>
+      <div>
+        <%= package.duration %>
+      </div>
+    </div>
     <% end %>
   </div>
 

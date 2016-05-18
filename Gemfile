@@ -4,7 +4,7 @@ gem 'carrierwave'
 gem 'fog'
 gem 'mini_magick'
 gem "font-awesome-rails"
-
+gem 'stripe'
 gem 'httparty'
 gem 'rails-erd'
 

@@ -9,22 +9,22 @@
 <div class="container-fluid">
   <div class="row">
     <% @packages.each do |package| %>
-    <div class="col-md-4 panel-body" style='background-image: url(<%= package.avatar %>)'>
-      <div>
-        <%= package.itinerary %>
-      </div>
-      <div>
-        <%= package.price %>
-      </div>
-      <div>
-        <%= package.duration %>
-      </div>
-      <div>
-        <%= package.duration %>
-      </div>
+    <div class="col-md-4 panel-body packages"><%= link_to image_tag(package.avatar), vendor_package_path(package.vendor, package) %></div>
+    <div class='inside'>
+      <%= package.itinerary %>
     </div>
-    <% end %>
+    <div class='inside'>
+      <%= package.price %>
+    </div>
+    <div class='inside'>
+      <%= package.duration %>
+    </div>
+    <div class='inside'>
+      <%= package.duration %>
+    </div>
   </div>
+  <% end %>
+</div> 
 
   <div class="row">
 

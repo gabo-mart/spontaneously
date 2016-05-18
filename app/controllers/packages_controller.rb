@@ -1,6 +1,6 @@
 class PackagesController < ApplicationController
   before_action :set_package, only: [:show, :edit, :update, :destroy]
-	before_action :set_vendor, only: [:create, :new, :update, :edit, :destroy]
+	before_action :set_vendor, only: [:show, :create, :new, :update, :edit, :destroy]
 
 
   # GET /packages

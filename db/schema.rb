@@ -16,19 +16,6 @@ ActiveRecord::Schema.define(version: 20160516213001) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "companies", force: :cascade do |t|
-    t.string   "name"
-    t.string   "address"
-    t.text     "about"
-    t.string   "twitter"
-    t.string   "linkedin"
-    t.string   "instagram"
-    t.string   "perks"
-    t.string   "ceo"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "packages", force: :cascade do |t|
     t.string   "itinerary"
     t.string   "ship"
@@ -62,8 +49,8 @@ ActiveRecord::Schema.define(version: 20160516213001) do
 
   create_table "ships", force: :cascade do |t|
     t.string   "name"
-    t.string   "tonnage"
-    t.string   "max_beam"
+    t.integer  "tonnage"
+    t.integer  "max_beam"
     t.string   "type"
     t.text     "other"
     t.datetime "created_at",     null: false

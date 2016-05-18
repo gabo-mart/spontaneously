@@ -13,6 +13,22 @@
 
 ActiveRecord::Schema.define(version: 20160516213001) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "companies", force: :cascade do |t|
+    t.string   "name"
+    t.string   "address"
+    t.text     "about"
+    t.string   "twitter"
+    t.string   "linkedin"
+    t.string   "instagram"
+    t.string   "perks"
+    t.string   "ceo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "packages", force: :cascade do |t|
     t.string   "itinerary"
     t.string   "ship"
@@ -30,9 +46,9 @@ ActiveRecord::Schema.define(version: 20160516213001) do
     t.integer  "ship_id"
   end
 
-  add_index "packages", ["ship_id"], name: "index_packages_on_ship_id"
-  add_index "packages", ["user_id"], name: "index_packages_on_user_id"
-  add_index "packages", ["vendor_id"], name: "index_packages_on_vendor_id"
+  add_index "packages", ["ship_id"], name: "index_packages_on_ship_id", using: :btree
+  add_index "packages", ["user_id"], name: "index_packages_on_user_id", using: :btree
+  add_index "packages", ["vendor_id"], name: "index_packages_on_vendor_id", using: :btree
 
   create_table "reviews", force: :cascade do |t|
     t.string   "title"
@@ -42,12 +58,12 @@ ActiveRecord::Schema.define(version: 20160516213001) do
     t.datetime "updated_at",  null: false
   end
 
-  add_index "reviews", ["user_id"], name: "index_reviews_on_user_id"
+  add_index "reviews", ["user_id"], name: "index_reviews_on_user_id", using: :btree
 
   create_table "ships", force: :cascade do |t|
     t.string   "name"
-    t.integer  "tonnage"
-    t.integer  "max_beam"
+    t.string   "tonnage"
+    t.string   "max_beam"
     t.string   "type"
     t.text     "other"
     t.datetime "created_at",     null: false
@@ -60,7 +76,7 @@ ActiveRecord::Schema.define(version: 20160516213001) do
     t.string   "avatar"
   end
 
-  add_index "ships", ["vendor_id"], name: "index_ships_on_vendor_id"
+  add_index "ships", ["vendor_id"], name: "index_ships_on_vendor_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "username"
@@ -79,7 +95,7 @@ ActiveRecord::Schema.define(version: 20160516213001) do
     t.datetime "updated_at",      null: false
   end
 
-  add_index "users", ["username"], name: "index_users_on_username", unique: true
+  add_index "users", ["username"], name: "index_users_on_username", unique: true, using: :btree
 
   create_table "vendors", force: :cascade do |t|
     t.string   "company"
@@ -89,4 +105,9 @@ ActiveRecord::Schema.define(version: 20160516213001) do
     t.string   "email"
   end
 
+  add_foreign_key "packages", "ships"
+  add_foreign_key "packages", "users"
+  add_foreign_key "packages", "vendors"
+  add_foreign_key "reviews", "users"
+  add_foreign_key "ships", "vendors"
 end

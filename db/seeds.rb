@@ -6,8 +6,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 Vendor.create([{
-  company:   "Carnival"
-  email:   "admin@carnival.com"
+  company:   "Carnival",
+  email:   "admin@carnival.com",
   password_digest:   "asdf"
   }])
 
@@ -36,7 +36,7 @@ Vendor.create([{
     onboard_crew: 1386,
     description: 'A really fun ship',
     avatar: 'example.png'
-  }
+  },
   {
     name: "Carnival Paradise",
     tonnage: 70367,
@@ -52,31 +52,31 @@ Vendor.create([{
     }])
 
     User.create([{
-      username:   "asdf"
-      first_name:   "Ed"
-      last_name:   "Toro"
-      dob:     DateTime.new(1980, 5, 16)
-      country:   "United States"
-      address1:   "400 NW 26th Street"
-      address2:   ""
-      region:   "Miami FL"
-      postal_code:   "33123"
-      tel:   "305-555-555"
-      email:   "ed@wyncode.co"
+      username:   "asdf",
+      first_name:   "Ed",
+      last_name:   "Toro",
+      dob:     DateTime.new(1980, 5, 16),
+      country:   "United States",
+      address1:   "400 NW 26th Street",
+      address2:   "",
+      region:   "Miami FL",
+      postal_code:   "33123",
+      tel:   "305-555-555",
+      email:   "ed@wyncode.co",
       password_digest:   "asdf"
       }])
 
       Package.create([{
-        itinerary:   "asdf"
-        ship:   ""
-        dates:   "May 27, 2016 - May 29, 2016"
-        duration:     "3 days"
-        price:   299.99
-        rooms:   1
-        people: 2
-        room_type: "Spa Room"
-        user_id: 1
-        avatar: "example.png"
-        vendor_id: 1
+        itinerary:   "asdf",
+        ship:   "",
+        dates:   "May 27, 2016 - May 29, 2016",
+        duration:     "3 days",
+        price:   299.99,
+        rooms:   1,
+        people: 2,
+        room_type: "Spa Room",
+        user_id: 1,
+        avatar: "example.png",
+        vendor_id: 1,
         ship_id: 1
         }])

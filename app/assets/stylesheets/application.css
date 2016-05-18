@@ -23,6 +23,9 @@
    width: 100%;
  }
 
+.emailblock {
+  display: inline-block;
+}
 
 #head {
   height: 500px;

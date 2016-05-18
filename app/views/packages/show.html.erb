@@ -21,11 +21,6 @@
 </p>
 
 <p>
-  <strong>Price:</strong>
-  <%= @package.price %>
-</p>
-
-<p>
   <strong>Rooms:</strong>
   <%= @package.rooms %>
 </p>
@@ -45,7 +40,29 @@
   <%= @package.user %>
 </p>
 
-<%= link_to 'Edit', edit_package_path(@package) %> |
-<%= link_to 'Back', packages_path %>
+
+<%= form_tag charges_path do %>
+  <article>
+    <% if flash[:error].present? %>
+      <div id="error_explanation">
+        <p><%= flash[:error] %></p>
+      </div>
+    <% end %>
+    <label class="amount">
+      <span>Amount: <%= @package.price %></span>
+    </label>
+  </article>
+
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key='pk_test_wsu2jhJ68jqECNhfJzaQnwRS'
+          data-description='<%= @package.duration %> - <%= @package.itinerary %>'
+          data-amount=<%= @package.price %>
+          data-locale="auto"></script>
+<% end %>
+<% if current_vendor == @vendor %>
+<%= link_to 'Edit', edit_vendor_package_path(@vendor, @package) %> |
+<% end %>
+<%= link_to 'Back', root_path %>
+
 
 </div>

@@ -16,5 +16,5 @@
 !/log/.keep
 /tmp
 
-/config/initializers/app_environment_variables.rb
+/config/local_env.yml
 /config/initializers/stripe.rb

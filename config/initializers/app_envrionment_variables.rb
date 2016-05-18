@@ -1,4 +1,0 @@
-ENV['S3_KEY'] = 'AKIAJMBLB3AMCZ7PYYOQ'
-ENV['S3_SECRET'] = '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'
-ENV['S3_BUCKET'] = 'spontaneously'
-ENV['S3_REGION'] = 'us-east-1'

@@ -1,6 +1,6 @@
 class AddFieldsToShips < ActiveRecord::Migration
   def change
-    change_column :ships, :tonnage, :integer
+    # change_column :ships, :tonnage, :integer
     change_column :ships, :max_beam, :integer
     remove_column :ships, :length
     remove_column :ships, :activities

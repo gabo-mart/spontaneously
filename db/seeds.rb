@@ -69,7 +69,7 @@ Vendor.create([{
 
       Package.create([{
         itinerary:   "asdf",
-        ship:   "",
+        # ship:   "",
         dates:   "May 27, 2016 - May 29, 2016",
         duration:     "3 days",
         price:   299.99,

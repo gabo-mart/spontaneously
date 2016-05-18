@@ -23,19 +23,19 @@
    z-index: 10;
    border-radius: 0px;
    background-color: rgba(0, 0, 5, 0.6);
-   font: white;
+   color: white;
    width: 100%;
    font-family: Cabin, sans-serif;
  }
 
  .navbar-collapse {
-  background-color: #03AEE4;
+  /*background-color: #03AEE4;*/
   font: white;
   border: none;
  }
 
  .navbar-inverse {
-  background-color: #03AEE4;
+  /*background-color: #03AEE4;*/
   font: white;
  }
 

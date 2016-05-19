@@ -7,83 +7,47 @@
 </div>
 
 <div class="container-fluid">
-  <div class="row">
+  
     <% @packages.each do |package| %>
-      <div class="col-md-4 panel-body packages"><%= link_to image_tag(package.avatar), vendor_package_path(package.vendor, package) %></div>
-        <div class='inside'>
-          <%= package.itinerary %>
-        </div>
-        <div class='inside'>
-          <%= package.price %>
-        </div>
-        <div class='inside'>
-          <%= package.duration %>
-        </div>
-        <div class='inside'>
-          <%= package.duration %>
+      <div class="col-md-4">
+        <div class="panel panel-primary">
+          <div class="panel-heading flex-panel">
+            <div class="img-thumbnail">
+                <%= link_to image_tag(package.avatar.medium), vendor_package_path(package.vendor, package)%>
+              </div>
+          </div>
+          <div class="panel-body">
+            <span class="package-items">
+              <span class="p-item">
+                Name:
+                <strong>
+                  <%= package.itinerary %>
+                </strong>
+              </span>
+              <span class="p-item">
+              Price:
+              <strong>
+                <%= package.price %>
+                </strong>
+              </span>
+              <span class="p-item">
+              Duration:
+                <strong>
+                <%= package.duration %>
+                </strong>
+              </span>
+              <span class="p-item">
+              Diration:
+                <strong>
+                  <%= package.duration %>
+                </strong>
+              </span>
+            </span>
+          </div>
         </div>
       </div>
+
     <% end %>
-  </div>
+  
 
-  <div class="row">
-
-    <div class="col-md-4 panel-body">
-      <img src="http://placehold.it/350x150">
-    </div>
-
-    <div class="col-md-4 panel-body">
-      <img src="http://placehold.it/350x150">
-    </div>
-
-    <div class="col-md-4 panel-body">
-      <img src="http://placehold.it/350x150">
-    </div>
-
-  </div>
-  <div class="row">
-
-    <div class="col-md-4 panel-body">
-      <img src="http://placehold.it/350x150">
-    </div>
-
-    <div class="col-md-4 panel-body">
-      <img src="http://placehold.it/350x150">
-    </div>
-
-    <div class="col-md-4 panel-body">
-      <img src="http://placehold.it/350x150">
-    </div>
-
-  </div>
-  <div class="row">
-
-    <div class="col-md-4 panel-body">
-      <img src="http://placehold.it/350x150">
-    </div>
-
-    <div class="col-md-4 panel-body">
-      <img src="http://placehold.it/350x150">
-    </div>
-
-    <div class="col-md-4 panel-body">
-      <img src="http://placehold.it/350x150">
-    </div>
-
-  </div>
-  <div class="row">
-
-    <div class="col-md-4 panel-body">
-      <img src="http://placehold.it/350x150">
-    </div>
-
-    <div class="col-md-4 panel-body">
-      <img src="http://placehold.it/350x150">
-    </div>
-
-    <div class="col-md-4 panel-body">
-      <img src="http://placehold.it/350x150">
-    </div>
-
-  </div>
 </div>

@@ -29,10 +29,14 @@ li {
 }
 
 .packages {
-  width: 100px;
-  height: 75px;
+  width: 350px;
+  height: 150px;
 }
 
 .inside {
   display: inline;
+}
+.inside-bl {
+  position: relative;
+  top: 125;
 }

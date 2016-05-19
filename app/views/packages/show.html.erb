@@ -59,8 +59,9 @@
           data-amount=<%= @package.price %>
           data-locale="auto"></script>
 <% end %>
+
 <% if current_vendor == @vendor %>
-<%= link_to 'Edit', edit_vendor_package_path(@vendor, @package) %> |
+  <%= link_to 'Edit', edit_vendor_package_path(@vendor, @package) %> |
 <% end %>
 <%= link_to 'Back', root_path %>
 

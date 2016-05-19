@@ -8,7 +8,10 @@ class ShipsController < ApplicationController
 	end
 
 	def new
-		@ship = Vendor.find(params[:vendor_id]).ships.build
+
+		# @ship = Vendor.find_by(params[:vendor_id]).ships.build
+		@ship = Ship.new
+
 	end
 
 	def edit

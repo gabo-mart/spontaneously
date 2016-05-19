@@ -15,6 +15,7 @@ Vendor.create([{
   company:   "Royal Caribbean",
   email:   "admin@royalcaribbean.com",
   password:   "asdf"
+
   }])
 
   Ship.create([{

@@ -18,20 +18,12 @@
       <%= f.text_field :name %>
     </div>
     <div class="field">
-      <%= f.label :type %><br>
-      <%= f.text_field :type %>
-    </div>
-    <div class="field">
       <%= f.label :tonnage %><br>
       <%= f.number_field :tonnage %>
     </div>
     <div class="field">
       <%= f.label :length_in_feet %><br>
       <%= f.number_field :length_in_feet %>
-    </div>
-    <div class="field">
-      <%= f.label :max_beam %><br>
-      <%= f.number_field :max_beam %>
     </div>
     <div class="field">
       <%= f.label :guest_capacity %><br>
@@ -41,58 +33,55 @@
       <%= f.label :onboard_crew %><br>
       <%= f.number_field :onboard_crew %>
     </div>
-    <div class="field">
-      <%= f.label :decription %><br>
-      <%= f.text_area :description %>
-    </div>
-    <div class="field">
-      <%= f.label :other %><br>
-      <%= f.text_area :other %>
-    </div>
   </div>
 
   <div class="col-md-4">
     <ul>
       <li><%= f.label :activities %></li>
       <br>
-      <li><%= check_box_tag(:activities) %> <%= label_tag(:activities, "Casino") %></li>
-      <li><%= check_box_tag(:activities) %> <%= label_tag(:activities, "Acupuncture") %></li>
-      <li><%= check_box_tag(:activities) %> <%= label_tag(:activities, "Spa") %></li>
-      <li><%= check_box_tag(:activities) %> <%= label_tag(:activities, "Movie Theater") %></li>
-      <li><%= check_box_tag(:activities) %> <%= label_tag(:activities, "Bingo") %></li>
-      <li><%= check_box_tag(:activities) %> <%= label_tag(:activities, "Games") %></li>
-      <li><%= check_box_tag(:activities) %> <%= label_tag(:activities, "Volleyball") %></li>
-      <li><%= check_box_tag(:activities) %> <%= label_tag(:activities, "Kid's Camp") %></li>
-      <li><%= check_box_tag(:activities) %> <%= label_tag(:activities, "Live Music") %></li>
-      <li><%= check_box_tag(:activities) %> <%= label_tag(:activities, "Stage Shows") %></li>
-      <li><%= check_box_tag(:activities) %> <%= label_tag(:activities, "Basketball") %></li>
-      <li><%= check_box_tag(:activities) %> <%= label_tag(:activities, "Karaoke") %></li>
-      <li><%= check_box_tag(:activities) %> <%= label_tag(:activities, "Skycourse") %></li>
-      <li><%= check_box_tag(:activities) %> <%= label_tag(:activities, "Mini Golf") %></li>
-      <li><%= check_box_tag(:activities) %> <%= label_tag(:activities, "Waterslide") %></li>
-      <li><%= check_box_tag(:activities) %> <%= label_tag(:activities, "Nightclub") %></li>
+      <% ["Casino",
+           "Acupuncture",
+           "Spa",
+           "Movie Theater",
+           "Bingo",
+           "Games",
+           "Volleyball",
+           "Kid's Camp",
+           "Live Music",
+           "Stage Shows",
+           "Basketball",
+           "Karaoke",
+           "Skycourse",
+           "Mini Golf",
+           "Waterslide",
+           "Nightclub"].each do |activity_name| %>
+        <li><%= check_box_tag("activities[#{activity_name}]") %> <%= label_tag(:activities, activity_name) %></li>
+      <% end %>
     </ul>
   </div>
+  
   <div class="col-md-4">
     <ul>
       <li><%= f.label :dining %></li>
       <br>
-      <li><%= check_box_tag(:dining) %> <%= label_tag(:dining, "Sushi") %></li>
-      <li><%= check_box_tag(:dining) %> <%= label_tag(:dining, "Steakhouse") %></li>
-      <li><%= check_box_tag(:dining) %> <%= label_tag(:dining, "BBQ") %></li>
-      <li><%= check_box_tag(:dining) %> <%= label_tag(:dining, "Asian Kitchen") %></li>
-      <li><%= check_box_tag(:dining) %> <%= label_tag(:dining, "Deli") %></li>
-      <li><%= check_box_tag(:dining) %> <%= label_tag(:dining, "Pasta Bar") %></li>
-      <li><%= check_box_tag(:dining) %> <%= label_tag(:dining, "Salad Bar") %></li>
-      <li><%= check_box_tag(:dining) %> <%= label_tag(:dining, "Chef's Table") %></li>
-      <li><%= check_box_tag(:dining) %> <%= label_tag(:dining, "Burger Joint") %></li>
-      <li><%= check_box_tag(:dining) %> <%= label_tag(:dining, "Kid's Menu") %></li>
-      <li><%= check_box_tag(:dining) %> <%= label_tag(:dining, "Breakfast Grill") %></li>
-      <li><%= check_box_tag(:dining) %> <%= label_tag(:dining, "Sports Bar") %></li>
-      <li><%= check_box_tag(:dining) %> <%= label_tag(:dining, "Rum Bar") %></li>
-      <li><%= check_box_tag(:dining) %> <%= label_tag(:dining, "Tequila Bar") %></li>
-      <li><%= check_box_tag(:dining) %> <%= label_tag(:dining, "Martini Bar") %></li>
-      <li><%= check_box_tag(:dining) %> <%= label_tag(:dining, "Vineyard") %></li>
+      <% ["Sushi",
+        "Steakhouse",
+        "BBQ",
+        "Asian Kitchen",
+        "Deli",
+        "Pasta Bar",
+        "Salad Bar",
+        "Chef's Table",
+        "Burger Joint",
+        "Kid's Menu",
+        "Breakfast Grill",
+        "Sports Bar",
+        "Rum Bar",
+        "Tequila Bar",
+        "Martini Bar",
+        "Vineyard"].each do |dine| %>
+          <li><%= check_box_tag("dining[#{dine}]") %> <%= label_tag(:dining, dine) %></li>
+        <% end %>
     </ul>
   </div>
 </div>

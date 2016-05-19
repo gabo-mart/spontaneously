@@ -1,17 +1,17 @@
 <div class="pagecontainer" id="logincompany">
 <h1>Company Log In</h1>
 
-<%= form_for create_vendor_path do |f| %>
+<%= form_tag create_vendor_path do %>
 	<p>
-		<%= f.label :email %>
-		<%= f.text_field :email, :class => "form-control"  %>
+		<%= label_tag :email %>
+		<%= text_field_tag :email, "", :class => "form-control"  %>
 	</p>
 	<p>
-		<%= f.label :password %>
-		<%= f.password_field :password, :class => "form-control" %>
+		<%= label_tag :password %>
+		<%= password_field_tag :password, "", :class => "form-control" %>
 	</p>
 
-		<%= f.submit 'Log In', :class => "btn btn-success" %>
+		<%= submit_tag 'Log In', :class => "btn btn-success" %>
 
 <% end %>
 </div>

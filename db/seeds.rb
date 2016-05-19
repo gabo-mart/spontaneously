@@ -184,7 +184,8 @@ Vendor.create([{
         room_type: "Spa Room",
         avatar: "example.png",
         vendor_id: 2,
-        ship_id: 4
+        ship_id: 4,
+        user_id: 3
         },
         {
         itinerary:   "Turks and Caicos",

@@ -3,25 +3,24 @@ Rails.application.routes.draw do
 
   resources :reviews
   resources :users
-  resources :charges
+
   root 'welcome#index'
 
   resources :sessions
 
-  # resources :vendors do
-  #   resources :packages
-  #   post 'packages/new' => 'packages#create'
-  # end
-
   resources :vendors do
-    resources :ships
-    post 'ships/new' => 'ships#create'
     resources :packages
     post 'packages/new' => 'packages#create'
   end
 
+  resources :vendors do
+    resources :ships
+    post 'ships/new' => 'ships#create'
+  end
+
   get '/welcome/confirmation' => 'welcome#confirmation'
   get '/welcome/booknow' => 'welcome#booknow'
+
   get '/usersign_up' => 'users#new'
   get 'signup', to: 'vendors#new', as: 'signup'
 

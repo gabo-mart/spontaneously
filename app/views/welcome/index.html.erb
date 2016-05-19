@@ -1,30 +1,53 @@
 <div id="head">
   <div class="main-head-content">
     <div class="">
-      <h3>Live Live Spontaneuosly . . .</h3>
+      <h3>Live Live Spontaneously . . .</h3> 
     </div>
   </div>
 </div>
 
 <div class="container-fluid">
-  <div class="row">
+  
     <% @packages.each do |package| %>
-    <div class="col-md-4 panel-body packages"><%= link_to image_tag(package.avatar), vendor_package_path(package.vendor, package) %></div>
-    <div class='inside'>
-      <%= package.itinerary %>
-    </div>
-    <div class='inside'>
-      <%= package.price %>
-    </div>
-    <div class='inside'>
-      <%= package.duration %>
-    </div>
-    <div class='inside'>
-      <%= package.duration %>
-    </div>
-  </div>
-  <% end %>
-</div>
+      <div class="col-md-4">
+        <div class="panel panel-primary">
+          <div class="panel-heading flex-panel">
+            <div class="img-thumbnail">
+                <%= link_to image_tag(package.avatar.medium), vendor_package_path(package.vendor, package)%>
+              </div>
+          </div>
+          <div class="panel-body">
+            <span class="package-items">
+              <span class="p-item">
+                Name:
+                <strong>
+                  <%= package.itinerary %>
+                </strong>
+              </span>
+              <span class="p-item">
+              Price:
+              <strong>
+                <%= package.price %>
+                </strong>
+              </span>
+              <span class="p-item">
+              Duration:
+                <strong>
+                <%= package.duration %>
+                </strong>
+              </span>
+              <span class="p-item">
+              Dates:
+                <strong>
+                  <%= package.dates %>
+                </strong>
+              </span>
+            </span>
+          </div>
+        </div>
+      </div>
+
+    <% end %>
 
   <div class="row">
 
@@ -85,5 +108,4 @@
       <img src="http://www.lovethispic.com/uploaded_images/185352-Inside-Of-A-Water-Wave.jpg"alt="Image Name Here" width="350" height="150">
     </div>
 
-  </div>
 </div>

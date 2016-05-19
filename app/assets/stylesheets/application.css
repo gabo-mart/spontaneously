@@ -39,7 +39,9 @@
   font: white;
  }
 
-
+.row {
+  background: none;
+}
 .emailblock {
   display: inline-block;
 }
@@ -112,4 +114,17 @@ footer.navbar-inverse div {
    background-color: #ccc;
    margin: 20px;
    padding: 40px;
+}
+
+
+
+.panel-primary>.panel-heading.flex-panel {
+  display: flex;
+  justify-content: center;
+}
+
+.package-item {
+  display: flex;
+  flex-direction: column;
+  margin-left: 50px;
 }

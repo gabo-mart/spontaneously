@@ -9,7 +9,8 @@
 Vendor.create([{
   company:   "Carnival",
   email:   "admin@carnival.com",
-  password_digest:   "asdf"
+  password:   "asdf",
+  password_confirmation: "asdf"
   }])
 
   Ship.create([{

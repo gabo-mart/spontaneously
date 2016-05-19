@@ -7,6 +7,17 @@
 }
 
 .pagecontainer {
-  margin: 3em;
+  margin: 4em;
 
+}
+
+#companysignup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.center {
+  margin: 10em;
+  margin-right: auto;
 }

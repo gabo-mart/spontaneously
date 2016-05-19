@@ -9,7 +9,7 @@
 Vendor.create([{
   company:   "Carnival",
   email:   "admin@carnival.com",
-  password_digest:   "asdf"
+  password:   "asdf"
   }])
 
   Ship.create([{
@@ -52,7 +52,7 @@ Vendor.create([{
       postal_code:   "33123",
       tel:   "305-555-555",
       email:   "ed@wyncode.co",
-      password_digest:   "asdf"
+      password:   "asdf"
       }])
 
       Package.create([{

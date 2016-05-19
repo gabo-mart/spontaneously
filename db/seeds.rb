@@ -15,40 +15,28 @@ Vendor.create([{
   Ship.create([{
     name: "Carnival Vista",
     tonnage: 133500,
-    max_beam: 459,
-    type: nil,
-    other: 'Fun Ship',
-    vendor_id: '1',
+    vendor_id: 1,
     length_in_feet: 1055,
     guest_capacity: 3956,
     onboard_crew: 1450,
-    description: 'A really fun ship',
     avatar: 'example.png'
   },
   {
     name: "Carnival Breeze",
     tonnage: 130000,
-    max_beam: 459,
-    type: nil,
-    other: 'Fun Ship',
-    vendor_id: '1',
+    vendor_id: 1,
     length_in_feet: 1004,
     guest_capacity: 3690,
     onboard_crew: 1386,
-    description: 'A really fun ship',
     avatar: 'example.png'
   },
   {
     name: "Carnival Paradise",
     tonnage: 70367,
-    max_beam: 459,
-    type: nil,
-    other: 'Fun Ship',
-    vendor_id: '1',
+    vendor_id: 1,
     length_in_feet: 855,
     guest_capacity: 2052,
     onboard_crew: 920,
-    description: 'A really fun ship',
     avatar: 'example.png'
     }])
 
@@ -69,14 +57,12 @@ Vendor.create([{
 
       Package.create([{
         itinerary:   "asdf",
-        ship:   "",
         dates:   "May 27, 2016 - May 29, 2016",
         duration:     "3 days",
         price:   299.99,
         rooms:   1,
         people: 2,
         room_type: "Spa Room",
-        user_id: 1,
         avatar: "example.png",
         vendor_id: 1,
         ship_id: 1

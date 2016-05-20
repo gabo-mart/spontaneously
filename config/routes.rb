@@ -18,6 +18,7 @@ Rails.application.routes.draw do
     post 'ships/new' => 'ships#create'
   end
 
+  resource :charges
   get '/welcome/confirmation' => 'welcome#confirmation'
   get '/welcome/booknow' => 'welcome#booknow'
 

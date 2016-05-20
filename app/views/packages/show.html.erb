@@ -35,10 +35,6 @@
   <%= @package.room_type %>
 </p>
 
-<p>
-  <strong>User:</strong>
-  <%= @package.user %>
-</p>
 
 
 <%= form_tag charges_path do %>
@@ -49,14 +45,14 @@
       </div>
     <% end %>
     <label class="amount">
-      <span>Amount: <%= @package.price %></span>
+      <span>Amount: <%= "$" + @package.price.to_s %></span>
     </label>
   </article>
 
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
           data-key='pk_test_wsu2jhJ68jqECNhfJzaQnwRS'
           data-description='<%= @package.duration %> - <%= @package.itinerary %>'
-          data-amount=<%= @package.price %>
+          data-amount=<%= @package.price.to_f * 100 %>
           data-locale="auto"></script>
 <% end %>
 

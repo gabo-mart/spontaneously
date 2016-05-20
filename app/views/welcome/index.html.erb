@@ -6,106 +6,28 @@
   </div>
 </div>
 
-<div class="container-fluid">
 
+
+
+<div class="row">
     <% @packages.each do |package| %>
-      <div class="col-md-4">
-        <div class="panel panel-primary">
-          <div class="panel-heading flex-panel">
-            <div class="img-thumbnail">
-                <%= link_to image_tag(package.avatar.medium), vendor_package_path(package.vendor, package)%>
-              </div>
+      <div class="col s12 m6">
+        <div class="card medium">
+          <div class="card-image waves-effect waves-block waves-light">
+            <%= link_to image_tag(package.avatar.medium), vendor_package_path(package.vendor, package), :class => "activator"%>
           </div>
-          <div class="panel-body">
-            <span class="package-items">
-              <span class="p-item">
-                Name:
-                <strong>
-                  <%= package.itinerary %>
-                </strong>
-              </span>
-              <span class="p-item">
-              Price:
-              <strong>
-                <%= "$" + package.price.to_s %>
-                </strong>
-              </span>
-              <span class="p-item">
-              Duration:
-                <strong>
-                <%= package.duration %>
-                </strong>
-              </span>
-              <span class="p-item">
-              Dates:
-                <strong>
-                  <%= package.dates %>
-                </strong>
-              </span>
-            </span>
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
+            <p><a href="#">This is a link</a></p>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+            <p><%= package.itinerary %></p>
+            <p><%= "$" + package.price.to_s %></p>
+            <p><%= package.duration %></p>
+            <p><%= package.dates %></p>
           </div>
         </div>
-      </div>
-
-    <% end %>
-
-  <div class="row">
-
-    <div class="col-md-4 panel-body">
-      <img src="https://s-media-cache-ak0.pinimg.com/564x/c0/2d/99/c02d997120479db1a36d9157c99eca7d.jpg" alt="Image Name Here" width="350" height="150">
-    </div>
-
-    <div class="col-md-4 panel-body">
-      <img src="http://wallpaperlayer.com/img/2015/8/tumblr-beach-sand-backgrounds-7102-7383-hd-wallpapers.jpg"alt="Image Name Here" width="350" height="150">
-    </div>
-
-    <div class="col-md-4 panel-body">
-      <img src="http://66.media.tumblr.com/03dc4b61c51d6b95002419e217469d54/tumblr_ns73rpp80e1uushzeo1_1280.jpg"alt="Image Name Here" width="350" height="150">
-    </div>
-
-  </div>
-  <div class="row">
-
-    <div class="col-md-4 panel-body">
-      <img src="http://www.ndemok.com/i/beach-tumblr-wallpaper-picture.jpg"alt="Image Name Here" width="350" height="150">
-    </div>
-
-    <div class="col-md-4 panel-body">
-      <img src="https://secure.static.tumblr.com/4fc89fd10767b122e547323c1b78b21a/lue0b6s/1Uvni3wg0/tumblr_static_tumblr_static_drsqk8cu7lwksc48kcokos8ww_640.jpg"alt="Image Name Here" width="350" height="150">
-    </div>
-
-    <div class="col-md-4 panel-body">
-      <img src="https://secure.static.tumblr.com/a0a0dd3faed8ec4884d07b284fcac327/3n2thnt/a97njx7ic/tumblr_static_tumblr_static__640.jpg"alt="Image Name Here" width="350" height="150">
-    </div>
-
-  </div>
-  <div class="row">
-
-    <div class="col-md-4 panel-body">
-      <img src="http://s8.favim.com/orig/150820/colorful-sea-photography-alternative-Favim.com-3151179.jpg"alt="Image Name Here" width="350" height="150">
-    </div>
-
-    <div class="col-md-4 panel-body">
-      <img src="http://www.welikebali.com/wp-content/uploads/2014/03/0.-Hawaii-and-Pineapples1.jpg"alt="Image Name Here" width="350" height="150">
-    </div>
-
-    <div class="col-md-4 panel-body">
-      <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcT88hQ27yZ1dGJQREQnSS6lcwsKnAWqSd0a3UMCvM1MuA4MHtar"alt="Image Name Here" width="350" height="150">
-    </div>
-
-  </div>
-  <div class="row">
-
-    <div class="col-md-4 panel-body">
-      <img src="http://dailyfirstpages.com/wp-content/uploads/2015/06/842.jpg"alt="Image Name Here" width="350" height="150">
-    </div>
-
-    <div class="col-md-4 panel-body">
-      <img src="http://sanibelrealestateguide.com/images/Chairs-on-the-Beach.jpg" alt="Image Name Here" width="350" height="150">
-    </div>
-
-    <div class="col-md-4 panel-body">
-      <img src="http://www.lovethispic.com/uploaded_images/185352-Inside-Of-A-Water-Wave.jpg"alt="Image Name Here" width="350" height="150">
-    </div>
-
+        </div>
+  <% end %>
 </div>

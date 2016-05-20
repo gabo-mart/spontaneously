@@ -16,7 +16,7 @@ class PackagesController < ApplicationController
 
   # GET /packages/new
   def new
-    @package = Vendor.find_by(params[:vendor_id]).packages.build
+    @package = Vendor.find(params[:vendor_id]).packages.build
 
   end
 

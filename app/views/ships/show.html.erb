@@ -20,8 +20,8 @@
 
 
 	<% if @ship.vendor == current_vendor %>
-	<%= link_to 'Edit', edit_vendor_ship_path(current_vendor.id, @ship.id) %>
-	<% end %> |
+	<%= link_to 'Edit', edit_vendor_ship_path(current_vendor.id, @ship.id) %> |
+	<% end %> 
 
 	<%= link_to 'Back to Dashboard', vendor_path(params[:vendor_id]) %>
 </div>

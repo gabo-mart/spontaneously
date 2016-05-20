@@ -1,14 +1,14 @@
 <class id="body">
-	<div class="pagecontainer">
+	<div class="container">
 		<div id="logincompany">
 			<h1>Company Log In</h1>
 
 			<%= form_for create_vendor_path do |f| %>
-			<p>
+			<p class="loginform">
 				<%= f.label :email %>
 				<%= f.text_field :email, :class => "form-control"  %>
 			</p>
-			<p>
+			<p class="loginform">
 				<%= f.label :password %>
 				<%= f.password_field :password, :class => "form-control" %>
 			</p>

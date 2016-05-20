@@ -12,7 +12,7 @@
 
 <p>
   <strong>Dates:</strong>
-  <%= @package.dates %>
+  <%= @package.start_date.to_formatted_s(:long) %> <%= + " - " + @package.end_date.to_formatted_s(:long)  %>
 </p>
 
 <p>

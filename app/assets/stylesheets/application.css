@@ -64,7 +64,10 @@
   color: white;
 }
 
-
+.panel {
+  width: 350px;
+  height: 150px;
+}
 
  .site-content {
    flex: 1;

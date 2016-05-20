@@ -7,48 +7,49 @@
 </div>
 
 <div class="container-fluid">
-
+  
     <% @packages.each do |package| %>
-      <div class="col-md-4">
-        <div class="panel panel-primary">
-          <div class="panel-heading flex-panel">
-            <div class="img-thumbnail">
-                <%= link_to image_tag(package.avatar.medium), vendor_package_path(package.vendor, package)%>
-              </div>
-          </div>
-          <div class="panel-body">
-            <span class="package-items">
-              <span class="p-item">
-                Name:
+      <%= link_to vendor_package_path(package.vendor, package) do %>
+        <div class="col-md-4">
+          <div class="panel panel-primary">
+            <div class="panel-heading flex-panel">
+              <div class="img-thumbnail">
+                  <%= image_tag(package.avatar.medium)%>
+                </div>
+            </div>
+            <div class="panel-body">
+              <span class="package-items">
+                <span class="p-item">
+                  Name:
+                  <strong>
+                    <%= package.itinerary %>
+                  </strong>
+                </span>
+                <span class="p-item">
+                Price:
                 <strong>
-                  <%= package.itinerary %>
-                </strong>
+                  <%= "$" + package.price.to_s %>
+                  </strong>
+                </span>
+                <span class="p-item">
+                Duration:
+                  <strong>
+                  <%= package.duration %>
+                  </strong>
+                </span>
+                <span class="p-item">
+                Dates:
+                  <strong>
+                    <%= package.dates %>
+                  </strong>
+                </span>
               </span>
-              <span class="p-item">
-              Price:
-              <strong>
-                <%= "$" + package.price.to_s %>
-                </strong>
-              </span>
-              <span class="p-item">
-              Duration:
-                <strong>
-                <%= package.duration %>
-                </strong>
-              </span>
-              <span class="p-item">
-              Dates:
-                <strong>
-                  <%= package.dates %>
-                </strong>
-              </span>
-            </span>
+            </div>
           </div>
         </div>
-      </div>
 
-    <% end %>
-
+      <% end %>
+  <% end %>
   <div class="row">
 
     <div class="col-md-4 panel-body">

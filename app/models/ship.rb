@@ -6,4 +6,21 @@ class Ship < ActiveRecord::Base
 	belongs_to :vendor
 	has_many :package
 
-end
+
+	ACTIVITIES = ["Casino",
+		"Acupuncture",
+		"Spa",
+		"Movie Theater",
+		"Bingo",
+		"Games",
+		"Volleyball",
+		"Kid's Camp",
+		"Live Music",
+		"Stage Shows",
+		"Basketball",
+		"Karaoke",
+		"Skycourse",
+		"Mini Golf",
+		"Waterslide",
+		"Nightclub"]
+	end

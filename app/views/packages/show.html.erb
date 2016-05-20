@@ -35,6 +35,9 @@
   <%= @package.room_type %>
 </p>
 
+<div class="col s8 col offset-s1">
+  <%= image_tag(@package.avatar.large) %>
+</div>
 
 
 <%= form_tag charges_path do %>

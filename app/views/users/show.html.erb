@@ -1,7 +1,28 @@
 <div class="pagecontainer">
 
 <p id="notice"><%= notice %></p>
+<table>
+  <thead>
+    <tr>
+      <th>Package</th>
+      <th>Duration</th>
+      <th>Dates</th>
+      <th>Price</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
 
+  <tbody>
+    <% @user.packages.each do |package| %>
+      <tr>
+        <td><%= package.itinerary %></td>
+        <td><%= package.duration %></td>
+        <td><%= package.dates %></td>
+        <td><%= package.price %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 <p>
   <strong>Username:</strong>
   <%= @user.username %>
@@ -56,7 +77,6 @@
   <strong>Email:</strong>
   <%= @user.email %>
 </p>
-
 
 
 <%= link_to 'Edit', edit_user_path(@user) %>

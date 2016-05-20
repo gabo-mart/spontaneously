@@ -12,7 +12,7 @@
 		<% @vendor.packages.each do |package| %>
 			<tr>
 				<td><%= link_to package.itinerary, vendor_package_path(@vendor.id, package.id) %></td>
-				<td><%= package.ship %></td>
+				<td><%= package.ship.name %></td>
         <td><%= package.dates %></td>
         <td><%= package.duration %></td>
         <td><%= package.price %></td>

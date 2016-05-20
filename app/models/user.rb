@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
 	has_secure_password
-	validates :first_name, :last_name, :username, :dob, :country, :address1, :region, :tel, :email, presence: true
+	validates :first_name, :last_name, :username, :email, presence: true
 	validates :email, uniqueness: true, format: { with: /\A[^@\s]+@([^@.\s]+\.)*[^@.\s]+\z/ }
 	validates :dob, :date => { on_or_after: :birth_date_first, on_or_before: :birth_date_last }
 	has_many :packages

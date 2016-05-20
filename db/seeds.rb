@@ -141,7 +141,8 @@ Vendor.create([{
 
       Package.create([{
         itinerary:   "Bahamas",
-        dates:   "June 3, 2016 - June 6, 2016",
+        start_date:   DateTime.new(2016, 6, 3),
+        end_date:     DateTime.new(2016, 6, 6),
         duration:     "3 days",
         price:   599.99,
         rooms:   1,
@@ -153,7 +154,8 @@ Vendor.create([{
         },
         {
         itinerary:   "Grand Cayman",
-        dates:   "May 27, 2016 - June 1, 2016",
+        start_date:   DateTime.new(2016, 5, 27),
+        end_date:     DateTime.new(2016, 6, 1),
         duration:     "5 days",
         price:   899.99,
         rooms:   1,
@@ -165,7 +167,8 @@ Vendor.create([{
         },
         {
         itinerary:   "Cozumel",
-        dates:   "May 27, 2016 - May 29, 2016",
+        start_date:   DateTime.new(2016, 5, 27),
+        end_date:     DateTime.new(2016, 5, 30),
         duration:     "3 days",
         price:   399.99,
         rooms:   1,
@@ -177,7 +180,8 @@ Vendor.create([{
         },
         {
         itinerary:   "Jamaica",
-        dates:   "June 1, 2016 - June 4, 2016",
+        start_date:   DateTime.new(2016, 6, 1),
+        end_date:     DateTime.new(2016, 6, 4),
         duration:     "3 days",
         price:   599.99,
         rooms:   1,
@@ -190,7 +194,8 @@ Vendor.create([{
         },
         {
         itinerary:   "Turks and Caicos",
-        dates:   "May 27, 2016 - May 29, 2016",
+        start_date:   DateTime.new(2016, 5, 27),
+        end_date:     DateTime.new(2016, 5, 30`),
         duration:     "3 days",
         price:   899.99,
         rooms:   1,

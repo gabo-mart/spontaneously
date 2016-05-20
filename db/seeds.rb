@@ -140,7 +140,7 @@ Vendor.create([{
       }])
 
       Package.create([{
-        itinerary:   "Bahams",
+        itinerary:   "Bahamas",
         dates:   "June 3, 2016 - June 6, 2016",
         duration:     "3 days",
         price:   599.99,

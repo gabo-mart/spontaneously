@@ -1,13 +1,22 @@
 
 <p id="notice"><%= notice %></p>
-<div class="pagecontainer">
+<div class="container">
 <p id="company_name">
-  <strong><%= @vendor.company %></strong>
+  <h3 class="center-align"><%= @vendor.company %></h3>
 
 </p>
-<div> Offerings </div>
-<table class="table table-hover">
-	<thead></thead>
+<h5> Packages </h5>
+<table class="highlight centered">
+	<thead>
+	  <tr>
+	    <th>Itinerary</th>
+      <th>Ship</th>
+      <th>Dates</th>
+      <th>Duration</th>
+      <th>Price</th>
+      <th>Room Type</th>
+	  </tr>
+	</thead>
 	<tbody>
 		<% @vendor.packages.each do |package| %>
 			<tr>
@@ -27,9 +36,8 @@
 	</tbody>
 </table>
 
-
-<div> SHIPS </div>
-<table class="table table-hover">
+<h5> Ships </h5>
+<table class="highlight">
 	<thead></thead>
 	<tbody>
 		<% @vendor.ships.each do |ship| %>

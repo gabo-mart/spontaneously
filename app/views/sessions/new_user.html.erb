@@ -1,12 +1,12 @@
-<div class="pagecontainer">
+<div class="container">
 <h1>Log In</h1>
 
 <%= form_tag create_user_path do %>
-	<p>
+	<p class="loginform">
 		<%= label_tag :username %>
 		<%= text_field_tag :username %>
 	</p>
-	<p>
+	<p class="loginform">
 		<%= label_tag :password %>
 		<%= password_field_tag :password %>
 	</p>

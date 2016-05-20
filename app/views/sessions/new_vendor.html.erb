@@ -1,17 +1,20 @@
-<div class="pagecontainer" id="logincompany">
-<h1>Company Log In</h1>
+<class id="body">
+	<div class="container">
+		<div id="logincompany">
+			<h1>Company Log In</h1>
 
-<%= form_tag create_vendor_path do %>
-	<p>
-		<%= label_tag :email %>
-		<%= text_field_tag :email, "", :class => "form-control"  %>
-	</p>
-	<p>
-		<%= label_tag :password %>
-		<%= password_field_tag :password, "", :class => "form-control" %>
-	</p>
+			<%= form_for create_vendor_path do |f| %>
+			<p class="loginform">
+				<%= f.label :email %>
+				<%= f.text_field :email, :class => "form-control"  %>
+			</p>
+			<p class="loginform">
+				<%= f.label :password %>
+				<%= f.password_field :password, :class => "form-control" %>
+			</p>
 
-		<%= submit_tag 'Log In', :class => "btn btn-success" %>
+			<%= f.submit 'Log In', :class => "btn btn-success" %>
 
-<% end %>
-</div>
+			<% end %>
+		</div>
+	</div>

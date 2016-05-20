@@ -7,6 +7,7 @@ gem "font-awesome-rails"
 gem 'stripe'
 gem 'httparty'
 gem 'rails-erd'
+gem 'rails_12factor'
 
 gem 'pry-rails'
 gem 'bcrypt', '~> 3.1.7'

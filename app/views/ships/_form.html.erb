@@ -40,27 +40,13 @@
     <ul>
       <li><%= f.label :activities %></li>
       <br>
-      <% ["Casino",
-           "Acupuncture",
-           "Spa",
-           "Movie Theater",
-           "Bingo",
-           "Games",
-           "Volleyball",
-           "Kid's Camp",
-           "Live Music",
-           "Stage Shows",
-           "Basketball",
-           "Karaoke",
-           "Skycourse",
-           "Mini Golf",
-           "Waterslide",
-           "Nightclub"].each do |activity_name| %>
-        <li><%= check_box_tag("activities[#{activity_name}]") %> <%= label_tag(:activities, activity_name) %></li>
+      <% Ship::ACTIVITIES.each do |activity_name| %>
+        <%# @ship.activities ? @ship.activities[activity_name] : nil %>
+        <li><%= check_box_tag("ship[activities[#{activity_name}]]", nil, @ship.activities.try(:[], activity_name)) %> <%= label_tag("ship[activities[#{activity_name}]]", activity_name) %></li>
       <% end %>
     </ul>
   </div>
-  
+
   <div class="col-md-4">
     <ul>
       <li><%= f.label :dining %></li>
@@ -81,7 +67,7 @@
         "Tequila Bar",
         "Martini Bar",
         "Vineyard"].each do |dine| %>
-          <li><%= check_box_tag("dining[#{dine}]") %> <%= label_tag(:dining, dine) %></li>
+          <li><%= check_box_tag("dining[#{dine}]") %> <%= label_tag("dining[#{dine}]", dine) %></li>
         <% end %>
     </ul>
   </div>

@@ -23,4 +23,22 @@ class Ship < ActiveRecord::Base
 		"Mini Golf",
 		"Waterslide",
 		"Nightclub"]
+
+
+		DINING = ["Sushi",
+			"Steakhouse",
+			"BBQ",
+			"Asian Kitchen",
+			"Deli",
+			"Pasta Bar",
+			"Salad Bar",
+			"Chef's Table",
+			"Burger Joint",
+			"Kid's Menu",
+			"Breakfast Grill",
+			"Sports Bar",
+			"Rum Bar",
+			"Tequila Bar",
+			"Martini Bar",
+			"Vineyard"]
 	end

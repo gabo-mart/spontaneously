@@ -41,8 +41,8 @@
       <li><%= f.label :activities %></li>
       <br>
       <% Ship::ACTIVITIES.each do |activity_name| %>
-        <%# @ship.activities ? @ship.activities[activity_name] : nil %>
-        <li><%= check_box_tag("ship[activities[#{activity_name}]]", nil, @ship.activities.try(:[], activity_name)) %> <%= label_tag("ship[activities[#{activity_name}]]", activity_name) %></li>
+      <%# @ship.activities ? @ship.activities[activity_name] : nil %>
+      <li><%= check_box_tag("ship[activities[#{activity_name}]]", nil, @ship.activities.try(:[], activity_name)) %> <%= label_tag("ship[activities[#{activity_name}]]", activity_name) %></li>
       <% end %>
     </ul>
   </div>
@@ -51,32 +51,18 @@
     <ul>
       <li><%= f.label :dining %></li>
       <br>
-      <% ["Sushi",
-        "Steakhouse",
-        "BBQ",
-        "Asian Kitchen",
-        "Deli",
-        "Pasta Bar",
-        "Salad Bar",
-        "Chef's Table",
-        "Burger Joint",
-        "Kid's Menu",
-        "Breakfast Grill",
-        "Sports Bar",
-        "Rum Bar",
-        "Tequila Bar",
-        "Martini Bar",
-        "Vineyard"].each do |dine| %>
-          <li><%= check_box_tag("dining[#{dine}]") %> <%= label_tag("dining[#{dine}]", dine) %></li>
+      <% Ship::DINING.each do |dining_name| %>
+    
+        <li><%= check_box_tag("ship[dining[#{dining_name}]]", nil, @ship.dining.try(:[], dining_name)) %> <%= label_tag("ship[dining[#{dining_name}]]", dining_name) %></li>
         <% end %>
-    </ul>
+      </ul>
+    </div>
   </div>
-</div>
 
-<div class="field">
-  <%= f.file_field :avatar %>
-</div>
-<div class="actions">
-  <%= f.submit %>
-</div>
-<% end %>
+  <div class="field">
+    <%= f.file_field :avatar %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+  <% end %>

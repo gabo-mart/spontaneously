@@ -45,7 +45,7 @@ class PackagesController < ApplicationController
   def update
     respond_to do |format|
       if @package.update(package_params)
-        format.html { redirect_to @package, notice: 'Package was successfully updated.' }
+        format.html { redirect_to vendor_package_path, notice: 'Package was successfully updated.' }
         format.json { render :show, status: :ok, location: @package }
       else
         format.html { render :edit }

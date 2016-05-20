@@ -1,4 +1,4 @@
-<%= javascript_include_tag :vendors %>
+
 <p id="notice"><%= notice %></p>
 <div class="container">
 <p id="company_name">
@@ -19,8 +19,8 @@
 	</thead>
 	<tbody>
 		<% @vendor.packages.each do |package| %>
-			<tr data-href= "<%= vendor_package_path(@vendor.id, package.id) %>">
-				<td><%= package.itinerary %></td>
+			<tr>
+				<td><%= link_to package.itinerary, vendor_package_path(@vendor.id, package.id) %></td>
 				<td><%= package.ship.name %></td>
         <td><%= package.dates %></td>
         <td><%= package.duration %></td>

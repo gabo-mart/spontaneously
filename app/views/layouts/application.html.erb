@@ -28,7 +28,7 @@
             <% elsif !current_vendor %>
                 <li><a href="/usersign_up"><span class="fa fa-user fa-2x"></span> Create Account</a></li>
                 <li><a href="/user/login"><span class="fa fa-sign-in"></span> Login</a></li>
-            <% elsif !current_user %>
+            <% elsif !current_user && !current_vendor %>
               <li>
                 <%= link_to "Sign Up" , usersign_up_path, :class => ""%>
               </li>

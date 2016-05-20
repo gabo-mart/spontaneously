@@ -9,46 +9,35 @@
  * compiled file so the styles you add here take precedence over styles defined in any styles
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
+
  *= require font-awesome
  *= require_tree .
  *= require_self
  */
-/*@font-face {
-  font-family: "Cabin";
-  src: url(Cabin-Regular.otf) format("truetype");
-}*/
 
- #navbar {
-   position: fixed;
-   z-index: 10;
-   border-radius: 0px;
-   background-color: rgba(0, 0, 5, 0.6);
-   color: white;
-   width: 100%;
-   font-family: Cabin, sans-serif;
+
+ html,
+ body{
+   min-height: 100%;
+   min-width: 100%
  }
 
- .navbar-collapse {
-  /*background-color: #03AEE4;*/
-  font: white;
-  border: none;
+ body {
+   display: flex;
+   min-height: 100vh;
+   flex-direction: column;
  }
 
- .navbar-inverse {
-  /*background-color: #03AEE4;*/
-  font: white;
+ main {
+   flex: 1 0 auto;
  }
 
-.row {
-  background: none;
-}
+
+
 .emailblock {
   display: inline-block;
 }
 
-.brand {
-  font-family: inherit;
-}
 
 #head {
   height: 500px;
@@ -68,35 +57,6 @@
   width: 350px;
   height: 150px;
 }
-
- .site-content {
-   flex: 1;
-
- }
-
- ul.nav {
-    float: right;
-  }
-
-
- ul.nav > li{
-   display: flex !important;
-   align-items: center;
-
-  }
-
-html,
-body{
-  min-height: 100%;
-  min-width: 100%
-}
-
- .Site {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-}
-
 
 
 footer.footer {

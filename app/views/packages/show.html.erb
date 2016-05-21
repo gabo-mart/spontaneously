@@ -87,44 +87,19 @@
     <div class="col s4" id="middle">
       <h4 class="text-center">Activities</h4>
       <ul>
-        <li>Casino</li>
-        <li>Spa</li>
-        <li>Acupuncture</li>
-        <li>Movie Theater</li>
-        <li>Bingo</li>
-        <li>Games</li>
-        <li>Volleyball</li>
-        <li>Kid's Camp</li>
-        <li>Live Music</li>
-        <li>Stage shows</li>
-        <li>Basketball</li>
-        <li>Karaoke</li>
-        <li>Skycourse</li>
-        <li>Minigolf</li>
-        <li>Waterslide</li>
-        <li>Nightclub</li>
+        <% @package.ship.activities.each do |key, value| %>
+        <li><%= key %></li>
+        <% end %>
+
       </ul>
     </div>
 
     <div class="col s4" id="right">
       <h4 class="text-center">Restaurants and Bars</h4>
       <ul>
-        <li>Sushi</li>
-        <li>Steakhouse</li>
-        <li>BBQ</li>
-        <li>Asian Kitchen</li>
-        <li>Deli</li>
-        <li>Pasta Bar</li>
-        <li>Salad Bar</li>
-        <li>Chef's Table</li>
-        <li>Burger Joint</li>
-        <li>Kid's Menu</li>
-        <li>Breakfast Grill</li>
-        <li>Sports Bar</li>
-        <li>Rum Bar</li>
-        <li>Tequila Bar</li>
-        <li>Martini Bar</li>
-        <li>Vineyard</li>
+        <% @package.ship.dining.each do |key, value| %>
+        <li><%= key %></li>
+        <% end %>
       </ul>
     </div>
 

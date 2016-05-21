@@ -1,69 +1,144 @@
-<p id="notice"><%= notice %></p>
-<div class="pagecontainer">
-<p>
-  <strong>Itinerary:</strong>
-  <%= @package.itinerary %>
-</p>
+<div class="slider">
+    <ul class="slides">
+      <li>
+        <img src="http://lorempixel.com/580/250/nature/1"> <!-- random image -->
+        <div class="caption center-align">
+          <h3>This is our big Tagline!</h3>
+          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+        </div>
+      </li>
+      <li>
+        <img src="http://lorempixel.com/580/250/nature/2"> <!-- random image -->
+        <div class="caption left-align">
+          <h3>Left Aligned Caption</h3>
+          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+        </div>
+      </li>
+      <li>
+        <img src="http://lorempixel.com/580/250/nature/3"> <!-- random image -->
+        <div class="caption right-align">
+          <h3>Right Aligned Caption</h3>
+          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+        </div>
+      </li>
+      <li>
+        <img src="http://lorempixel.com/580/250/nature/4"> <!-- random image -->
+        <div class="caption center-align">
+          <h3>This is our big Tagline!</h3>
+          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+        </div>
+      </li>
+    </ul>
+  </div>
 
-<p>
-  <strong>Ship:</strong>
-  <%= @package.ship.name %>
-</p>
 
-<p>
-  <strong>Dates:</strong>
-  <%= @package.start_date.to_formatted_s(:long) %> <%= + " - " + @package.end_date.to_formatted_s(:long)  %>
-</p>
 
-<p>
-  <strong>Duration:</strong>
-  <%= @package.duration %>
-</p>
 
-<p>
-  <strong>Rooms:</strong>
-  <%= @package.rooms %>
-</p>
 
-<p>
-  <strong>People:</strong>
-  <%= @package.people %>
-</p>
-
-<p>
-  <strong>Room type:</strong>
-  <%= @package.room_type %>
-</p>
-
-<div class="col s8 col offset-s1">
-  <%= image_tag(@package.avatar.large) %>
+  <!-- Controller buttons for Cruise Slides -->
+  <!-- Left and right controls -->
+  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
 </div>
 
-<% if current_user %>
-  <%= form_tag charges_path do %>
-    <article>
-      <% if flash[:error].present? %>
-        <div id="error_explanation">
-          <p><%= flash[:error] %></p>
-        </div>
-      <% end %>
-      <label class="amount">
-        <span>Amount: <%= "$" + @package.price.to_s %></span>
-      </label>
-    </article>
-    <input name="package_id" value=<%= @package.id %> type="hidden">
-      <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-              data-key='pk_test_wsu2jhJ68jqECNhfJzaQnwRS'
-              data-description='<%= @package.duration %> - <%= @package.itinerary %>'
-              data-amount=<%= @package.price.to_f * 100 %>
-              data-locale="auto"></script>
-    <% end %>
-<% end %>
 
-<% if current_vendor == @vendor %>
-  <%= link_to 'Edit', edit_vendor_package_path(@vendor, @package) %> |
-<% end %>
-<%= link_to 'Back', root_path %>
+<!-- temputure and Forcasting -->
+<h1 id='temp'><%= temp %> °F &nbsp; &nbsp;  <%= description.capitalize %></h1>
 
 
+<!-- Amenities Tab Bar -->
+
+<div class="container">
+  <div class="row text-center" id="packagebar">
+    <div class="col s4">
+      <h2> @package.ship.name </h2>
+    </div>
+    <div class="col s4">
+      <h2># Days</h2>
+    </div>
+    <div class="col s4">
+      <h2>Path - Path - Path</h2>
+    </div>
+
+  </div>
+  <div class="row">
+
+    <div class="col s4" id="left">
+      <h4 class="text-center">Ship Features</h4>
+      <ul>
+        <li><i class="fa fa-ship" aria-hidden="true"></i> Tonnage: </li>
+        <li><i class="fa fa-ship" aria-hidden="true"></i> Guest Capacity: </li>
+        <li><i class="fa fa-ship" aria-hidden="true"></i> Length in Feet: </li>
+        <li><i class="fa fa-ship" aria-hidden="true"></i> Onboard Crew: </li>
+        <li><i class="fa fa-wifi" aria-hidden="true"></i> Internet Cafe</li>
+        <li><i class="fa fa-clock-o" aria-hidden="true"></i> 24-Hour Room Service</li>
+        <li><i class="fa fa-clock-o" aria-hidden="true"></i> 24-Hour Room Steward</li>
+        <li><i class="fa fa-lock" aria-hidden="true"></i> Personal Safe</li>
+        <li><i class="fa fa-bed" aria-hidden="true"></i> Nightly Turndown Service</li>
+        <li><i class="fa fa-arrows" aria-hidden="true"></i> Generous Closet and Drawer Space</li>
+        <li><i class="fa fa-key" aria-hidden="true"></i> Private Bathroom and Shower</li>
+        <li><i class="fa fa-television" aria-hidden="true"></i> Television</li>
+        <li><i class="fa fa-arrows-h" aria-hidden="true"></i> Connecting Rooms</li>
+        <li><i class="fa fa-wheelchair-alt" aria-hidden="true"></i> Accessible Cruising</li>
+        <li><i class="fa fa-glass" aria-hidden="true"></i></i> Adults Only Area</li>
+        <li><i class="fa fa-life-ring" aria-hidden="true"></i> Pools</li>
+        <li><i class="fa fa-female" aria-hidden="true"></i> Beauty Salon</li>
+        <li><i class="fa fa-bolt" aria-hidden="true"></i> Jogging Track</li>
+        <li><i class="fa fa-bolt" aria-hidden="true"></i> Fitness Center</li>
+        <li><i class="fa fa-book" aria-hidden="true"></i> Library</li>
+
+      </ul>
+    </div>
+
+    <div class="col s4" id="middle">
+      <h4 class="text-center">Activities</h4>
+      <ul>
+        <li>Casino</li>
+        <li>Spa</li>
+        <li>Acupuncture</li>
+        <li>Movie Theater</li>
+        <li>Bingo</li>
+        <li>Games</li>
+        <li>Volleyball</li>
+        <li>Kid's Camp</li>
+        <li>Live Music</li>
+        <li>Stage shows</li>
+        <li>Basketball</li>
+        <li>Karaoke</li>
+        <li>Skycourse</li>
+        <li>Minigolf</li>
+        <li>Waterslide</li>
+        <li>Nightclub</li>
+      </ul>
+    </div>
+
+    <div class="col s4" id="right">
+      <h4 class="text-center">Restaurants and Bars</h4>
+      <ul>
+        <li>Sushi</li>
+        <li>Steakhouse</li>
+        <li>BBQ</li>
+        <li>Asian Kitchen</li>
+        <li>Deli</li>
+        <li>Pasta Bar</li>
+        <li>Salad Bar</li>
+        <li>Chef's Table</li>
+        <li>Burger Joint</li>
+        <li>Kid's Menu</li>
+        <li>Breakfast Grill</li>
+        <li>Sports Bar</li>
+        <li>Rum Bar</li>
+        <li>Tequila Bar</li>
+        <li>Martini Bar</li>
+        <li>Vineyard</li>
+      </ul>
+    </div>
+
+  </div>
 </div>

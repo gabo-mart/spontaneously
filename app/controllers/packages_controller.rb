@@ -59,7 +59,7 @@ class PackagesController < ApplicationController
   def destroy
     @package.destroy
     respond_to do |format|
-      format.html { redirect_to packages_url, notice: 'Package was successfully destroyed.' }
+      format.html { redirect_to @vendor, notice: 'Package was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

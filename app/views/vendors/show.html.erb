@@ -78,7 +78,7 @@
 	        <td><%= "$" + package.price.to_s %></td>
 	        <td><%= package.room_type %></td>
 			<% end %>
-			<tr>
+			<tr class="totalcash">
 				<td><strong> Day's Total: </strong></td>
 				<td><% total = @day.map do |p| %>
 						<% p.price.to_f %>
@@ -110,7 +110,7 @@
 	        <td><%= "$" + package.price.to_s %></td>
 	        <td><%= package.room_type %></td>
 			<% end %>
-			<tr>
+			<tr class="totalcash">
 				<td><strong> MTD - Total: </strong></td>
 				<td><% total = @month.map do |p| %>
 						<% p.price.to_f %>
@@ -141,7 +141,7 @@
 	        <td><%= sprintf '$%.2f', package.price %></td>
 	        <td><%= package.room_type %></td>
 			<% end %>
-			<tr>
+			<tr class="totalcash">
 				<td><strong> YTD - Total: </strong></td>
 				<td><% total = @year.map do |p| %>
 						<% p.price.to_f %>

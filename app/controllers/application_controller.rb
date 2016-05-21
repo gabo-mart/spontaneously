@@ -5,6 +5,9 @@ class ApplicationController < ActionController::Base
   helper_method :current_vendor
   helper_method :current_user
 
+  def to_money(number)
+    sprintf '$%.2f', number
+  end
 
 
   private
@@ -12,6 +15,7 @@ class ApplicationController < ActionController::Base
   def current_vendor
     @current_vendor ||= Vendor.find_by(id: session[:vendor_id])
   end
+
 
   def current_user
     @current_user ||= User.find_by(id: session[:user_id])

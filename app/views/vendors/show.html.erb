@@ -20,19 +20,21 @@
 	</thead>
 	<tbody>
 		<% @vendor.packages.each do |package| %>
-			<tr onclick='window.location="<%= vendor_package_path(@vendor.id, package.id) %>"' >
-				<td><%= package.itinerary %></td>
-				<td><%= package.ship.name %></td>
-        <td><%= package.start_date.to_formatted_s(:long)  %> <%= + " - " + package.end_date.to_formatted_s(:long)  %></td>
-        <td><%= package.duration %></td>
-        <td><%= package.price %></td>
-        <td><%= package.room_type %></td>
-				<% if @vendor == current_vendor %>
-        <td><%# image_tag(@package.avatar.medium) %></td>
-				<td><%= link_to 'Edit', edit_vendor_package_path(@vendor.id, package.id) %> </td>
-				<td><%= link_to 'Delete', vendor_package_path(current_vendor, package), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-				</tr>
-				<% end %>
+			<% if package.start_date > Date.current %>
+				<tr onclick='window.location="<%= vendor_package_path(@vendor.id, package.id) %>"' >
+					<td><%= package.itinerary %></td>
+					<td><%= package.ship.name %></td>
+	        <td><%= package.start_date.to_formatted_s(:long)  %> <%= + " - " + package.end_date.to_formatted_s(:long)  %></td>
+	        <td><%= package.duration %></td>
+	        <td><%= sprintf '$%.2f', package.price %></td>
+	        <td><%= package.room_type %></td>
+					<% if @vendor == current_vendor %>
+	        <td><%# image_tag(@package.avatar.medium) %></td>
+					<td><%= link_to 'Edit', edit_vendor_package_path(@vendor.id, package.id) %> </td>
+					<td><%= link_to 'Delete', vendor_package_path(current_vendor, package), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+					</tr>
+					<% end %>
+			<% end %>
 			
 		<% end %>
 	</tbody>
@@ -53,14 +55,107 @@
 		<% end %>
 	</tbody>
 </table>
+<% if current_vendor %>
+	<h5> Bookings in Last 24 Hours </h5>
+	<table id="packageTable" class="highlight centered">
+		<thead>
+		  <tr>
+		    <th>Itinerary</th>
+	      <th>Ship</th>
+	      <th>Dates</th>
+	      <th>Duration</th>
+	      <th>Price</th>
+	      <th>Room Type</th>
+		  </tr>
+		</thead>
+		<tbody>
+			<% @day.each do |package| %>
+				<tr onclick='window.location="<%= vendor_package_path(@vendor.id, package.id) %>"' >
+					<td><%= package.itinerary %></td>
+					<td><%= package.ship.name %></td>
+	        <td><%= package.start_date.to_formatted_s(:long)  %> <%= + " - " + package.end_date.to_formatted_s(:long)  %></td>
+	        <td><%= package.duration %></td>
+	        <td><%= "$" + package.price.to_s %></td>
+	        <td><%= package.room_type %></td>
+			<% end %>
+			<tr>
+				<td><strong> Day's Total: </strong></td>
+				<td><% total = @day.map do |p| %> 
+						<% p.price.to_f %>
+						<% end %>
+						<strong><%= sprintf '$%.2f', total.inject(:+) %></strong>
+				</td>
+		</tbody>
+	</table>
+
+	<h5> Bookings in Last 30 Days </h5>
+	<table id="packageTable" class="highlight centered">
+		<thead>
+		  <tr>
+		    <th>Itinerary</th>
+	      <th>Ship</th>
+	      <th>Dates</th>
+	      <th>Duration</th>
+	      <th>Price</th>
+	      <th>Room Type</th>
+		  </tr>
+		</thead>
+		<tbody>
+			<% @month.each do |package| %>
+				<tr onclick='window.location="<%= vendor_package_path(@vendor.id, package.id) %>"' >
+					<td><%= package.itinerary %></td>
+					<td><%= package.ship.name %></td>
+	        <td><%= package.start_date.to_formatted_s(:long)  %> <%= + " - " + package.end_date.to_formatted_s(:long)  %></td>
+	        <td><%= package.duration %></td>
+	        <td><%= "$" + package.price.to_s %></td>
+	        <td><%= package.room_type %></td>
+			<% end %>
+			<tr>
+				<td><strong> MTD - Total: </strong></td>
+				<td><% total = @month.map do |p| %> 
+						<% p.price.to_f %>
+						<% end %>
+						<strong><%= sprintf '$%.2f', total.inject(:+) %></strong>
+				</td>
+		</tbody>
+	</table>
+	<h5> Year to Date Bookings </h5>
+	<table id="packageTable" class="highlight centered">
+		<thead>
+		  <tr>
+		    <th>Itinerary</th>
+	      <th>Ship</th>
+	      <th>Dates</th>
+	      <th>Duration</th>
+	      <th>Price</th>
+	      <th>Room Type</th>
+		  </tr>
+		</thead>
+		<tbody>
+			<% @year.each do |package| %>
+				<tr onclick='window.location="<%= vendor_package_path(@vendor.id, package.id) %>"' >
+					<td><%= package.itinerary %></td>
+					<td><%= package.ship.name %></td>
+	        <td><%= package.start_date.to_formatted_s(:long)  %> <%= + " - " + package.end_date.to_formatted_s(:long)  %></td>
+	        <td><%= package.duration %></td>
+	        <td><%= sprintf '$%.2f', package.price %></td>
+	        <td><%= package.room_type %></td>
+			<% end %>
+			<tr>
+				<td><strong> YTD - Total: </strong></td>
+				<td><% total = @year.map do |p| %> 
+						<% p.price.to_f %>
+						<% end %>
+						<strong><%= sprintf '$%.2f', total.inject(:+) %></strong>
+				</td>
+		</tbody>
+	</table>
 
 
 
-
-<% if @vendor == current_vendor %>
-<%= link_to 'Create a New Ship', new_vendor_ship_path(@vendor) %> |
-<%= link_to 'Create a New Package', new_vendor_package_path(@vendor) %> |
-<%= link_to 'Edit Profile', edit_vendor_path(@vendor) %>
+	<%= link_to 'Create a New Ship', new_vendor_ship_path(@vendor) %> |
+	<%= link_to 'Create a New Package', new_vendor_package_path(@vendor) %> |
+	<%= link_to 'Edit Profile', edit_vendor_path(@vendor) %>
 <% end %>
 
 </div>

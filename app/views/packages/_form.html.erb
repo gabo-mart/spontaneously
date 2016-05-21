@@ -7,8 +7,8 @@
     <%= f.text_field :itinerary %>
   </div>
   <!-- <div class="field">
-    <%= f.label :ship %><br>
-    <%= f.text_field :ship %>
+    <%#= f.label :ship %><br>
+    <%#= f.text_field :ship %>
   </div> -->
   <div class="field">
     <%= f.label :start_date %><br>
@@ -40,9 +40,10 @@
   </div>
 
 
-  <div class="input-field col s6">
-    <%= select("Ship", "ship_id", Ship.all.collect {|s| [ s.name, s.id ] }) %>
-    <label>Ship </label>
+  <div class="input-field">
+    <%= f.select(:ship_id, Ship.where(vendor_id: current_vendor).collect {|u| [u.name, u.id]}, :prompt => 'Choose a Ship') %>
+    <%#= select("Ship", "ship_id", Ship.all.collect {|s| [ s.name, s.id ] }) %>
+    <!-- <label>Ship </label> -->
   </div>
 
   <div class="field">

@@ -195,7 +195,7 @@ Vendor.create([{
         {
         itinerary:   "Turks and Caicos",
         start_date:   DateTime.new(2016, 5, 27),
-        end_date:     DateTime.new(2016, 5, 30`),
+        end_date:     DateTime.new(2016, 5, 30),
         duration:     "3 days",
         price:   899.99,
         rooms:   1,

@@ -1,8 +1,11 @@
 class ChargesController < ApplicationController
+	before_action :set_package, only: [:create]
+
 	def new
 	end
 
 	def create
+		p params
 	  # Amount in cents
 	  @amount = 500
 
@@ -22,4 +25,10 @@ class ChargesController < ApplicationController
 			flash[:error] = e.message
 			redirect_to new_charge_path
 	end
+
+	private
+	def set_package
+		@package = Package.find(:package_id)
+	end
+
 end

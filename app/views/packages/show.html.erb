@@ -51,12 +51,14 @@
       <span>Amount: <%= "$" + @package.price.to_s %></span>
     </label>
   </article>
-
-  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key='pk_test_wsu2jhJ68jqECNhfJzaQnwRS'
-          data-description='<%= @package.duration %> - <%= @package.itinerary %>'
-          data-amount=<%= @package.price.to_f * 100 %>
-          data-locale="auto"></script>
+  <input name="item_id" value="SOMEVALUEHERE" type="hidden">
+  <% if current_user %>
+    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+            data-key='pk_test_wsu2jhJ68jqECNhfJzaQnwRS'
+            data-description='<%= @package.duration %> - <%= @package.itinerary %>'
+            data-amount=<%= @package.price.to_f * 100 %>
+            data-locale="auto"></script>
+  <% end %>
 <% end %>
 
 <% if current_vendor == @vendor %>

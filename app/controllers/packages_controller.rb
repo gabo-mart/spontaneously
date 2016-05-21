@@ -76,7 +76,7 @@ class PackagesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def package_params
-      params.require(:package).permit(:itinerary, :dates, :duration, :price, :rooms, :people, :room_type, :user_id, :avatar, :vendor_id)
+      params.require(:package).permit(:itinerary, :start_date, :end_date, :duration, :price, :rooms, :people, :room_type, :user_id, :avatar, :vendor_id)
     end
 end
 

@@ -11,6 +11,7 @@
 * file per style scope.
 
 *= require font-awesome
+#= require animate
 *= require_tree .
 *= require_self
 */
@@ -58,6 +59,12 @@ main {
   justify-content: center;
   align-items: center;
   color: white;
+}
+
+.main-head-content {
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .panel {

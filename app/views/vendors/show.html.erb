@@ -35,7 +35,7 @@
 					</tr>
 					<% end %>
 			<% end %>
-			
+
 		<% end %>
 	</tbody>
 </table>
@@ -55,7 +55,7 @@
 		<% end %>
 	</tbody>
 </table>
-<% if current_vendor %>
+<% if current_vendor == @vendor %>
 	<h5> Bookings in Last 24 Hours </h5>
 	<table id="packageTable" class="highlight centered">
 		<thead>
@@ -80,7 +80,7 @@
 			<% end %>
 			<tr>
 				<td><strong> Day's Total: </strong></td>
-				<td><% total = @day.map do |p| %> 
+				<td><% total = @day.map do |p| %>
 						<% p.price.to_f %>
 						<% end %>
 						<strong><%= sprintf '$%.2f', total.inject(:+) %></strong>
@@ -112,7 +112,7 @@
 			<% end %>
 			<tr>
 				<td><strong> MTD - Total: </strong></td>
-				<td><% total = @month.map do |p| %> 
+				<td><% total = @month.map do |p| %>
 						<% p.price.to_f %>
 						<% end %>
 						<strong><%= sprintf '$%.2f', total.inject(:+) %></strong>
@@ -143,7 +143,7 @@
 			<% end %>
 			<tr>
 				<td><strong> YTD - Total: </strong></td>
-				<td><% total = @year.map do |p| %> 
+				<td><% total = @year.map do |p| %>
 						<% p.price.to_f %>
 						<% end %>
 						<strong><%= sprintf '$%.2f', total.inject(:+) %></strong>

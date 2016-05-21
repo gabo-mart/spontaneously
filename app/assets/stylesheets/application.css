@@ -17,11 +17,11 @@
 */
  /*material nav bar */
 nav {
-  background-color: #028090;
+  background-color: #ff5252;
 }
 
 footer.page-footer {
-  background-color: #114B5F;
+  background-color: #ff5252;
 }
 
 html,
@@ -35,6 +35,12 @@ body {
   min-height: 100vh;
   flex-direction: column;
 }
+
+
+h4 {
+        font-family: 'Give You Glory', cursive;
+        font-size: 48px;
+      }
 
 main {
   flex: 1 0 auto;

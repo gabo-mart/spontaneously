@@ -52,6 +52,7 @@
       </label>
     </article>
     <input name="package_id" value=<%= @package.id %> type="hidden">
+    <input name="user_id" value=<%= current_user.id %> type="hidden">
       <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
               data-key='pk_test_wsu2jhJ68jqECNhfJzaQnwRS'
               data-description='<%= @package.duration %> - <%= @package.itinerary %>'

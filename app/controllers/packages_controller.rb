@@ -1,6 +1,6 @@
 class PackagesController < ApplicationController
   before_action :set_package, only: [:show, :edit, :update, :destroy]
-  before_action :set_vendor, only: [:show, :create, :new, :update, :edit, :destroy]
+	before_action :set_vendor, only: [:show, :create, :new, :update, :edit, :destroy]
 
 
   # GET /packages
@@ -65,19 +65,19 @@ class PackagesController < ApplicationController
   end
 
   private
-  # Use callbacks to share common setup or constraints between actions.
-  def set_package
-    @package = Package.find(params[:id])
-  end
+    # Use callbacks to share common setup or constraints between actions.
+    def set_package
+      @package = Package.find(params[:id])
+    end
 
-  def set_vendor
-    @vendor = Vendor.find(params[:vendor_id])
-  end
+    def set_vendor
+  		@vendor = Vendor.find(params[:vendor_id])
+  	end
 
-  # Never trust parameters from the scary internet, only allow the white list through.
-  def package_params
-    params.require(:package).permit(:itinerary, :start_date, :end_date, :duration, :price, :rooms, :people, :room_type, :user_id, :avatar, :vendor_id)
-  end
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def package_params
+      params.require(:package).permit(:itinerary, :start_date, :end_date, :duration, :price, :rooms, :people, :room_type, :user_id, :avatar, :vendor_id)
+    end
 end
 
 # :ship,

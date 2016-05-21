@@ -39,16 +39,7 @@
     <%= f.text_field :room_type %>
   </div>
  
-  <div class="input-field col s6">
-    <select>
-      <option value="" disabled="disabled" selected="selected">Choose a Ship</option>
-      <% Ship.where(vendor_id: current_vendor.id).each do |ship| %>
-          <option value="<%= ship.id %>"><%= ship.name%></option>
-        <%#= f.select :ship_id, options_for_select(Ship.all.collect{ |u| [u.name, u.id] }) %>
-      <% end %>
-    </select>
-    <label>Ship </label>
-  </div>
+
 
   <div class="field">
     <%= f.file_field :avatar %>

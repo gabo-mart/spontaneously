@@ -1,7 +1,11 @@
 <div class="pagecontainer">
-
+<table id="packageTable" class="highlight centered">
+  <thead></thead>
+  <tbody>
+    <% @vendor.ships.each do |ship| %>
+      <tr onclick='window.location="<%= vendor_ship_path(@vendor.id, ship.id) %>"' >
 <p id="notice"><%= notice %></p>
-<table>
+<table id="packageTable" class="highlight centered">
   <thead>
     <tr>
       <th>Package</th>

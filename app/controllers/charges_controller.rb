@@ -24,9 +24,11 @@ class ChargesController < ApplicationController
 		rescue Stripe::CardError => e
 			flash[:error] = e.message
 			redirect_to new_charge_path
+			@package.user_id = current_user.id
 	end
 
 	private
+
 	def set_package
 		@package = Package.find(:package_id)
 	end

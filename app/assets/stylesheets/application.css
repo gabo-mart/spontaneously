@@ -117,3 +117,7 @@ footer.navbar-inverse div {
   flex-direction: column;
   margin-left: 50px;
 }
+
+a {
+  color: white;
+}

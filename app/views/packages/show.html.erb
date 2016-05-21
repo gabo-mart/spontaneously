@@ -35,17 +35,6 @@
 
 
 
-  <!-- Controller buttons for Cruise Slides -->
-  <!-- Left and right controls -->
-  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
 
 <!-- temputure and Forcasting -->
 <h1 id='temp'><%= temp %> °F &nbsp; &nbsp;  <%= description.capitalize %></h1>
@@ -138,7 +127,7 @@
         <li>Vineyard</li>
       </ul>
     </div>
-    
+
 <% if current_user %>
   <%= form_tag charges_path do %>
     <article>

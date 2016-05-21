@@ -52,7 +52,6 @@
       <li><%= f.label :dining %></li>
       <br>
       <% Ship::DINING.each do |dining_name| %>
-    
         <li><%= check_box_tag("ship[dining[#{dining_name}]]", nil, @ship.dining.try(:[], dining_name)) %> <%= label_tag("ship[dining[#{dining_name}]]", dining_name) %></li>
         <% end %>
       </ul>

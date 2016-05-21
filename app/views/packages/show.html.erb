@@ -35,18 +35,6 @@
 
 
 
-  <!-- Controller buttons for Cruise Slides -->
-  <!-- Left and right controls -->
-  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
-
 
 <!-- temputure and Forcasting -->
 <h1 id='temp'><%= temp %> °F &nbsp; &nbsp;  <%= description.capitalize %></h1>
@@ -140,5 +128,31 @@
       </ul>
     </div>
 
+<% if current_user %>
+  <%= form_tag charges_path do %>
+    <article>
+      <% if flash[:error].present? %>
+        <div id="error_explanation">
+          <p><%= flash[:error] %></p>
+        </div>
+      <% end %>
+      <label class="amount">
+        <span>Amount: <%= "$" + @package.price.to_s %></span>
+      </label>
+    </article>
+    <input name="package_id" value=<%= @package.id %> type="hidden">
+    <input name="user_id" value=<%= current_user.id %> type="hidden">
+      <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+              data-key='pk_test_wsu2jhJ68jqECNhfJzaQnwRS'
+              data-description='<%= @package.duration %> - <%= @package.itinerary %>'
+              data-amount=<%= @package.price.to_f * 100 %>
+              data-locale="auto"></script>
+    <% end %>
+<% end %>
+
+<% if current_vendor == @vendor %>
+  <%= link_to 'Edit', edit_vendor_package_path(@vendor, @package) %> |
+<% end %>
+<%= link_to 'Back', root_path %>
   </div>
 </div>

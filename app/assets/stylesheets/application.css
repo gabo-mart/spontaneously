@@ -40,7 +40,9 @@ main {
   flex: 1 0 auto;
 }
 
-
+#packageTable tbody tr {
+  cursor: pointer;
+}
 
 .emailblock {
   display: inline-block;

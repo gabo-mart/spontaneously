@@ -1,14 +1,13 @@
 source 'https://rubygems.org'
 
 gem 'carrierwave'
+gem 'rspec-rails'
 gem 'fog'
 gem 'mini_magick'
 gem "font-awesome-rails"
 gem 'stripe'
 gem 'httparty'
 gem 'rails-erd'
-gem 'rails_12factor'
-
 gem 'pry-rails'
 gem 'bcrypt', '~> 3.1.7'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -46,6 +45,11 @@ group :development, :test do
   gem 'capybara'
   gem 'launchy'
 end
+
+group :production do
+  gem 'rails_12factor'
+end
+
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views

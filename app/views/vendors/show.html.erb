@@ -7,7 +7,7 @@
 
 </p>
 <h5> Packages </h5>
-<table class="highlight centered">
+<table id="packageTable" class="highlight centered">
 	<thead>
 	  <tr>
 	    <th>Itinerary</th>
@@ -20,7 +20,7 @@
 	</thead>
 	<tbody>
 		<% @vendor.packages.each do |package| %>
-			<tr data-href="<%= vendor_package_path(@vendor.id, package.id) %>">
+			<tr onclick='window.location="<%= vendor_package_path(@vendor.id, package.id) %>"' >
 				<td><%= package.itinerary %></td>
 				<td><%= package.ship.name %></td>
         <td><%= package.start_date.to_formatted_s(:long)  %> <%= + " - " + package.end_date.to_formatted_s(:long)  %></td>
@@ -38,11 +38,11 @@
 	</tbody>
 </table>
 <h5> Ships </h5>
-<table class="highlight">
+<table id="packageTable" class="highlight centered">
 	<thead></thead>
 	<tbody>
 		<% @vendor.ships.each do |ship| %>
-			<tr>
+			<tr onclick='window.location="<%= vendor_ship_path(@vendor.id, ship.id) %>"' >
 				<td><%= link_to ship.name, vendor_ship_path(@vendor.id, ship.id) %></td>
 				<% if @vendor == current_vendor %>
         <td><%# image_tag(@ship.avatar.medium) %></td>

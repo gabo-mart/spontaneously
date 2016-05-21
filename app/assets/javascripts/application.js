@@ -14,3 +14,8 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$("#packageTable tbody tr").on("click", function(){
+  var link  = $(this).data("href")
+  console.info(this);
+});

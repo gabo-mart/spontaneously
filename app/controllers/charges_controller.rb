@@ -8,7 +8,7 @@ class ChargesController < ApplicationController
 	def create
 		p params
 
-		@package.update_attributes(user_id: params[:user_id])
+		@package.update_attributes(user_id: params[:user_id], booked_at: Date.current)
 		
 	  # Amount in cents
 	  @amount = 500

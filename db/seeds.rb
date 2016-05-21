@@ -176,7 +176,8 @@ Vendor.create([{
         room_type: "Interior Cabin",
         avatar: "example.png",
         vendor_id: 2,
-        ship_id: 6
+        ship_id: 6,
+        booked_at: Date.new(2016,4,28)
         },
         {
         itinerary:   "Jamaica",
@@ -190,7 +191,8 @@ Vendor.create([{
         avatar: "example.png",
         vendor_id: 2,
         ship_id: 4,
-        user_id: 3
+        user_id: 3,
+        booked_at: Date.new(2015,12,28)
         },
         {
         itinerary:   "Turks and Caicos",
@@ -203,5 +205,20 @@ Vendor.create([{
         room_type: "Spa Room",
         avatar: "example.png",
         vendor_id: 2,
-        ship_id: 5
+        ship_id: 5,
+        booked_at: Date.new(2016,5,21)
+        },
+        {
+        itinerary:   "Key West",
+        start_date:   DateTime.new(2016, 5, 20),
+        end_date:     DateTime.new(2016, 5, 23),
+        duration:     "3 days",
+        price:   899.99,
+        rooms:   1,
+        people: 2,
+        room_type: "Spa Room",
+        avatar: "example.png",
+        vendor_id: 2,
+        ship_id: 3,
+        booked_at: Date.new(2016,5,18)
         }])

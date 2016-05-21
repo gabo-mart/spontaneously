@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160521153424) do
+ActiveRecord::Schema.define(version: 20160521190555) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20160521153424) do
     t.integer  "ship_id"
     t.date     "start_date"
     t.date     "end_date"
+    t.date     "booked_at"
   end
 
   add_index "packages", ["ship_id"], name: "index_packages_on_ship_id", using: :btree

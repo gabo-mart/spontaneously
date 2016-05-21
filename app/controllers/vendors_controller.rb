@@ -10,6 +10,9 @@ class VendorsController < ApplicationController
   # GET /vendors/1
   # GET /vendors/1.json
   def show
+    @day = Package.where(booked_at: Date.current, vendor_id: current_vendor)
+    @month = Package.where(booked_at: 1.month.ago..Date.today, vendor_id: current_vendor)
+    @year = Package.where(booked_at: 1.year.ago..Date.today, vendor_id: current_vendor)
   end
 
   # GET /vendors/new

@@ -31,7 +31,7 @@
       <tr>
         <td><%= package.itinerary %></td>
         <td><%= package.ship.name %></td>
-        <td><%= package.dates %></td>
+        <td><%= package.start_date.to_formatted_s(:long)  %> <%= + " - " + package.end_date.to_formatted_s(:long)  %></td>
         <td><%= package.duration %></td>
         <td><%= package.price %></td>
         <td><%= package.rooms %></td>

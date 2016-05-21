@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160520000423) do
+ActiveRecord::Schema.define(version: 20160520234834) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,7 +19,6 @@ ActiveRecord::Schema.define(version: 20160520000423) do
   create_table "packages", force: :cascade do |t|
     t.string   "itinerary"
     t.string   "ship"
-    t.string   "dates"
     t.string   "duration"
     t.decimal  "price"
     t.integer  "rooms"
@@ -31,6 +30,8 @@ ActiveRecord::Schema.define(version: 20160520000423) do
     t.string   "avatar"
     t.integer  "vendor_id"
     t.integer  "ship_id"
+    t.date     "start_date"
+    t.date     "end_date"
   end
 
   add_index "packages", ["ship_id"], name: "index_packages_on_ship_id", using: :btree
@@ -58,6 +59,7 @@ ActiveRecord::Schema.define(version: 20160520000423) do
     t.integer  "onboard_crew"
     t.string   "avatar"
     t.text     "activities"
+    t.text     "dining"
   end
 
   add_index "ships", ["vendor_id"], name: "index_ships_on_vendor_id", using: :btree

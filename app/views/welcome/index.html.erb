@@ -25,7 +25,7 @@
             <p><%= package.itinerary %></p>
             <p><%= "$" + package.price.to_s %></p>
             <p><%= package.duration %></p>
-            <p><%= package.dates %></p>
+            <p><%= package.start_date.to_formatted_s(:long)  %> <%= + " - " + package.end_date.to_formatted_s(:long)     %></p>
           </div>
         </div>
         </div>

@@ -12,7 +12,7 @@
 
 <p>
   <strong>Dates:</strong>
-  <%= @package.dates %>
+  <%= @package.start_date.to_formatted_s(:long) %> <%= + " - " + @package.end_date.to_formatted_s(:long)  %>
 </p>
 
 <p>
@@ -35,6 +35,9 @@
   <%= @package.room_type %>
 </p>
 
+<div class="col s8 col offset-s1">
+  <%= image_tag(@package.avatar.large) %>
+</div>
 
 
 <%= form_tag charges_path do %>
@@ -48,12 +51,14 @@
       <span>Amount: <%= "$" + @package.price.to_s %></span>
     </label>
   </article>
-
-  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key='pk_test_wsu2jhJ68jqECNhfJzaQnwRS'
-          data-description='<%= @package.duration %> - <%= @package.itinerary %>'
-          data-amount=<%= @package.price.to_f * 100 %>
-          data-locale="auto"></script>
+  <input name="item_id" value="SOMEVALUEHERE" type="hidden">
+  <% if current_user %>
+    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+            data-key='pk_test_wsu2jhJ68jqECNhfJzaQnwRS'
+            data-description='<%= @package.duration %> - <%= @package.itinerary %>'
+            data-amount=<%= @package.price.to_f * 100 %>
+            data-locale="auto"></script>
+  <% end %>
 <% end %>
 
 <% if current_vendor == @vendor %>

@@ -38,8 +38,12 @@
     <%= f.label :room_type %><br>
     <%= f.text_field :room_type %>
   </div>
- 
 
+
+  <div class="input-field col s6">
+    <%= select("Ship", "ship_id", Ship.all.collect {|s| [ s.name, s.id ] }) %>
+    <label>Ship </label>
+  </div>
 
   <div class="field">
     <%= f.file_field :avatar %>

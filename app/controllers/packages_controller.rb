@@ -59,7 +59,7 @@ class PackagesController < ApplicationController
   def destroy
     @package.destroy
     respond_to do |format|
-      format.html { redirect_to packages_url, notice: 'Package was successfully destroyed.' }
+      format.html { redirect_to @vendor, notice: 'Package was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -74,10 +74,11 @@ class PackagesController < ApplicationController
   		@vendor = Vendor.find(params[:vendor_id])
   	end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def package_params
-      params.require(:package).permit(:itinerary, :start_date, :end_date, :duration, :price, :rooms, :people, :room_type, :user_id, :avatar, :vendor_id)
-    end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def package_params
+    params.require(:package).permit(:itinerary, :start_date, :end_date, :duration, :price, :rooms, :people, :room_type, :ship_id, :user_id, :avatar, :vendor_id)
+  end
 end
 
 # :ship,

@@ -42,9 +42,8 @@
           </ul>
         </div>
     </nav>
-
     <% flash.each do |key, value| %>
-      <%= content_tag(:div, class: "alert alert- #{key}") do %>
+      <%= content_tag(:div, style: "position: absolute;", class: "alert alert-#{key}") do %>
         <p><%= value %></p>
       <% end %>
     <% end %>
@@ -56,26 +55,25 @@
     <footer class="page-footer">
       <div class="container">
         <div class="row">
-          <div class="col l6 s12">
+          <div class="col l6 s12" id="footerlinks">
 
 
-            <p class="grey-text text-lighten-4"><%= link_to "ABOUT  |", "#" %> <%= link_to "JOBS  |", "#" %>    <%= link_to "SUPPORT  |", "#" %> <%= link_to "FAQ  |", "#" %>  <%= link_to "TERMS", "#" %>
-    </p>
-          </div>
-          <div class="col l4 offset-l2 s12">
-            <ul>
-              <% if current_vendor %>
-                <li><%= link_to "Log out", logout_path, :class => "grey-text text-lighten-3" %></li>
-                <li><%= link_to "Dashboard", vendor_path(current_vendor), :class => "grey-text text-lighten-3" %></li>
-              <% elsif !current_user %>
-                <li>Company:
+            <%= link_to "ABOUT  |", "#" %>
+            <%= link_to "JOBS  |", "#" %>
+            <%= link_to "SUPPORT  |", "#" %>
+             <%= link_to "FAQ  |", "#" %>
+             <%= link_to "TERMS", "#" %>
+             <span class="right">
+               <% if current_vendor %>
+                 <%= link_to "Log out", logout_path, :class => "grey-text text-lighten-3" %>
+                 <%= link_to "Dashboard", vendor_path(current_vendor), :class => "grey-text text-lighten-3" %>
+               <% elsif !current_user %>
+                 Company:
                   <strong><%= link_to "Sign In", create_vendor_path, :class => "grey-text text-lighten-3" %></strong>
-                    or
+                  or
                   <strong><%= link_to "Sign Up", new_vendor_path, :class => "grey-text text-lighten-3" %></strong>
-                </li>
-              <% else %>
-              <% end %>
-            </ul>
+              <%end%>
+              </span>
           </div>
         </div>
       </div>

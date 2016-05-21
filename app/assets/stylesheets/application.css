@@ -118,6 +118,23 @@ footer.navbar-inverse div {
   margin-left: 50px;
 }
 
-a {
-  color: white;
+#footerlinks a {
+  color: #fff !important;
+}
+
+.card.medium {
+  display: flex;
+  flex-direction: column;
+}
+
+.card.medium > div {
+  flex: 1;
+}
+
+.card.small .card-image, .card.medium .card-image, .card.large .card-image {
+  max-height: 80% !important;
+}
+
+.card.small .card-content, .card.medium .card-content, .card.large .card-content {
+  max-height: 20% !important;
 }

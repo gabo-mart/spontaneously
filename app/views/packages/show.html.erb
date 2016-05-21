@@ -86,21 +86,25 @@
 
     <div class="col s4" id="middle">
       <h4 class="text-center">Activities</h4>
+      <% if @package.ship.activities != nil%>
       <ul>
-        <% @package.ship.activities.each do |key, value| %>
-        <li><%= key %></li>
-        <% end %>
+          <% @package.ship.activities.each do |key, value| %>
+          <li><%= key %></li>
+          <% end %>
 
       </ul>
+      <% end %>
     </div>
 
     <div class="col s4" id="right">
       <h4 class="text-center">Restaurants and Bars</h4>
+      <% if @package.ship.dining != nil%>
       <ul>
         <% @package.ship.dining.each do |key, value| %>
         <li><%= key %></li>
         <% end %>
       </ul>
+      <% end%>
     </div>
 
 <% if current_user %>

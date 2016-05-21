@@ -95,7 +95,11 @@ footer.navbar-inverse div {
   padding: 40px;
 }
 
-
+.totalcash {
+  background-color: #26a69a;
+  border: 2px solid #26a69a;
+  color: white;
+}
 
 .panel-primary>.panel-heading.flex-panel {
   display: flex;

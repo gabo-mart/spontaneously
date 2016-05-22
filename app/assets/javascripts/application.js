@@ -19,3 +19,11 @@ $("#packageTable tbody tr").on("click", function(){
   var link  = $(this).data("href")
   console.info(this);
 });
+
+$(function(){
+	$('.star_rating').click(function() {
+		var star = $(this);
+		var stars = $(this).attr('data-stars');
+		
+	});
+});

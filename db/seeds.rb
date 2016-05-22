@@ -27,7 +27,27 @@ Vendor.create([{
     length_in_feet: 1055,
     guest_capacity: 3956,
     onboard_crew: 1450,
-    avatar: 'example.png'
+    avatar: 'example.png',
+    activities: {
+      "Casino"=>"on",
+    "Acupuncture"=>"on",
+    "Spa"=>"on",
+    "Movie Theater"=>"on",
+    "Bingo"=>"on",
+    "Games"=>"on",
+    "Volleyball"=>"on",
+    "Kid's Camp"=>"on",
+    "Live Music"=>"on"
+    },
+    dining: {
+      "Deli"=>"on",
+      "Pasta Bar"=>"on",
+      "Salad Bar"=>"on",
+      "Chef's Table"=>"on",
+      "Burger Joint"=>"on",
+      "Kid's Menu"=>"on",
+      "Breakfast Grill"=>"on"
+    }
   },
   {
     name: "Carnival Breeze",
@@ -45,7 +65,27 @@ Vendor.create([{
     length_in_feet: 855,
     guest_capacity: 2052,
     onboard_crew: 920,
-    avatar: 'example.png'
+    avatar: 'example.png',
+    activities: {
+      "Casino"=>"on",
+    "Acupuncture"=>"on",
+    "Spa"=>"on",
+    "Movie Theater"=>"on",
+    "Bingo"=>"on",
+    "Games"=>"on",
+    "Volleyball"=>"on",
+    "Kid's Camp"=>"on",
+    "Live Music"=>"on"
+    },
+    dining: {
+      "Deli"=>"on",
+      "Pasta Bar"=>"on",
+      "Salad Bar"=>"on",
+      "Chef's Table"=>"on",
+      "Burger Joint"=>"on",
+      "Kid's Menu"=>"on",
+      "Breakfast Grill"=>"on"
+    }
     },
     {
     name: "Carnival Paradise",
@@ -63,7 +103,27 @@ Vendor.create([{
     length_in_feet: 1_187,
     guest_capacity: 6_410,
     onboard_crew: 2_100,
-    avatar: 'example.png'
+    avatar: 'example.png',
+    activities: {
+      "Casino"=>"on",
+    "Acupuncture"=>"on",
+    "Spa"=>"on",
+    "Movie Theater"=>"on",
+    "Bingo"=>"on",
+    "Games"=>"on",
+    "Volleyball"=>"on",
+    "Kid's Camp"=>"on",
+    "Live Music"=>"on"
+    },
+    dining: {
+      "Deli"=>"on",
+      "Pasta Bar"=>"on",
+      "Salad Bar"=>"on",
+      "Chef's Table"=>"on",
+      "Burger Joint"=>"on",
+      "Kid's Menu"=>"on",
+      "Breakfast Grill"=>"on"
+    }
     },
     {
     name: "Allure of the Seas",
@@ -81,7 +141,27 @@ Vendor.create([{
     length_in_feet: 1_112,
     guest_capacity: 4_515,
     onboard_crew: 1_360,
-    avatar: 'example.png'
+    avatar: 'example.png',
+    activities: {
+      "Casino"=>"on",
+    "Acupuncture"=>"on",
+    "Spa"=>"on",
+    "Movie Theater"=>"on",
+    "Bingo"=>"on",
+    "Games"=>"on",
+    "Volleyball"=>"on",
+    "Kid's Camp"=>"on",
+    "Live Music"=>"on"
+    },
+    dining: {
+      "Deli"=>"on",
+      "Pasta Bar"=>"on",
+      "Salad Bar"=>"on",
+      "Chef's Table"=>"on",
+      "Burger Joint"=>"on",
+      "Kid's Menu"=>"on",
+      "Breakfast Grill"=>"on"
+    }
     }])
 
     User.create([{

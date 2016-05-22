@@ -9,8 +9,8 @@
 			<li><strong>Length in feet: </strong><%= @ship.length_in_feet %></li>
 			<li><strong>Guest capacity: </strong><%= @ship.guest_capacity %></li>
 			<li><strong>Onboard crew: </strong><%= @ship.onboard_crew %></li>
-			<li><strong>Activities: </strong><%= @ship.activities.keys.to_sentence %></li>
-			<li><strong>Dining: </strong><%= @ship.dining.keys.to_sentence %></li>
+			<li><strong>Activities: </strong><%= @ship.activities.keys.to_sentence unless @ship.activities.nil? %></li>
+			<li><strong>Dining: </strong><%= @ship.dining.keys.to_sentence unless @ship.dining.nil? %></li>
 		</ul>
 
 		<div class="col-md-8 col-md-offset-1">
@@ -18,6 +18,10 @@
 		</div>
 
 	</div>
+	<ul class="rating">
+		<li class='rating_star' ></li>
+	</ul>
+
 
 
 

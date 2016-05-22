@@ -6,7 +6,7 @@
   <h3 class="center-align"><%= @vendor.company %></h3>
 
 </p>
-<h5> Packages </h5>
+<h5 class="heading"> Packages </h5>
 <table id="packageTable" class="highlight centered">
 	<thead>
 	  <tr>
@@ -39,7 +39,7 @@
 		<% end %>
 	</tbody>
 </table>
-<h5> Ships </h5>
+<h5 class="heading"> Ships </h5>
 <table id="packageTable" class="highlight centered">
 	<thead></thead>
 	<tbody>
@@ -56,7 +56,7 @@
 	</tbody>
 </table>
 <% if current_vendor == @vendor %>
-	<h5> Bookings in Last 24 Hours </h5>
+	<h5 class="heading"> Bookings in Last 24 Hours </h5>
 	<table id="packageTable" class="highlight centered">
 		<thead>
 		  <tr>
@@ -80,15 +80,17 @@
 			<% end %>
 			<tr class="totalcash">
 				<td><strong> Day's Total: </strong></td>
-				<td><% total = @day.map do |p| %>
-						<% p.price.to_f %>
-						<% end %>
-						<strong><%= sprintf '$%.2f', total.inject(:+) %></strong>
-				</td>
+				<% unless @day.empty? %>
+					<td><% total = @day.map do |p| %>
+							<% p.price.to_f %>
+							<% end %>
+							<strong><%= sprintf '$%.2f', total.inject(:+) %></strong>
+					</td>
+				<% end %>
 		</tbody>
 	</table>
 
-	<h5> Bookings in Last 30 Days </h5>
+	<h5 class="heading"> Bookings in Last 30 Days </h5>
 	<table id="packageTable" class="highlight centered">
 		<thead>
 		  <tr>
@@ -112,14 +114,16 @@
 			<% end %>
 			<tr class="totalcash">
 				<td><strong> MTD - Total: </strong></td>
-				<td><% total = @month.map do |p| %>
-						<% p.price.to_f %>
-						<% end %>
-						<strong><%= sprintf '$%.2f', total.inject(:+) %></strong>
-				</td>
+				<% unless @month.empty? %>
+					<td><% total = @month.map do |p| %>
+							<% p.price.to_f %>
+							<% end %>
+							<strong><%= sprintf '$%.2f', total.inject(:+) %></strong>
+					</td>
+				<% end %>
 		</tbody>
 	</table>
-	<h5> Year to Date Bookings </h5>
+	<h5 class="heading"> Year to Date Bookings </h5>
 	<table id="packageTable" class="highlight centered">
 		<thead>
 		  <tr>
@@ -143,11 +147,13 @@
 			<% end %>
 			<tr class="totalcash">
 				<td><strong> YTD - Total: </strong></td>
-				<td><% total = @year.map do |p| %>
-						<% p.price.to_f %>
-						<% end %>
-						<strong><%= sprintf '$%.2f', total.inject(:+) %></strong>
-				</td>
+				<% unless @year.empty? %>
+					<td><% total = @year.map do |p| %>
+							<% p.price.to_f %>
+							<% end %>
+							<strong><%= sprintf '$%.2f', total.inject(:+) %></strong>
+					</td>
+				<% end %>
 		</tbody>
 	</table>
 

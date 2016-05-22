@@ -136,7 +136,13 @@ footer.navbar-inverse div {
   display: flex;
   flex-direction: column;
 }
-
+.heading {
+  text-align: center;
+  background-color: #EF5050;
+  padding: 12px 0 12px 0;
+  color: white;
+  font-size: 32px ;
+}
 .card.medium > div {
   flex: 1;
 }

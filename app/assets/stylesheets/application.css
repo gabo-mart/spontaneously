@@ -16,12 +16,22 @@
 *= require_self
 */
  /*material nav bar */
+.card-reveal > p {
+  font-size: 1.5em;
+  color: #757575;
+  text-align: center;
+}
+
+#bookbutton {
+  margin: auto;
+}
+
 nav {
-  background-color: #028090;
+  background-color: #ff5252;
 }
 
 footer.page-footer {
-  background-color: #114B5F;
+  background-color: #ff5252;
 }
 
 html,
@@ -35,6 +45,12 @@ body {
   min-height: 100vh;
   flex-direction: column;
 }
+
+
+h4 {
+        font-family: 'Give You Glory', cursive;
+        font-size: 48px;
+      }
 
 main {
   flex: 1 0 auto;
@@ -110,4 +126,25 @@ footer.navbar-inverse div {
   display: flex;
   flex-direction: column;
   margin-left: 50px;
+}
+
+#footerlinks a {
+  color: #fff !important;
+}
+
+.card.medium {
+  display: flex;
+  flex-direction: column;
+}
+
+.card.medium > div {
+  flex: 1;
+}
+
+.card.small .card-image, .card.medium .card-image, .card.large .card-image {
+  max-height: 80% !important;
+}
+
+.card.small .card-content, .card.medium .card-content, .card.large .card-content {
+  max-height: 20% !important;
 }

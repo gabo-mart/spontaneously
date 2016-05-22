@@ -18,6 +18,8 @@ Vendor.create([{
 
   }])
 
+
+
   Ship.create([{
     name: "Carnival Vista",
     tonnage: 133500,

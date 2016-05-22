@@ -46,10 +46,18 @@
     <!-- <label>Ship </label> -->
   </div>
 
-  <div class="field">
-    <%= f.file_field :avatar %>
+  <div class="file-field input-field">
+    <div class="btn">
+      <span>File</span>
+      <%= f.file_field :avatar %>
+    </div>
+    <div class="file-path-wrapper">
+      <input class="file-path validate" type="text">
+    </div>
   </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
+    
+    <div class="actions">
+      <a class="waves-effect waves-light btn-large"><%= f.submit "Submit"%></a>
+    </div>
 <% end %>

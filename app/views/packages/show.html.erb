@@ -18,28 +18,29 @@
 
 
     <!-- temputure and Forcasting -->
-    <h1 id='temp'><%= temp %> °F &nbsp; &nbsp;  <%= description.capitalize %></h1>
+
+    <span id='temp'>CURRENT WEATHER: &nbsp; &nbsp; &nbsp;<%= temp %> °F &nbsp; &nbsp;  <%= description.upcase %></span>
 
 
     <!-- Amenities Tab Bar -->
 
-    <div class="container">
-      <div class="row text-center" id="packagebar">
+    <div class>
+      <div class="row z-depth-1" id="packageheading">
         <div class="col s4">
-          <h2> <%= @package.ship.name %> </h2>
+          <h3> <%= @package.ship.name.upcase %> </h3>
         </div>
         <div class="col s4">
-          <h2> <%= @package.duration %></h2>
+          <h3> <%= @package.duration.upcase %></h3>
         </div>
         <div class="col s4">
-          <h2> <%= @package.itinerary %></h2>
+          <h3> <%= @package.itinerary.upcase %></h3>
         </div>
 
       </div>
-      <div class="row">
+      <div class="row" id="packagedetails">
 
         <div class="col s4" id="left">
-          <h4 class="text-center">Ship Features</h4>
+          <h5 class="text-center">Ship Features</h5>
           <ul>
             <li><i class="fa fa-ship" aria-hidden="true"></i> Tonnage: <%= @package.ship.tonnage %></li>
             <li><i class="fa fa-ship" aria-hidden="true"></i> Guest Capacity: <%= @package.ship.guest_capacity %></li>
@@ -66,7 +67,7 @@
         </div>
 
         <div class="col s4" id="middle">
-          <h4 class="text-center">Activities</h4>
+          <h5 class="text-center">Activities</h5>
           <% if @package.ship.activities != nil%>
           <ul>
             <% @package.ship.activities.each do |key, value| %>
@@ -78,7 +79,7 @@
         </div>
 
         <div class="col s4" id="right">
-          <h4 class="text-center">Restaurants and Bars</h4>
+          <h5 class="text-center">Restaurants and Bars</h5>
           <% if @package.ship.dining != nil%>
           <ul>
             <% @package.ship.dining.each do |key, value| %>

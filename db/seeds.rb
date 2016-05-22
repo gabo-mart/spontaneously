@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Vendor.create([{
+Vendor.create!([{
   company:   "Carnival",
   email:   "admin@carnival.com",
   password:   "asdf"
@@ -20,7 +20,7 @@ Vendor.create([{
 
 
 
-  Ship.create([{
+  Ship.create!([{
     name: "Carnival Vista",
     tonnage: 133500,
     vendor_id: 1,
@@ -329,7 +329,7 @@ Vendor.create([{
       "Vineyard"=>"on"
     }}])
 
-    User.create([{
+    User.create!([{
       username:   "asdf",
       first_name:   "Ed",
       last_name:   "Toro",
@@ -386,7 +386,7 @@ Vendor.create([{
       password:   "asdf"
       }])
 
-      Package.create([
+      Package.create!([
         {
         itinerary:   "Bahamas",
         start_date:   DateTime.new(2016, 6, 3),

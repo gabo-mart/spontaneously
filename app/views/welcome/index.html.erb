@@ -20,6 +20,7 @@
             <p><%= package.itinerary %></p>
             <p><%= "$" + package.price.to_s %></p>
             <p><%= package.duration %></p>
+            <p>Rooms: <%= package.rooms %> People: <%= package.people %></p>
             <p><%= package.start_date.to_formatted_s(:long)  %> - <%= package.end_date.to_formatted_s(:long)     %></p>
             <p><%= link_to "Book Now!", vendor_package_path(package.vendor_id, package), :class => "btn btn-success" %></p>
           </div>

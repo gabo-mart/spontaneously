@@ -16,6 +16,16 @@
 *= require_self
 */
  /*material nav bar */
+.card-reveal > p {
+  font-size: 1.5em;
+  color: #757575;
+  text-align: center;
+}
+
+#bookbutton {
+  margin: auto;
+}
+
 nav {
   background-color: #ff5252;
 }

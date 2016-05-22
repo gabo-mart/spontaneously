@@ -1,137 +1,118 @@
-<div class="slider">
-    <ul class="slides">
-      <li>
-        <img src="http://lorempixel.com/580/250/nature/1"> <!-- random image -->
-        <div class="caption center-align">
-          <h3>This is our big Tagline!</h3>
-          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-        </div>
-      </li>
-      <li>
-        <img src="http://lorempixel.com/580/250/nature/2"> <!-- random image -->
-        <div class="caption left-align">
-          <h3>Left Aligned Caption</h3>
-          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-        </div>
-      </li>
-      <li>
-        <img src="http://lorempixel.com/580/250/nature/3"> <!-- random image -->
-        <div class="caption right-align">
-          <h3>Right Aligned Caption</h3>
-          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-        </div>
-      </li>
-      <li>
-        <img src="http://lorempixel.com/580/250/nature/4"> <!-- random image -->
-        <div class="caption center-align">
-          <h3>This is our big Tagline!</h3>
-          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-        </div>
-      </li>
-    </ul>
-  </div>
+<div class="animated fadeInLeft" onload="Materialize.showStaggeredList('#staggered-test')">
 
+<ul class="row text" id="staggered-test">
 
+  <li class="col s4" style="transform: translateX(0px); opacity: 1;">
+    <img class="responsive-img" src="http://placehold.it/350x350" />
+  </li>
 
+  <li class="col s4" style="transform: translateX(0px); opacity: 1;">
+    <img class="responsive-img" src="http://placehold.it/350x350" />
+  </li>
 
-
-
-<!-- temputure and Forcasting -->
-<h1 id='temp'><%= temp %> °F &nbsp; &nbsp;  <%= description.capitalize %></h1>
-
-
-<!-- Amenities Tab Bar -->
-
-<div class="container">
-  <div class="row text-center" id="packagebar">
-    <div class="col s4">
-      <h2> <%= @package.ship.name %> </h2>
-    </div>
-    <div class="col s4">
-      <h2> <%= @package.duration %></h2>
-    </div>
-    <div class="col s4">
-      <h2> <%= @package.itinerary %></h2>
-    </div>
-
-  </div>
-  <div class="row">
-
-    <div class="col s4" id="left">
-      <h4 class="text-center">Ship Features</h4>
-      <ul>
-        <li><i class="fa fa-ship" aria-hidden="true"></i> Tonnage: <%= @package.ship.tonnage %></li>
-        <li><i class="fa fa-ship" aria-hidden="true"></i> Guest Capacity: <%= @package.ship.guest_capacity %></li>
-        <li><i class="fa fa-ship" aria-hidden="true"></i> Length in Feet: <%= @package.ship.length_in_feet %></li>
-        <li><i class="fa fa-ship" aria-hidden="true"></i> Onboard Crew: <%= @package.ship.onboard_crew %></li>
-        <li><i class="fa fa-wifi" aria-hidden="true"></i> Internet Cafe</li>
-        <li><i class="fa fa-clock-o" aria-hidden="true"></i> 24-Hour Room Service</li>
-        <li><i class="fa fa-clock-o" aria-hidden="true"></i> 24-Hour Room Steward</li>
-        <li><i class="fa fa-lock" aria-hidden="true"></i> Personal Safe</li>
-        <li><i class="fa fa-bed" aria-hidden="true"></i> Nightly Turndown Service</li>
-        <li><i class="fa fa-arrows" aria-hidden="true"></i> Generous Closet and Drawer Space</li>
-        <li><i class="fa fa-key" aria-hidden="true"></i> Private Bathroom and Shower</li>
-        <li><i class="fa fa-television" aria-hidden="true"></i> Television</li>
-        <li><i class="fa fa-arrows-h" aria-hidden="true"></i> Connecting Rooms</li>
-        <li><i class="fa fa-wheelchair-alt" aria-hidden="true"></i> Accessible Cruising</li>
-        <li><i class="fa fa-glass" aria-hidden="true"></i></i> Adults Only Area</li>
-        <li><i class="fa fa-life-ring" aria-hidden="true"></i> Pools</li>
-        <li><i class="fa fa-female" aria-hidden="true"></i> Beauty Salon</li>
-        <li><i class="fa fa-bolt" aria-hidden="true"></i> Jogging Track</li>
-        <li><i class="fa fa-bolt" aria-hidden="true"></i> Fitness Center</li>
-        <li><i class="fa fa-book" aria-hidden="true"></i> Library</li>
-
-      </ul>
-    </div>
-
-    <div class="col s4" id="middle">
-      <h4 class="text-center">Activities</h4>
-      <% if @package.ship.activities != nil%>
-      <ul>
-          <% @package.ship.activities.each do |key, value| %>
-          <li><%= key %></li>
-          <% end %>
-
-      </ul>
-      <% end %>
-    </div>
-
-    <div class="col s4" id="right">
-      <h4 class="text-center">Restaurants and Bars</h4>
-      <% if @package.ship.dining != nil%>
-      <ul>
-        <% @package.ship.dining.each do |key, value| %>
-        <li><%= key %></li>
-        <% end %>
-      </ul>
-      <% end%>
-    </div>
-
-<% if current_user %>
-  <%= form_tag charges_path do %>
-    <article>
-      <% if flash[:error].present? %>
-        <div id="error_explanation">
-          <p><%= flash[:error] %></p>
-        </div>
-      <% end %>
-      <label class="amount">
-        <span>Amount: <%= "$" + @package.price.to_s %></span>
-      </label>
-    </article>
-    <input name="package_id" value=<%= @package.id %> type="hidden">
-    <input name="user_id" value=<%= current_user.id %> type="hidden">
-      <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-              data-key='pk_test_wsu2jhJ68jqECNhfJzaQnwRS'
-              data-description='<%= @package.duration %> - <%= @package.itinerary %>'
-              data-amount=<%= @package.price.to_f * 100 %>
-              data-locale="auto"></script>
-    <% end %>
-<% end %>
-
-<% if current_vendor == @vendor %>
-  <%= link_to 'Edit', edit_vendor_package_path(@vendor, @package) %> |
-<% end %>
-<%= link_to 'Back', root_path %>
-  </div>
+  <li class="col s4" style="transform: translateX(0px); opacity: 1;">
+    <img class="responsive-img" src="http://placehold.it/350x350" />
+  </li>
+</ul>
 </div>
+
+
+    <!-- temputure and Forcasting -->
+    <h1 id='temp'><%= temp %> °F &nbsp; &nbsp;  <%= description.capitalize %></h1>
+
+
+    <!-- Amenities Tab Bar -->
+
+    <div class="container">
+      <div class="row text-center" id="packagebar">
+        <div class="col s4">
+          <h2> <%= @package.ship.name %> </h2>
+        </div>
+        <div class="col s4">
+          <h2> <%= @package.duration %></h2>
+        </div>
+        <div class="col s4">
+          <h2> <%= @package.itinerary %></h2>
+        </div>
+
+      </div>
+      <div class="row">
+
+        <div class="col s4" id="left">
+          <h4 class="text-center">Ship Features</h4>
+          <ul>
+            <li><i class="fa fa-ship" aria-hidden="true"></i> Tonnage: <%= @package.ship.tonnage %></li>
+            <li><i class="fa fa-ship" aria-hidden="true"></i> Guest Capacity: <%= @package.ship.guest_capacity %></li>
+            <li><i class="fa fa-ship" aria-hidden="true"></i> Length in Feet: <%= @package.ship.length_in_feet %></li>
+            <li><i class="fa fa-ship" aria-hidden="true"></i> Onboard Crew: <%= @package.ship.onboard_crew %></li>
+            <li><i class="fa fa-wifi" aria-hidden="true"></i> Internet Cafe</li>
+            <li><i class="fa fa-clock-o" aria-hidden="true"></i> 24-Hour Room Service</li>
+            <li><i class="fa fa-clock-o" aria-hidden="true"></i> 24-Hour Room Steward</li>
+            <li><i class="fa fa-lock" aria-hidden="true"></i> Personal Safe</li>
+            <li><i class="fa fa-bed" aria-hidden="true"></i> Nightly Turndown Service</li>
+            <li><i class="fa fa-arrows" aria-hidden="true"></i> Generous Closet and Drawer Space</li>
+            <li><i class="fa fa-key" aria-hidden="true"></i> Private Bathroom and Shower</li>
+            <li><i class="fa fa-television" aria-hidden="true"></i> Television</li>
+            <li><i class="fa fa-arrows-h" aria-hidden="true"></i> Connecting Rooms</li>
+            <li><i class="fa fa-wheelchair-alt" aria-hidden="true"></i> Accessible Cruising</li>
+            <li><i class="fa fa-glass" aria-hidden="true"></i></i> Adults Only Area</li>
+            <li><i class="fa fa-life-ring" aria-hidden="true"></i> Pools</li>
+            <li><i class="fa fa-female" aria-hidden="true"></i> Beauty Salon</li>
+            <li><i class="fa fa-bolt" aria-hidden="true"></i> Jogging Track</li>
+            <li><i class="fa fa-bolt" aria-hidden="true"></i> Fitness Center</li>
+            <li><i class="fa fa-book" aria-hidden="true"></i> Library</li>
+
+          </ul>
+        </div>
+
+        <div class="col s4" id="middle">
+          <h4 class="text-center">Activities</h4>
+          <% if @package.ship.activities != nil%>
+          <ul>
+            <% @package.ship.activities.each do |key, value| %>
+            <li><%= key %></li>
+            <% end %>
+
+          </ul>
+          <% end %>
+        </div>
+
+        <div class="col s4" id="right">
+          <h4 class="text-center">Restaurants and Bars</h4>
+          <% if @package.ship.dining != nil%>
+          <ul>
+            <% @package.ship.dining.each do |key, value| %>
+            <li><%= key %></li>
+            <% end %>
+          </ul>
+          <% end%>
+        </div>
+
+        <% if current_user %>
+        <%= form_tag charges_path do %>
+        <article>
+          <% if flash[:error].present? %>
+          <div id="error_explanation">
+            <p><%= flash[:error] %></p>
+          </div>
+          <% end %>
+          <label class="amount">
+            <span>Amount: <%= "$" + @package.price.to_s %></span>
+          </label>
+        </article>
+        <input name="package_id" value=<%= @package.id %> type="hidden">
+        <input name="user_id" value=<%= current_user.id %> type="hidden">
+        <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+        data-key='pk_test_wsu2jhJ68jqECNhfJzaQnwRS'
+        data-description='<%= @package.duration %> - <%= @package.itinerary %>'
+        data-amount=<%= @package.price.to_f * 100 %>
+        data-locale="auto"></script>
+        <% end %>
+        <% end %>
+
+        <% if current_vendor == @vendor %>
+        <%= link_to 'Edit', edit_vendor_package_path(@vendor, @package) %> |
+        <% end %>
+        <%= link_to 'Back', root_path %>
+      </div>
+    </div>

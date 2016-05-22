@@ -37,18 +37,33 @@ Vendor.create([{
     "Games"=>"on",
     "Volleyball"=>"on",
     "Kid's Camp"=>"on",
-    "Live Music"=>"on"
+    "Live Music"=>"on",
+    "Stage Shows"=>"on",
+    "Basketball"=>"on",
+    "Karaoke"=>"on",
+    "Skycourse"=>"on",
+    "Mini Golf"=>"on",
+    "Waterslide"=>"on",
+    "Nightclub"=>"on"
     },
     dining: {
+      "Sushi"=>"on",
+      "Steakhouse"=>"on",
+      "BBQ"=>"on",
+      "Asian Kitchen"=>"on",
       "Deli"=>"on",
       "Pasta Bar"=>"on",
       "Salad Bar"=>"on",
       "Chef's Table"=>"on",
       "Burger Joint"=>"on",
       "Kid's Menu"=>"on",
-      "Breakfast Grill"=>"on"
-    }
-  },
+      "Breakfast Grill"=>"on",
+      "Sports Bar"=>"on",
+      "Rum Bar"=>"on",
+      "Tequila Bar"=>"on",
+      "Martini Bar"=>"on",
+      "Vineyard"=>"on"
+    }},
   {
     name: "Carnival Breeze",
     tonnage: 130000,
@@ -56,8 +71,43 @@ Vendor.create([{
     length_in_feet: 1004,
     guest_capacity: 3690,
     onboard_crew: 1386,
-    avatar: 'example.png'
-  },
+    avatar: 'example.png',
+    activities: {
+      "Casino"=>"on",
+    "Acupuncture"=>"on",
+    "Spa"=>"on",
+    "Movie Theater"=>"on",
+    "Bingo"=>"on",
+    "Games"=>"on",
+    "Volleyball"=>"on",
+    "Kid's Camp"=>"on",
+    "Live Music"=>"on",
+    "Stage Shows"=>"on",
+    "Basketball"=>"on",
+    "Karaoke"=>"on",
+    "Skycourse"=>"on",
+    "Mini Golf"=>"on",
+    "Waterslide"=>"on",
+    "Nightclub"=>"on"
+    },
+    dining: {
+      "Sushi"=>"on",
+      "Steakhouse"=>"on",
+      "BBQ"=>"on",
+      "Asian Kitchen"=>"on",
+      "Deli"=>"on",
+      "Pasta Bar"=>"on",
+      "Salad Bar"=>"on",
+      "Chef's Table"=>"on",
+      "Burger Joint"=>"on",
+      "Kid's Menu"=>"on",
+      "Breakfast Grill"=>"on",
+      "Sports Bar"=>"on",
+      "Rum Bar"=>"on",
+      "Tequila Bar"=>"on",
+      "Martini Bar"=>"on",
+      "Vineyard"=>"on"
+    }},
   {
     name: "Carnival Paradise",
     tonnage: 70367,
@@ -75,18 +125,33 @@ Vendor.create([{
     "Games"=>"on",
     "Volleyball"=>"on",
     "Kid's Camp"=>"on",
-    "Live Music"=>"on"
+    "Live Music"=>"on",
+    "Stage Shows"=>"on",
+    "Basketball"=>"on",
+    "Karaoke"=>"on",
+    "Skycourse"=>"on",
+    "Mini Golf"=>"on",
+    "Waterslide"=>"on",
+    "Nightclub"=>"on"
     },
     dining: {
+      "Sushi"=>"on",
+      "Steakhouse"=>"on",
+      "BBQ"=>"on",
+      "Asian Kitchen"=>"on",
       "Deli"=>"on",
       "Pasta Bar"=>"on",
       "Salad Bar"=>"on",
       "Chef's Table"=>"on",
       "Burger Joint"=>"on",
       "Kid's Menu"=>"on",
-      "Breakfast Grill"=>"on"
-    }
-    },
+      "Breakfast Grill"=>"on",
+      "Sports Bar"=>"on",
+      "Rum Bar"=>"on",
+      "Tequila Bar"=>"on",
+      "Martini Bar"=>"on",
+      "Vineyard"=>"on"
+    }},
     {
     name: "Carnival Paradise",
     tonnage: 70367,
@@ -94,8 +159,43 @@ Vendor.create([{
     length_in_feet: 855,
     guest_capacity: 2052,
     onboard_crew: 920,
-    avatar: 'example.png'
+    avatar: 'example.png',
+    activities: {
+      "Casino"=>"on",
+    "Acupuncture"=>"on",
+    "Spa"=>"on",
+    "Movie Theater"=>"on",
+    "Bingo"=>"on",
+    "Games"=>"on",
+    "Volleyball"=>"on",
+    "Kid's Camp"=>"on",
+    "Live Music"=>"on",
+    "Stage Shows"=>"on",
+    "Basketball"=>"on",
+    "Karaoke"=>"on",
+    "Skycourse"=>"on",
+    "Mini Golf"=>"on",
+    "Waterslide"=>"on",
+    "Nightclub"=>"on"
     },
+    dining: {
+      "Sushi"=>"on",
+      "Steakhouse"=>"on",
+      "BBQ"=>"on",
+      "Asian Kitchen"=>"on",
+      "Deli"=>"on",
+      "Pasta Bar"=>"on",
+      "Salad Bar"=>"on",
+      "Chef's Table"=>"on",
+      "Burger Joint"=>"on",
+      "Kid's Menu"=>"on",
+      "Breakfast Grill"=>"on",
+      "Sports Bar"=>"on",
+      "Rum Bar"=>"on",
+      "Tequila Bar"=>"on",
+      "Martini Bar"=>"on",
+      "Vineyard"=>"on"
+    }},
     {
     name: "Harmony of the Seas",
     tonnage: 226_000,
@@ -113,18 +213,33 @@ Vendor.create([{
     "Games"=>"on",
     "Volleyball"=>"on",
     "Kid's Camp"=>"on",
-    "Live Music"=>"on"
+    "Live Music"=>"on",
+    "Stage Shows"=>"on",
+    "Basketball"=>"on",
+    "Karaoke"=>"on",
+    "Skycourse"=>"on",
+    "Mini Golf"=>"on",
+    "Waterslide"=>"on",
+    "Nightclub"=>"on"
     },
     dining: {
+      "Sushi"=>"on",
+      "Steakhouse"=>"on",
+      "BBQ"=>"on",
+      "Asian Kitchen"=>"on",
       "Deli"=>"on",
       "Pasta Bar"=>"on",
       "Salad Bar"=>"on",
       "Chef's Table"=>"on",
       "Burger Joint"=>"on",
       "Kid's Menu"=>"on",
-      "Breakfast Grill"=>"on"
-    }
-    },
+      "Breakfast Grill"=>"on",
+      "Sports Bar"=>"on",
+      "Rum Bar"=>"on",
+      "Tequila Bar"=>"on",
+      "Martini Bar"=>"on",
+      "Vineyard"=>"on"
+    }},
     {
     name: "Allure of the Seas",
     tonnage: 225_282,
@@ -132,8 +247,43 @@ Vendor.create([{
     length_in_feet: 1_180,
     guest_capacity: 6_296,
     onboard_crew: 2_384,
-    avatar: 'example.png'
+    avatar: 'example.png',
+    activities: {
+      "Casino"=>"on",
+    "Acupuncture"=>"on",
+    "Spa"=>"on",
+    "Movie Theater"=>"on",
+    "Bingo"=>"on",
+    "Games"=>"on",
+    "Volleyball"=>"on",
+    "Kid's Camp"=>"on",
+    "Live Music"=>"on",
+    "Stage Shows"=>"on",
+    "Basketball"=>"on",
+    "Karaoke"=>"on",
+    "Skycourse"=>"on",
+    "Mini Golf"=>"on",
+    "Waterslide"=>"on",
+    "Nightclub"=>"on"
     },
+    dining: {
+      "Sushi"=>"on",
+      "Steakhouse"=>"on",
+      "BBQ"=>"on",
+      "Asian Kitchen"=>"on",
+      "Deli"=>"on",
+      "Pasta Bar"=>"on",
+      "Salad Bar"=>"on",
+      "Chef's Table"=>"on",
+      "Burger Joint"=>"on",
+      "Kid's Menu"=>"on",
+      "Breakfast Grill"=>"on",
+      "Sports Bar"=>"on",
+      "Rum Bar"=>"on",
+      "Tequila Bar"=>"on",
+      "Martini Bar"=>"on",
+      "Vineyard"=>"on"
+    }},
     {
     name: "Freedom of the Seas",
     tonnage: 154_407,
@@ -151,18 +301,33 @@ Vendor.create([{
     "Games"=>"on",
     "Volleyball"=>"on",
     "Kid's Camp"=>"on",
-    "Live Music"=>"on"
+    "Live Music"=>"on",
+    "Stage Shows"=>"on",
+    "Basketball"=>"on",
+    "Karaoke"=>"on",
+    "Skycourse"=>"on",
+    "Mini Golf"=>"on",
+    "Waterslide"=>"on",
+    "Nightclub"=>"on"
     },
     dining: {
+      "Sushi"=>"on",
+      "Steakhouse"=>"on",
+      "BBQ"=>"on",
+      "Asian Kitchen"=>"on",
       "Deli"=>"on",
       "Pasta Bar"=>"on",
       "Salad Bar"=>"on",
       "Chef's Table"=>"on",
       "Burger Joint"=>"on",
       "Kid's Menu"=>"on",
-      "Breakfast Grill"=>"on"
-    }
-    }])
+      "Breakfast Grill"=>"on",
+      "Sports Bar"=>"on",
+      "Rum Bar"=>"on",
+      "Tequila Bar"=>"on",
+      "Martini Bar"=>"on",
+      "Vineyard"=>"on"
+    }}])
 
     User.create([{
       username:   "asdf",
@@ -221,7 +386,8 @@ Vendor.create([{
       password:   "asdf"
       }])
 
-      Package.create([{
+      Package.create([
+        {
         itinerary:   "Bahamas",
         start_date:   DateTime.new(2016, 6, 3),
         end_date:     DateTime.new(2016, 6, 6),
@@ -230,7 +396,7 @@ Vendor.create([{
         rooms:   1,
         people: 3,
         room_type: "Balcony Room",
-        avatar: "example.png",
+        remote_avatar_url: "https://s3.amazonaws.com/spontaneously/uploads/package/avatar/1/beachsq.jpg",
         vendor_id: 1,
         ship_id: 1
         },
@@ -243,7 +409,7 @@ Vendor.create([{
         rooms:   1,
         people: 2,
         room_type: "Spa Room",
-        avatar: "example.png",
+        remote_avatar_url: "https://s3.amazonaws.com/spontaneously/uploads/package/avatar/2/coconutdrinksq.jpg",
         vendor_id: 1,
         ship_id: 2
         },
@@ -256,7 +422,7 @@ Vendor.create([{
         rooms:   1,
         people: 2,
         room_type: "Interior Cabin",
-        avatar: "example.png",
+        remote_avatar_url: "https://s3.amazonaws.com/spontaneously/uploads/package/avatar/3/waterboatsq.jpg",
         vendor_id: 2,
         ship_id: 6,
         booked_at: Date.new(2016,4,28)
@@ -270,7 +436,7 @@ Vendor.create([{
         rooms:   1,
         people: 2,
         room_type: "Spa Room",
-        avatar: "example.png",
+        remote_avatar_url: "https://s3.amazonaws.com/spontaneously/uploads/package/avatar/4/jamaicasq.jpg",
         vendor_id: 2,
         ship_id: 4,
         user_id: 3,
@@ -285,7 +451,7 @@ Vendor.create([{
         rooms:   1,
         people: 2,
         room_type: "Spa Room",
-        avatar: "example.png",
+        remote_avatar_url: "https://s3.amazonaws.com/spontaneously/uploads/package/avatar/5/starfishsq.jpg",
         vendor_id: 2,
         ship_id: 5,
         booked_at: Date.new(2016,5,21)
@@ -299,7 +465,7 @@ Vendor.create([{
         rooms:   1,
         people: 2,
         room_type: "Spa Room",
-        avatar: "example.png",
+        remote_avatar_url: "https://s3.amazonaws.com/spontaneously/uploads/package/avatar/6/sunsetkwsq.jpg",
         vendor_id: 2,
         ship_id: 3,
         booked_at: Date.new(2016,5,18)

@@ -11,6 +11,7 @@
 			<li><strong>Onboard crew: </strong><%= @ship.onboard_crew %></li>
 			<li><strong>Activities: </strong><%= @ship.activities.keys.to_sentence unless @ship.activities.nil? %></li>
 			<li><strong>Dining: </strong><%= @ship.dining.keys.to_sentence unless @ship.dining.nil? %></li>
+			<li><strong>Rating: </strong><%= @ship.rating %></li>
 		</ul>
 
 		<div class="col-md-8 col-md-offset-1">
@@ -18,9 +19,25 @@
 		</div>
 
 	</div>
-	<ul class="rating">
+
+
+
+<% if @reviews.nil? %>
+	<h6>No reviews just yet. Be the first!</h6>
+<% else %>
+	<% @reviews.each do |review| %>
+		<div class="reviews">
+			<p><%= review.rating %></p>
+			<p><%= review.description %></p>
+		</div>
+	<% end %>
+<% end %>
+
+
+<%= render 'reviews/form'%>
+<!-- 	<ul class="rating">
 		<li class='rating_star' ></li>
-	</ul>
+	</ul> -->
 
 
 

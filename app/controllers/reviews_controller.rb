@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
   before_action :set_review, only: [:show, :edit, :update, :destroy]
-  before_action :require_logged_in
+  # before_action :require_logged_in
   # GET /reviews
   # GET /reviews.json
   def index
@@ -25,10 +25,12 @@ class ReviewsController < ApplicationController
   # POST /reviews.json
   def create
     @review = Review.new(review_params)
+    @ship = Ship.find(params[:ship_id].keys.to_sentence)
+    @vendor = Vendor.find(params[:vendor_id].keys.to_sentence)
 
     respond_to do |format|
       if @review.save
-        format.html { redirect_to reviews_path, notice: 'Review was successfully created.' }
+        format.html { redirect_to vendor_ship_path(params[:vendor_id].keys.to_sentence, params[:ship_id].keys.to_sentence), notice: 'Review was successfully created.' }
         format.json { render :show, status: :created, location: @review }
       else
         format.html { render :new }
@@ -70,6 +72,6 @@ class ReviewsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def review_params
-      params.require(:review).permit(:title, :description, :user_id)
+      params.require(:review).permit(:title, :description, :user_id, :ship_id, :rating)
     end
 end

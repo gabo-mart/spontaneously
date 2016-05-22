@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
 
 
-  resources :reviews
   resources :users
+  resources :reviews
+  # resources :ships do
+  #   resource :reviews
+  # end
 
   root 'welcome#index'
 

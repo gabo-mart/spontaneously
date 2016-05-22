@@ -1,28 +1,19 @@
 <%= form_for(@review) do |f| %>
-  <% if @review.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@review.errors.count, "error") %> prohibited this review from being saved:</h2>
-
-      <ul>
-      <% @review.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
 
   <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
+    <%= f.label :rating %><br>
+    <%= f.number_field :rating, max: 5, min: 0 %>
   </div>
   <div class="field">
     <%= f.label :description %><br>
-    <%= f.text_area :description %>
+    <%= f.text_area :description, max: 5, min: 0, class: "materialize-textarea" %>
   </div>
 
   <%= f.hidden_field :user_id, :value => current_user.id %>
+  <%= hidden_field :ship_id, @ship.id %>
+  <%= hidden_field :vendor_id, @ship.vendor.id %>
 
   <div class="actions">
-    <%= f.submit %>
+    <a class="waves-effect waves-light btn-large"><%= f.submit "Submit"%></a>
   </div>
 <% end %>

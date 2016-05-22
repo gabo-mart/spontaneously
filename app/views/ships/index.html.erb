@@ -1,0 +1,17 @@
+
+<table id="packageTable" class="highlight centered">
+<thead>
+	  <tr>
+	    <th>Ship</th>
+	    <th>Company</th>
+	  </tr>
+	</thead>
+	<tbody>
+		<% @allships.each do |ship| %>
+			<tr onclick='window.location="<%= vendor_ship_path(ship.vendor.id, ship.id) %>"' >
+				<td><%= link_to ship.name, vendor_ship_path(ship.vendor.id, ship.id) %></td>
+				<td><%= ship.vendor.company %></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>

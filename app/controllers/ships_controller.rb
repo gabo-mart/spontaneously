@@ -18,6 +18,8 @@ class ShipsController < ApplicationController
 	end
 
 	def show
+		@review = Review.new
+		@reviews = Review.where(ship_id: @ship.id).order("created_at DESC")
 	end
 
 	def create

@@ -22,6 +22,29 @@
    <div class="nav-wrapper">
      <a href="<%= root_path %>" class="brand-logo">Spontaneously</a>
      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+     <ul class="right hide-on-med-and-down">
+       <% if current_user %>
+         <li>
+           <%= link_to "" , user_path(current_user.id), :class => "fa fa-ticket fa-2x"%>
+         <li>
+           <a href="/users/<%= current_user.id %>">
+           Hi </strong><%= current_user.username.capitalize %>! 😀</strong></a>
+         </li>
+         <li>
+           <%= link_to 'Log Out', logout_path %>
+         </li>
+         <li>
+           <%= link_to 'Home', root_path, :class => "waves-effect waves-light" %>
+         </li>
+       <% elsif !current_vendor %>
+           <li><a href="/usersign_up"><span class="fa fa-user "></span> Create Account</a></li>
+           <li><a href="/user/login"><span class="fa fa-sign-in"></span> Login</a></li>
+       <% elsif !current_user && !current_vendor %>
+         <li>
+           <%= link_to "Sign Up" , usersign_up_path, :class => "" %>
+         </li>
+       <% end %>
+     </ul>
      <ul class="side-nav" id="mobile-demo">
        <% if current_user %>
          <li>

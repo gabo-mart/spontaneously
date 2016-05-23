@@ -83,16 +83,16 @@
 
     <footer class="page-footer">
       <div class="container">
-        <div class="row">
-          <div class="col l6 s12" id="footerlinks">
-
+        <div class="row" id="footerlinks">
+              <div class= "col s6">
 
             <%= link_to "ABOUT  |", "#" %>
             <%= link_to "JOBS  |", "#" %>
             <%= link_to "SUPPORT  |", "#" %>
              <%= link_to "FAQ  |", "#" %>
              <%= link_to "TERMS", "#" %>
-             <span class="right">
+             </div>
+             <div class="col s6 right-align">
                <% if current_vendor %>
                  <%= link_to "Log out", logout_path, :class => "grey-text text-lighten-3" %>
                  <%= link_to "Dashboard", vendor_path(current_vendor), :class => "grey-text text-lighten-3" %>
@@ -102,7 +102,7 @@
                   or
                   <strong><%= link_to "Sign Up", new_vendor_path, :class => "grey-text text-lighten-3" %></strong>
               <%end%>
-              </span>
+            </div>
           </div>
         </div>
       </div>

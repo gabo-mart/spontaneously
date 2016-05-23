@@ -11,62 +11,60 @@
   </li>
 
   <li class="col s4 animated flipInY" style="transform: translateX(0px); opacity: 1;">
-    <img class="responsive-img" src="https://s3.amazonaws.com/spontaneously/uploads/balcony.jpg" />
+    <img class="responsive-img" src="https://s3.amazonaws.com/spontaneously/uploads/carnival_suitesq.jpg" />
   </li>
 </ul>
 </div>
 
-
-    <!-- temputure and Forcasting -->
-
-    <span id='temp'>CURRENT WEATHER: &nbsp; &nbsp; &nbsp;<%= temp %> °F &nbsp; &nbsp;  <%= description.upcase %></span>
-
-
     <!-- Amenities Tab Bar -->
 
-    <div class>
-      <div class="row z-depth-1" id="packageheading">
-        <div class="col s4">
-          <h3> <%= @package.ship.name.upcase %> </h3>
-        </div>
-        <div class="col s4">
-          <h3> <%= @package.duration.upcase %></h3>
-        </div>
-        <div class="col s4">
-          <h3> <%= @package.itinerary.upcase %></h3>
-        </div>
+    <div class="row z-depth-1" id="packageheading">
+      <span id='temp'>
+        <i class="material-icons icon-temp">cloud</i>
+        <%= temp %> °F &nbsp; &nbsp;  <%= description.upcase %>
+      </span>
 
-      </div>
-      <div class="row" id="packagedetails">
+        <h5 class="col s12 m4"> <%= @package.ship.name.upcase %> </h5>
+        <h5 class="col s12 m4"> <%= @package.duration.upcase %></h5>
+        <h5 class="col s12 m4"> <%= @package.itinerary.upcase %></h5>
+    </div>
 
-        <div class="col s4" id="left">
-          <h5 class="text-center">Ship Features</h5>
-          <ul>
-            <li><i class="fa fa-ship" aria-hidden="true"></i> Tonnage: <%= @package.ship.tonnage %></li>
-            <li><i class="fa fa-ship" aria-hidden="true"></i> Guest Capacity: <%= @package.ship.guest_capacity %></li>
-            <li><i class="fa fa-ship" aria-hidden="true"></i> Length in Feet: <%= @package.ship.length_in_feet %></li>
-            <li><i class="fa fa-ship" aria-hidden="true"></i> Onboard Crew: <%= @package.ship.onboard_crew %></li>
-            <li><i class="fa fa-wifi" aria-hidden="true"></i> Internet Cafe</li>
-            <li><i class="fa fa-clock-o" aria-hidden="true"></i> 24-Hour Room Service</li>
-            <li><i class="fa fa-clock-o" aria-hidden="true"></i> 24-Hour Room Steward</li>
-            <li><i class="fa fa-lock" aria-hidden="true"></i> Personal Safe</li>
-            <li><i class="fa fa-bed" aria-hidden="true"></i> Nightly Turndown Service</li>
-            <li><i class="fa fa-arrows" aria-hidden="true"></i> Generous Closet and Drawer Space</li>
-            <li><i class="fa fa-key" aria-hidden="true"></i> Private Bathroom and Shower</li>
-            <li><i class="fa fa-television" aria-hidden="true"></i> Television</li>
-            <li><i class="fa fa-arrows-h" aria-hidden="true"></i> Connecting Rooms</li>
-            <li><i class="fa fa-wheelchair-alt" aria-hidden="true"></i> Accessible Cruising</li>
-            <li><i class="fa fa-glass" aria-hidden="true"></i></i> Adults Only Area</li>
-            <li><i class="fa fa-life-ring" aria-hidden="true"></i> Pools</li>
-            <li><i class="fa fa-female" aria-hidden="true"></i> Beauty Salon</li>
-            <li><i class="fa fa-bolt" aria-hidden="true"></i> Jogging Track</li>
-            <li><i class="fa fa-bolt" aria-hidden="true"></i> Fitness Center</li>
-            <li><i class="fa fa-book" aria-hidden="true"></i> Library</li>
+    <div class="row">
+       <div class="col s12">
+         <div class="card package-teal">
+           <div class="card-content white-text">
+             <span class="card-title">Ship Features</span>
+            <div class="row ship-coll-icons">
+              <span class="col s12 m4 l4"><i class="fa fa-ship" aria-hidden="true"></i> Tonnage: <%= @package.ship.tonnage %></span>
+              <span class="col s12 m4 l4"><i class="fa fa-ship" aria-hidden="true"></i> Guest Capacity: <%= @package.ship.guest_capacity %></span>
+              <span class="col s12 m4 l4"><i class="fa fa-ship" aria-hidden="true"></i> Length in Feet: <%= @package.ship.length_in_feet %></span>
+              <span class="col s12 m4 l4"><i class="fa fa-ship" aria-hidden="true"></i> Onboard Crew: <%= @package.ship.onboard_crew %></span>
+              <span class="col s12 m4 l4"><i class="fa fa-wifi" aria-hidden="true"></i> Internet Cafe</span>
+              <span class="col s12 m4 l4"><i class="fa fa-clock-o" aria-hidden="true"></i> 24-Hour Room Service</span>
+              <span class="col s12 m4 l4"><i class="fa fa-clock-o" aria-hidden="true"></i> 24-Hour Room Steward</span>
+              <span class="col s12 m4 l4"><i class="fa fa-lock" aria-hidden="true"></i> Personal Safe</span>
+              <span class="col s12 m4 l4"><i class="fa fa-bed" aria-hidden="true"></i> Nightly Turndown Service</span>
+              <span class="col s12 m4 l4"><i class="fa fa-arrows" aria-hidden="true"></i> Generous Closet and Drawer Space</span>
+              <span class="col s12 m4 l4"><i class="fa fa-key" aria-hidden="true"></i> Private Bathroom and Shower</span>
+              <span class="col s12 m4 l4"><i class="fa fa-television" aria-hidden="true"></i> Television</span>
+              <span class="col s12 m4 l4"><i class="fa fa-arrows-h" aria-hidden="true"></i> Connecting Rooms</span>
+              <span class="col s12 m4 l4"><i class="fa fa-wheelchair-alt" aria-hidden="true"></i> Accessible Cruising</span>
+              <span class="col s12 m4 l4"><i class="fa fa-glass" aria-hidden="true"></i></i> Adults Only Area</span>
+              <span class="col s12 m4 l4"><i class="fa fa-life-ring" aria-hidden="true"></i> Pools</span>
+              <span class="col s12 m4 l4"><i class="fa fa-female" aria-hidden="true"></i> Beauty Salon</span>
+              <span class="col s12 m4 l4"><i class="fa fa-bolt" aria-hidden="true"></i> Jogging Track</span>
+              <span class="col s12 m4 l4"><i class="fa fa-bolt" aria-hidden="true"></i> Fitness Center</span>
+              <span class="col s12 m4 l4"><i class="fa fa-book" aria-hidden="true"></i> Library</span>
+            </div>
+           </div>
+         </div>
+       </div>
+     </div>
 
-          </ul>
-        </div>
 
-        <div class="col s4" id="middle">
+      <div class="row">
+
+        <div class="col s12 m6 center-align">
           <h5 class="text-center">Activities</h5>
           <% if @package.ship.activities != nil%>
           <ul>
@@ -77,8 +75,7 @@
           </ul>
           <% end %>
         </div>
-
-        <div class="col s4" id="right">
+        <div class="col s12 m6  center-align">
           <h5 class="text-center">Restaurants and Bars</h5>
           <% if @package.ship.dining != nil%>
           <ul>
@@ -88,9 +85,10 @@
           </ul>
           <% end%>
         </div>
+    </div>
 
         <% if current_user %>
-        <%= form_tag charges_path do %>
+        <%= form_tag charges_path, :class => "center-align" do %>
         <article>
           <% if flash[:error].present? %>
           <div id="error_explanation">
@@ -112,8 +110,7 @@
         <% end %>
 
         <% if current_vendor == @vendor %>
-        <%= link_to 'Edit', edit_vendor_package_path(@vendor, @package) %> |
+        <%= link_to 'Edit', edit_vendor_package_path(@vendor, @package), :class => "waves-effect waves-light" %> |
         <% end %>
-        <%= link_to 'Back', root_path %>
       </div>
     </div>

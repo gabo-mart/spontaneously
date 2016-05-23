@@ -26,7 +26,6 @@
 			<div class="reviews">
 					<div class="star-rating" data-score=<%= review_total.inject(:+) / review_total.count %> ></div>
 			</div>
-			<h6>Leave us a review!</h6>
 <% else %>
 	<h6><strong>No reviews just yet. Be the first!</strong></h6>
 
@@ -35,8 +34,10 @@
 
 
 
-
-<%= render 'reviews/form'%>
+<% if current_user %>
+	<h6>Leave us a review!</h6>
+	<%= render 'reviews/form'%>
+<% end %>
 <!-- 	<ul class="rating">
 		<li class='rating_star' ></li>
 	</ul> -->

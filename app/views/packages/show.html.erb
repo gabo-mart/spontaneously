@@ -90,7 +90,7 @@
         </div>
     </div>
 
-        <% if current_user %>
+      <% if current_user %>
         <%= form_tag charges_path, :class => "center-align" do %>
         <article>
           <% if flash[:error].present? %>
@@ -111,9 +111,41 @@
         data-locale="auto"></script>
         <% end %>
         <% end %>
+        <br>
+<div class="container">
+  <% if @reviews.any? %>
+    <h6><strong>Average Rating of this Ship</strong></h6>
+      <% review_total = @reviews.map do |review| %>
+        <% review.rating %> 
+      <% end %>
+      <div class="reviews">
+      <div class="star-rating" data-score=<%= review_total.inject(:+) / review_total.count %> ></div>
+      <br>
+      <h6> Reviews: </h6>
+    <% @reviews.each do |review| %>
+      <div class="reviews">
+      <div class="star-rating" data-score= <%= review.rating %> ></div>
+      <p><%= review.description %></p>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
+
 
         <% if current_vendor == @vendor %>
         <%= link_to 'Edit', edit_vendor_package_path(@vendor, @package), :class => "waves-effect waves-light" %> |
         <% end %>
+
       </div>
     </div>
+
+<script>
+  $('.star-rating').raty({
+    path: '/assets/',
+    readOnly: true,
+    score: function() {
+      return $(this).attr('data-score');
+    }
+  });
+</script>

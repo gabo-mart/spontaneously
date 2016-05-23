@@ -33,11 +33,11 @@ class SessionsController < ApplicationController
 
   def destroy
     if current_vendor
-      redirect_to root_url, notice: "Bye 😔 👋!!"
+      redirect_to root_url, notice: "You are now logged out"
       session[:vendor_id] = nil
     else
       session[:user_id] = nil
-      redirect_to root_url, notice: "Bye 😔 👋!!"
+      redirect_to root_url, notice: "You are now logged out"
     end
   end
 

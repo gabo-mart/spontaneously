@@ -24,13 +24,14 @@ class ReviewsController < ApplicationController
   # POST /reviews
   # POST /reviews.json
   def create
-    @review = Review.new(review_params)
-    @ship = Ship.find(params[:ship_id].keys.to_sentence)
-    @vendor = Vendor.find(params[:vendor_id].keys.to_sentence)
+    @ship = Ship.find(params[:ship_id])
+    @review = @ship.reviews.new(review_params)
+    @review.user = current_user
+    
 
     respond_to do |format|
       if @review.save
-        format.html { redirect_to vendor_ship_path(params[:vendor_id].keys.to_sentence, params[:ship_id].keys.to_sentence), notice: 'Review was successfully created.' }
+        format.html { redirect_to @ship, notice: 'Review was successfully created.' }
         format.json { render :show, status: :created, location: @review }
       else
         format.html { render :new }

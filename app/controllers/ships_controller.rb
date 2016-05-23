@@ -19,7 +19,7 @@ class ShipsController < ApplicationController
 
 	def show
 		@review = Review.new
-		@reviews = Review.where(ship_id: @ship.id).order("created_at DESC")
+		@reviews = @ship.reviews.order("created_at DESC")
 	end
 
 	def create

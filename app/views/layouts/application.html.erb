@@ -22,6 +22,29 @@
    <div class="nav-wrapper">
      <a href="<%= root_path %>" class="brand-logo"><%=image_tag("spontaneously final logo-01")%></a>
      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+     <ul class="right hide-on-med-and-down">
+       <% if current_user %>
+         <li>
+           <%= link_to "" , user_path(current_user.id), :class => "fa fa-ticket fa-2x"%>
+         <li>
+           <a href="/users/<%= current_user.id %>">
+           Hi </strong><%= current_user.username.capitalize %>! 😀</strong></a>
+         </li>
+         <li>
+           <%= link_to 'Log Out', logout_path %>
+         </li>
+         <li>
+           <%= link_to 'Home', root_path, :class => "waves-effect waves-light" %>
+         </li>
+       <% elsif !current_vendor %>
+           <li><a href="/usersign_up"><span class="fa fa-user "></span> Create Account</a></li>
+           <li><a href="/user/login"><span class="fa fa-sign-in"></span> Login</a></li>
+       <% elsif !current_user && !current_vendor %>
+         <li>
+           <%= link_to "Sign Up" , usersign_up_path, :class => "" %>
+         </li>
+       <% end %>
+     </ul>
      <ul class="side-nav" id="mobile-demo">
        <% if current_user %>
          <li>
@@ -41,7 +64,7 @@
            <li><a href="/user/login"><span class="fa fa-sign-in"></span> Login</a></li>
        <% elsif !current_user && !current_vendor %>
          <li>
-           <%= link_to "Sign Up" , usersign_up_path, :class => ""%>
+           <%= link_to "Sign Up" , usersign_up_path, :class => "" %>
          </li>
        <% end %>
      </ul>
@@ -60,16 +83,16 @@
 
     <footer class="page-footer">
       <div class="container">
-        <div class="row">
-          <div class="col l6 s12" id="footerlinks">
-
+        <div class="row" id="footerlinks">
+              <div class= "col s6">
 
             <%= link_to "ABOUT  |", "#" %>
             <%= link_to "JOBS  |", "#" %>
             <%= link_to "SUPPORT  |", "#" %>
              <%= link_to "FAQ  |", "#" %>
              <%= link_to "TERMS", "#" %>
-             <span class="right">
+             </div>
+             <div class="col s6 right-align">
                <% if current_vendor %>
                  <%= link_to "Log out", logout_path, :class => "grey-text text-lighten-3" %>
                  <%= link_to "Dashboard", vendor_path(current_vendor), :class => "grey-text text-lighten-3" %>
@@ -79,7 +102,7 @@
                   or
                   <strong><%= link_to "Sign Up", new_vendor_path, :class => "grey-text text-lighten-3" %></strong>
               <%end%>
-              </span>
+            </div>
           </div>
         </div>
       </div>

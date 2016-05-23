@@ -22,12 +22,21 @@
   text-align: center;
 }
 
+.card-title {
+  margin: auto;
+}
+
+
 #bookbutton {
   margin: auto;
 }
 
 nav {
   background-color: #ff5252;
+}
+
+.card-title {
+  font-weight: bold;
 }
 
 footer.page-footer {
@@ -137,6 +146,16 @@ footer.navbar-inverse div {
   color: #fff !important;
 }
 
+.ship a {
+  color: #20425D;
+}
+
+.card-content {
+  color: #05357d;
+}
+nav .brand-logo {
+  padding-left: 36px;
+}
 .card.medium {
   display: flex;
   flex-direction: column;

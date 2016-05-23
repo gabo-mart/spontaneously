@@ -5,7 +5,7 @@ class Ship < ActiveRecord::Base
 	serialize :dining
 	belongs_to :vendor
 	has_many :package
-	has_many :review
+	has_many :reviews
 
 
 	ACTIVITIES = ["Casino",

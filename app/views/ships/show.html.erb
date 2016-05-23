@@ -11,7 +11,6 @@
 			<li><strong>Onboard crew: </strong><%= @ship.onboard_crew %></li>
 			<li><strong>Activities: </strong><%= @ship.activities.keys.to_sentence unless @ship.activities.nil? %></li>
 			<li><strong>Dining: </strong><%= @ship.dining.keys.to_sentence unless @ship.dining.nil? %></li>
-			<li><strong>Rating: </strong><%= @ship.rating %></li>
 		</ul>
 
 		<div class="col-md-8 col-md-offset-1">
@@ -19,13 +18,35 @@
 		</div>
 
 	</div>
-
-
-
-<% if @reviews.nil? %>
-	<h6>No reviews just yet. Be the first!</h6>
+<% if @reviews.any? %>
+	<h6><strong>Average Rating</strong></h6>
+		<% review_total = @reviews.map do |review| %>
+					<% review.rating %> 
+			<% end %>
+			<div class="reviews">
+					<div class="star-rating" data-score=<%= review_total.inject(:+) / review_total.count %> ></div>
+			</div>
+			<h6>Leave us a review!</h6>
 <% else %>
+	<h6><strong>No reviews just yet. Be the first!</strong></h6>
+
+<% end %>
+
+
+
+
+
+<%= render 'reviews/form'%>
+<!-- 	<ul class="rating">
+		<li class='rating_star' ></li>
+	</ul> -->
+<br>
+
+<% unless @reviews.nil? %>
+	<h6> Reviews: </h6>
 	<% @reviews.each do |review| %>
+
+
 		<div class="reviews">
 			<div class="star-rating" data-score= <%= review.rating %> ></div>
 			<p><%= review.description %></p>
@@ -34,19 +55,12 @@
 <% end %>
 
 
-<%= render 'reviews/form'%>
-<!-- 	<ul class="rating">
-		<li class='rating_star' ></li>
-	</ul> -->
-
-
-
 
 	<% if @ship.vendor == current_vendor %>
 	<%= link_to 'Edit', edit_vendor_ship_path(current_vendor.id, @ship.id) %> | 
 	<% end %> 
 
-	<%= link_to 'Back to Dashboard', vendor_path(params[:vendor_id]) %>
+	<%= link_to 'Back to Dashboard', @ship.vendor %>
 </div>
 
 <script>

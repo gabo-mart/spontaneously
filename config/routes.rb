@@ -3,9 +3,9 @@ Rails.application.routes.draw do
 
   resources :users
   resources :reviews
-  # resources :ships do
-  #   resource :reviews
-  # end
+  resources :ships do
+    resource :reviews
+  end
 
   root 'welcome#index'
 

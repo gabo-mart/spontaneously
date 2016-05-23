@@ -136,7 +136,9 @@ footer.navbar-inverse div {
 #footerlinks a {
   color: #fff !important;
 }
-
+.ship a {
+  color: #20425D;
+}
 .card.medium {
   display: flex;
   flex-direction: column;

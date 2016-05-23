@@ -7,7 +7,8 @@
   </li>
 
   <li class="col s4 animated flipInY" style="transform: translateX(0px); opacity: 1;">
-    <img class="responsive-img" src="https://s3.amazonaws.com/spontaneously/uploads/vistas.jpg" />
+    <%#=link_to( image_tag("https://s3.amazonaws.com/spontaneously/uploads/vistas.jpg"), @ship, class: 'responsive-img') %>
+   <img class="responsive-img" src="https://s3.amazonaws.com/spontaneously/uploads/vistas.jpg" />
   </li>
 
   <li class="col s4 animated flipInY" style="transform: translateX(0px); opacity: 1;">
@@ -24,7 +25,7 @@
         <%= temp %> °F &nbsp; &nbsp;  <%= description.upcase %>
       </span>
 
-        <h5 class="col s12 m4"> <%= @package.ship.name.upcase %> </h5>
+        <h5 class="col s12 m4 ship" > <%= link_to @package.ship.name.upcase, @package.ship %> </h5>
         <h5 class="col s12 m4"> <%= @package.duration.upcase %></h5>
         <h5 class="col s12 m4"> <%= @package.itinerary.upcase %></h5>
     </div>

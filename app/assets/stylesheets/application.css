@@ -17,7 +17,7 @@
 */
  /*material nav bar */
 .card-reveal > p {
-  font-size: 1.5em;
+  font-size: 1.2em;
   color: #757575;
   text-align: center;
 }
@@ -77,6 +77,11 @@ main {
   justify-content: center;
   align-items: center;
   color: white;
+  background-position: 100%;
+}
+
+#head h4 {
+  font-size: 2em;
 }
 
 .main-head-content {

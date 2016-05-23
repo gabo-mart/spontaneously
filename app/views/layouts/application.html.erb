@@ -4,10 +4,11 @@
 <head>
 
   <title>Spontaneously</title>
-  <!-- Compiled and minified CSS -->
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1" name="viewport">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
-   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -17,33 +18,38 @@
 
 <body>
 
-    <nav>
-      <div class="nav-wrapper">
-          <a href="/" class="brand-logo left">Spontaneously</a>
-          <ul id="nav-mobile" class="right">
-            <% if current_user %>
-              <li>
-                <%= link_to "" , user_path(current_user.id), :class => "fa fa-ticket fa-2x"%>
-              <li>
-                <a href="/users/<%= current_user.id %>">
-                Hello </strong><%= current_user.username %> !</strong></a>
-              </li>
-              <li>
-                <%= link_to 'Log Out', logout_path %>
-              </li>
-            <% elsif !current_vendor %>
-                <li><a href="/usersign_up"><span class="fa fa-user fa-2x"></span> Create Account</a></li>
-                <li><a href="/user/login"><span class="fa fa-sign-in"></span> Login</a></li>
-            <% elsif !current_user && !current_vendor %>
-              <li>
-                <%= link_to "Sign Up" , usersign_up_path, :class => ""%>
-              </li>
-            <% end %>
-          </ul>
-        </div>
-    </nav>
+  <nav>
+   <div class="nav-wrapper">
+     <a href="<%= root_path %>" class="brand-logo">Spontaneously</a>
+     <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+     <ul class="side-nav" id="mobile-demo">
+       <% if current_user %>
+         <li>
+           <%= link_to "" , user_path(current_user.id), :class => "fa fa-ticket fa-2x"%>
+         <li>
+           <a href="/users/<%= current_user.id %>">
+           Hi </strong><%= current_user.username.capitalize %>! 😀</strong></a>
+         </li>
+         <li>
+           <%= link_to 'Log Out', logout_path %>
+         </li>
+         <li>
+           <%= link_to 'Home', root_path, :class => "waves-effect waves-light" %>
+         </li>
+       <% elsif !current_vendor %>
+           <li><a href="/usersign_up"><span class="fa fa-user "></span> Create Account</a></li>
+           <li><a href="/user/login"><span class="fa fa-sign-in"></span> Login</a></li>
+       <% elsif !current_user && !current_vendor %>
+         <li>
+           <%= link_to "Sign Up" , usersign_up_path, :class => ""%>
+         </li>
+       <% end %>
+     </ul>
+   </div>
+ </nav>
+
     <% flash.each do |key, value| %>
-      <%= content_tag(:div, style: "position: absolute;", class: "alert alert-#{key}") do %>
+      <%= content_tag(:div, style: "position: absolute;text-align: center;width: 100%;", class: "alert alert-#{key}") do %>
         <p><%= value %></p>
       <% end %>
     <% end %>
@@ -86,6 +92,10 @@
 
   <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
-
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $(".button-collapse").sideNav();
+    });
+  </script>
 </body>
 </html>

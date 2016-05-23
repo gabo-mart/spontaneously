@@ -5,10 +5,37 @@
 #temp {
   display: flex;
   justify-content: center;
-  font-size: 1.5em;
-  color: darkgrey;
+  padding: 9px 0 8px;
+  text-shadow: none;
+  color: #fff;
+}
+.icon-temp {
+  position: relative;
+  right: 8px;
+  bottom: 4px;
 }
 
+.ship-coll-icons span:nth-child(1n){
+  padding: 8px 0 ;
+}
+.package-teal {
+  background-color: #0cbfc3;
+}
+.stripe-button-el {
+  letter-spacing: .5px;
+  transition: .2s ease-out;
+  cursor: pointer;
+  border: none;
+  border-radius: 2px;
+  display: inline-block;
+  height: 36px;
+  line-height: 36px;
+  outline: 0;
+  padding: 0 2rem;
+  text-transform: uppercase;
+  vertical-align: middle;
+  -webkit-tap-highlight-color: transparent;
+}
 #packageheading {
   background-color: #0cbfc3;
   color: #20425d;

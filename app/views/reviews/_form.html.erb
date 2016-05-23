@@ -1,8 +1,9 @@
 <%= form_for(@review) do |f| %>
 
   <div class="field">
-    <%= f.label :rating %><br>
-    <%= f.number_field :rating, max: 5, min: 0 %>
+  <div id="star-rating"></div>
+    <%#= f.label :rating %><br>
+    <%#= f.number_field :rating, max: 5, min: 0 %>
   </div>
   <div class="field">
     <%= f.label :description %><br>
@@ -17,3 +18,10 @@
     <a class="waves-effect waves-light btn-large"><%= f.submit "Submit"%></a>
   </div>
 <% end %>
+
+<script>
+  $('#star-rating').raty({
+    path: '/assets/',
+    scoreName: 'review[rating]'
+  });
+</script>

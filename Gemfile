@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'ratyrate'
+
 gem 'carrierwave'
 gem 'rspec-rails'
 gem 'fog'

@@ -126,6 +126,7 @@
       <div class="reviews">
       <div class="star-rating" data-score= <%= review.rating %> ></div>
       <p><%= review.description %></p>
+      <p style="padding-left: 24px; color: #D1D1D1;"> - <%= review.user.username %></p>
       </div>
     <% end %>
   <% end %>

@@ -1,1 +1,40 @@
-<h2>Thanks, you paid <strong> <%= @package.price %> </strong>!</h2>
+<h5 class="center-align">You are booked!</h5>
+
+
+<div class="container">
+  <div class="animated bounceIn center-align"><i class="fa fa-check-circle fa-5x" aria-hidden="true"></i>
+</div>
+<table>
+        <thead>
+          <tr>
+              Order Confirmation
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td><%= @package.itinerary %> </td>
+            <td><%= "$" + @package.price.to_s %></td>
+
+          </tr>
+          <tr>
+            <td><%= @package.start_date.to_formatted_s(:long)  %> - <%= @package.end_date.to_formatted_s(:long)     %></td>
+            <td></td>
+
+          </tr>
+          <tr>
+            <td>Rooms: <%= @package.rooms %></td>
+            <td></td>
+
+          </tr>
+          <tr>
+            <td> People: <%= @package.people %></td>
+            <td></td>
+
+          </tr>
+        </tbody>
+      </table>
+
+      <h5>An email confirmation has been sent to you at <%= @package.user.email %></h5>
+
+</div>

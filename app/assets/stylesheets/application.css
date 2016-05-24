@@ -157,9 +157,7 @@ footer.navbar-inverse div {
 .card-content {
   color: #05357d;
 }
-nav .brand-logo {
-  padding-left: 36px;
-}
+
 .card.medium {
   display: flex;
   flex-direction: column;
@@ -184,7 +182,5 @@ nav .brand-logo {
 }
 
 .brand-logo img {
-width: 5em;
-height: 5em;
-position: static;
+width: 285px;
 }

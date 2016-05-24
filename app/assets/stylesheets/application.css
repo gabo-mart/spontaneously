@@ -16,6 +16,10 @@
 *= require_self
 */
  /*material nav bar */
+.fa-check-circle {
+  color: green;
+}
+
 .card-reveal > p {
   font-size: 1.2em;
   color: #757575;

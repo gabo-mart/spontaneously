@@ -7,13 +7,13 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 Vendor.create!([{
-  company:   "Carnival",
-  email:   "admin@carnival.com",
+  company:   "Royal Caribbean",
+  email:   "admin@royalcaribbean.com",
   password:   "asdf"
   },
   {
-  company:   "Royal Caribbean",
-  email:   "admin@royalcaribbean.com",
+  company:   "Carnival",
+  email:   "admin@carnival.com",
   password:   "asdf"
 
   }])
@@ -108,50 +108,6 @@ Vendor.create!([{
       "Martini Bar"=>"on",
       "Vineyard"=>"on"
     }},
-  {
-    name: "Carnival Paradise",
-    tonnage: 70367,
-    vendor_id: 1,
-    length_in_feet: 855,
-    guest_capacity: 2052,
-    onboard_crew: 920,
-    avatar: 'example.png',
-    activities: {
-      "Casino"=>"on",
-    "Acupuncture"=>"on",
-    "Spa"=>"on",
-    "Movie Theater"=>"on",
-    "Bingo"=>"on",
-    "Games"=>"on",
-    "Volleyball"=>"on",
-    "Kid's Camp"=>"on",
-    "Live Music"=>"on",
-    "Stage Shows"=>"on",
-    "Basketball"=>"on",
-    "Karaoke"=>"on",
-    "Skycourse"=>"on",
-    "Mini Golf"=>"on",
-    "Waterslide"=>"on",
-    "Nightclub"=>"on"
-    },
-    dining: {
-      "Sushi"=>"on",
-      "Steakhouse"=>"on",
-      "BBQ"=>"on",
-      "Asian Kitchen"=>"on",
-      "Deli"=>"on",
-      "Pasta Bar"=>"on",
-      "Salad Bar"=>"on",
-      "Chef's Table"=>"on",
-      "Burger Joint"=>"on",
-      "Kid's Menu"=>"on",
-      "Breakfast Grill"=>"on",
-      "Sports Bar"=>"on",
-      "Rum Bar"=>"on",
-      "Tequila Bar"=>"on",
-      "Martini Bar"=>"on",
-      "Vineyard"=>"on"
-    }},
     {
     name: "Carnival Paradise",
     tonnage: 70367,
@@ -197,7 +153,7 @@ Vendor.create!([{
       "Vineyard"=>"on"
     }},
     {
-    name: "Harmony of the Seas",
+    name: "Carnival Breeze",
     tonnage: 226_000,
     vendor_id: 2,
     length_in_feet: 1_187,
@@ -241,7 +197,7 @@ Vendor.create!([{
       "Vineyard"=>"on"
     }},
     {
-    name: "Allure of the Seas",
+    name: "Carnival Paradise",
     tonnage: 225_282,
     vendor_id: 2,
     length_in_feet: 1_180,
@@ -285,7 +241,7 @@ Vendor.create!([{
       "Vineyard"=>"on"
     }},
     {
-    name: "Freedom of the Seas",
+    name: "Carnival Fantasy",
     tonnage: 154_407,
     vendor_id: 2,
     length_in_feet: 1_112,
